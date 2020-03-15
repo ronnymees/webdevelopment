@@ -14,6 +14,8 @@ Volg de standaard installatie maar vink volgende 2 vinkjes zeker aan:
 
 ![download](./images/afbeelding1.png)
 
+Na de installatie start je Visual Studio Code op en installer je de extensie 'Live preview'.
+
 ## Node.js
 
 Node.js is een applicatie die toelaat om JavaScript uit te voeren.
