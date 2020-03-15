@@ -46,7 +46,7 @@ Een IP adres is een set van vier nummers gescheiden door een punt (vb 192.168.1.
 
 6. You browser zal tot slot de code interpreteren en de webpagina tonen op het scherm.
 
-![download](./images/Afbeelding2.jpg) 
+![download](./images/afbeelding2.jpg) 
 
 ## Client side of Server Side ?
 
@@ -56,5 +56,5 @@ Een dynamische webpagina heeft extra scripts. Meestal zijn deze webpagina's geba
 
 **Javascripts** worden aan de client-side uitgevoerd, terwijl **PHP**, ASP.NET,... scripts aan de server-side uitgevoerd worden.
 
-![download](./images/Afbeelding5.jpg) 
+![download](./images/afbeelding5.jpg) 
 
