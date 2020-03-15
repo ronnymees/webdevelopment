@@ -972,15 +972,15 @@ JSON is een formaat om op eenvoudige en compacte manier data te kunnen uitwissel
 
 ```json
 {
-    "my_name": "Piet",
-    "my_number": 23,
-    "my_object": {
-        "my_array": [
-            5,
-            6,
-            7
-        ]
-    }
+  "my_name": "Piet",
+  "my_number": 23,
+  "my_object": {
+    "my_array": [
+      5,
+      6,
+      7
+    ]
+  }
 }
 ```
 
