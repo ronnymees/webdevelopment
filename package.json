@@ -1,0 +1,28 @@
+{
+  "name": "webdevelopment",
+  "version": "0.0.0",
+  "description": "Cursus Webdevelopment",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronnymees/webdevelopment.git"
+  },
+  "author": "Ronny Mees",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronnymees/webdevelopment/issues"
+  },
+   "homepage": "https://github.com/ronnymees/webdevelopment#readme",
+  "devDependencies": {
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-zooming": "^1.1.7"
+  },
+  "dependencies": {}  
+}
