@@ -511,7 +511,7 @@ Tot slot voegen we nog een footer toe.
     <p>Deze pagina was door [jou naam] ontworpen.</p>
 </footer>
 ```
-[Hier](%base_url%/assets/html_example.html) kan je het volledige voorbeeld downloaden.
+[Hier](../blob/master/docs/assets/html_example.html) kan je het volledige voorbeeld downloaden.
 
 ## Herhaling via zelfstudie
 
