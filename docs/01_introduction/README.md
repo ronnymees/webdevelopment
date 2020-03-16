@@ -6,29 +6,29 @@ Laten we eerst even kijken naar de infrastructuur die we gebruiken om de web inf
 
 De infrastructuur gebruikt om informatie over de wereld te verspreiden noemen we internet. Internet is eigenlijk een netwerk van netwerken. Om deze informatiestroom op gang te krijgen zijn enkele protocols van kracht.
 
-##### IP-protocol
+**IP-protocol**
 
 Het **I**nternet **P**rotocol definieerd de manier waarop informatie is verzonden d.m.v pakketjes langs een willekeurige weg naar de ontvanger. Die informatie kan allerhande data bevatten. Dit protocol gebruikt de 'best-effort' techniek om die data te bezorgen zonder enige vorm van fout- of datastroom controle. 
  
 ![download](./images/afbeelding2.png)
 
-##### TCP-protocol
+**TCP-protocol**
 
 Het **T**ransmission **C**ontrol **P**rotocol verzekerd het aanleveren van IP pakketjes zonder verlies van pakketjes en zorgt er ook voor dat deze in de juiste volgorde aangeleverd worden. De tijd nodig om de data te versturen is onderschikt aan de zekerheid dat alle data correct aangeleverd wordt.
  
 ![download](./images/afbeelding3.png)
 
-##### HTTP-protocol
+**HTTP-protocol**
 
 **H**yper**T**ext **T**ransfer **P**rotocol is een applicatie protocol dat de taal definieerd om clients en servers te laten communiceren. Het is tevens ook het protocol die gebruikt wordt om webpagina's te versturen en ontvangen.
 
 ![download](./images/afbeelding4.png)
 
-##### DNS
+**DNS**
 
 **D**omain **N**ame **S**ervers zijn zoals het adressboek voor websites. Als je een web adres in je browser intikt, dan zoekt de browser via DNS het werkelijke adres van de site alvorens het te kunnen ontvangen van de website. De browser moet bepalen op welke server die website staat zodat het een HTTP boodschap naar de juiste plaats kan sturen.
  
-##### IP adres
+**IP adres**
 
 Een IP adres is een set van vier nummers gescheiden door een punt (vb 192.168.1.1). Net zoals je thuisadres is dit een uniek nummer voor elk toestel die op een netwerk gekoppeld is.
 

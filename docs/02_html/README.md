@@ -389,7 +389,7 @@ Het `<button>` element geeft een klikbare knop weer.
 ```html
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
-# HTML Voorbeeld
+## HTML Voorbeeld
 
 Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand **index.html**.
 

@@ -390,7 +390,7 @@ img {
 }
 ```
 
-# Laten we een voorbeeld maken
+## Laten we een voorbeeld maken
 
 ![download](./images/construction.jpg)
 
@@ -405,7 +405,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 * [Opdrachtfiche](assignment1.html)
 
-# Het gebruik van online stylesheets
+## Het gebruik van online stylesheets
 
 Naast het werken met je eigen stijl kan je ook gebruik maken van online stijlen. 
 

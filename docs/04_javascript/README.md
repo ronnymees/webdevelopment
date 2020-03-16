@@ -397,7 +397,7 @@ Volg onderstaande videotutorials van LinkedIn Learning op je eigen tempo tegen d
 * [Learning the javascript Language](https://www.linkedin.com/learning/learning-the-javascript-language-2) (Hoofdstuk 7 is optioneel)
 * [Using input validation](https://www.linkedin.com/learning/validating-and-processing-forms-with-javascript-and-php) (Hoofdstuk 1 t.e.m. 3)
 
-# Form validatie via javascript
+## Form validatie via javascript
 
 Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadplegen:
 
@@ -463,7 +463,7 @@ Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moes
 
 * [opdrachtfiche](assignment1.html)
 
-# Een rekenmachine via javascript
+## Een rekenmachine via javascript
 
 Om javascript nog verder in te oefenen maken we een rekenmachine als voorbeeld.
 
@@ -600,7 +600,7 @@ We maken gebruik van een anonieme functie om hetzelfde resultaat te bekomen.
 
 Je kan het volledige voorbeeld [hier](/files/rekenmachine.rar) downloaden. 
 
-# Een tabel aanvullen met javascript
+## Een tabel aanvullen met javascript
 
 In dit voorbeeld kijken we hoe we inhoud aan een tabel kunnen toevoegen d.m.v. javascript.
 
@@ -764,7 +764,7 @@ function processForm() {
 };
 ```
 
-# Verder werken op de formvalidation opdracht met Node-red
+## Verder werken op de formvalidation opdracht met Node-red
 
 We starten node-red op door in een powershell venster `node-red` in te tikken.
 
@@ -882,7 +882,7 @@ Voor de header is het **application/json** dat moet doorgegeven worden. (deze in
 
 Test uit door te surfen naar [http://localhost:1880/formdata.json](http://localhost:1880/formdata.json)
 
-# Asynchronous Javascript And XML (AJAX)
+## Asynchronous Javascript And XML (AJAX)
 
 AJAX is een techniek om je webpagina te updaten zonder dat de volledige pagina opnieuw moet worden geladen.
 Het is Google die deze techniek heeft geïntroduceerd in hun zoekmachine (als je in google iets begint te type worden suggesties gegeven).
@@ -964,7 +964,7 @@ De functie zal bij elke Await de code verlaten en later op dat punt dan verder d
 
 **Let op**: Deze techniek werkt niet bij oude browsers!
 
-# JavaScript Object Notation (JSON)
+## JavaScript Object Notation (JSON)
 
 JSON is een formaat om op eenvoudige en compacte manier data te kunnen uitwisselen. Er zijn 2 structuren, objecten te herkennen aan {} en array’s te herkennen aan [].
 
@@ -1009,7 +1009,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 * Hoofdstuk 7 van [deze](https://www.linkedin.com/learning/learning-the-javascript-language-2) LinkedIn Learning videotutorial.
 
-# JSON data in een tabel weergeven
+## JSON data in een tabel weergeven
 
 We maken nu een pagina **formdata.html** aan die data uit formdata.json, die we in de vorige oefening via Node-red beschikbaar hebben gemaakt, leest en in een tabel weergeeft.
 
