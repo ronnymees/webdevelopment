@@ -202,27 +202,63 @@ Met de CSS **border** eigenschap kan je de stijl, dikte en kleur van een border 
 
 ![download](./images/afbeelding1.png)
 
-
-
-
-
-
-
-
-
-
-
+```css
+    p {
+        border-style: solid;
+    }
+```
 ### Margin
 
+Met de CSS **Margin** eigenschap kan je afstand creëren rond een element buiten de rand van het element.
+
+```css
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+/* of via de korte notitie */
+p {
+  margin: 25px 50px 75px;
+}
+```
 ### padding
+
+De CSS **padding** eigenschap doet net hetzelfde als margin maar dan langs de binnenkant van de rand van een element.
+
+```css
+div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+/* of via de korte notitie */
+div {
+  padding: 25px 50px 75px 100px;
+}
+```
+![download](./images/afbeelding2.png)
 
 ### Height and width
 
-### Box model
+De CSS **height** en **width** eigenschappen leggen zoals je wel kunt vermoeden de hoogte en breedte van een element vast.
 
-### Outline
+De waarde kan je op `auto` plaatsen of uitdrukken in `pixels` of `%`.
 
+```css
+div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}
+```
 ### Text
+
+Naast de kleur kan van nog meerdere eigenschappen van tekst vastleggen.
+
+
 
 ### Fonts
 

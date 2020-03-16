@@ -408,7 +408,7 @@ In dit voorbeeld zullen we een form validatie doen aan de client-side d.m.v. jav
 
 ![download](./images/afbeelding1.png)
 
-Je kan de files van dit voorbeeld [hier](../assets/formvalidation.rar) downloaden.
+Je kan de files van dit voorbeeld [hier](/files/formvalidation.rar) downloaden.
 
 We gebruiken hier geen HTML validatie, enkel javascript validatie.
 Laten we even kijken naar het script.
@@ -598,7 +598,7 @@ document.getElementById("equal").onclick=(event) => {
 ```
 We maken gebruik van een anonieme functie om hetzelfde resultaat te bekomen.
 
-Je kan het volledige voorbeeld [hier](../assets/rekenmachine.rar) downloaden. 
+Je kan het volledige voorbeeld [hier](/files/rekenmachine.rar) downloaden. 
 
 # Een tabel aanvullen met javascript
 
@@ -788,7 +788,7 @@ In ons voorbeeld willen we het volgende gaan uitvoeren :
 </figure>
 <!-- blank line -->
 
-Laten we eerst de basis van onze node-red flow [hier](../assets/node-red-basis.json) downloaden.
+Laten we eerst de basis van onze node-red flow [hier](/files/node-red-basis.json) downloaden.
 
 Om die flow nu te importeren in node-red klik je op de 3 streepjes rechtsboven en kies je voor import.
 

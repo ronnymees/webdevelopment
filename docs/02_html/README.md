@@ -432,7 +432,7 @@ Laten we starten om de body van onze pagina op te bouwen.
     </div>
 ```
 Vervolgens voegen we een afbeelding toe aan ons voorbeeld. 
-Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen. [Hier](../assets/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
+Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen. [Hier](/files/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
 
 ```html
 <body>
@@ -511,7 +511,7 @@ Tot slot voegen we nog een footer toe.
     <p>Deze pagina was door [jou naam] ontworpen.</p>
 </footer>
 ```
-[Hier](../assets/html_example.html) kan je het volledige voorbeeld downloaden.
+[Hier](/files/html_example.html) kan je het volledige voorbeeld downloaden.
 
 ## Herhaling via zelfstudie
 

@@ -44,5 +44,6 @@ module.exports = {
         type: 'output',
         defaultTitle: 'Output',
       }]
-  ],
+  ['@dovyp/vuepress-plugin-clipboard-copy', true],    
+  ],  
 }
