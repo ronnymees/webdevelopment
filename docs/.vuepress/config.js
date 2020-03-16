@@ -40,10 +40,10 @@ module.exports = {
         zIndex: 10000,
       },
     }],
-	['container', {
+	  ['container', {
         type: 'output',
         defaultTitle: 'Output',
-      }]
-  ['@dovyp/vuepress-plugin-clipboard-copy', true],    
+      }],
+    ['@dovyp/vuepress-plugin-clipboard-copy', true],    
   ],  
 }

@@ -258,55 +258,141 @@ div {
 
 Naast de kleur kan van nog meerdere eigenschappen van tekst vastleggen.
 
-
-
-### Fonts
-
-### Icons
+```css
+h1 {
+  color: green;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-indent: 50px;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  word-spacing: 10px;
+  text-shadow: 3px 2px red;
+  font-family: "Times New Roman", Times, serif;
+}
+```
 
 ### Links
 
+Een hyperlink kan je als volgt stylen:
+
+```css
+/* Niet bezochte link */
+a:link {
+  color: red;
+}
+
+/* Bezochte link */
+a:visited {
+  color: green;
+}
+
+/* Mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* Geselecteerde link */
+a:active {
+  color: blue;
+}
+```
+
 ### Lists
+
+Je kan de lijst markering als volgt aanpassen:
+
+```css
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+```
+
+of zelfs een afbeelding als markering gebruiken:
+
+```css
+ul {
+  list-style-image: url('sqpurple.gif');
+}
+```
 
 ### tables
 
+Je kan de opmaak van je tabel als volgt aanpassen:
+
+```css
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  height: 50px;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 15px;
+}
+```
+
 ### Display
+
+De CSS **display** eigenschap zal bepalen als en hoe een element getoont wordt.
+
+```css
+/*inline */ 
+li {
+  display: inline;
+}
+/*block*/
+span {
+  display: block;
+}
+/*hidden*/
+h1.hidden {
+  display: none;
+}
+```
 
 ### Max-width
 
-### Position
+De CSS **max-width** eigenschap stelt een maximum breedte in van een element.
 
-### Overflow
+```css
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+```
 
 ### Float
 
-### Inline-block
+De CSS **float** eigenschap maakt het mogelijk om een element zwevend op te stellen.
 
-### Align
-
-### Navigation bar
-
-### Dropdowns
-
-### Forms
-
-### Responsivenes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```css
+/*afbeelding zwevend aan de rechterzijde*/
+img {
+  float: right;
+}
+```
 
 # Laten we een voorbeeld maken
+
+
 
 
 
