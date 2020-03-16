@@ -392,7 +392,115 @@ img {
 
 ## Laten we een voorbeeld maken
 
-![download](./images/construction.jpg)
+We passen een stijl to op ons HTML voorbeeld die we eerder hebben aangemaakt.
+
+Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style sheet toevoegen.
+
+```html
+<head>
+  <!--metadata -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+```
+We starten met een achtergrond kleur te definieren voor onze html pagina.
+
+```css
+html {
+    background-color: grey;
+}
+```
+Vervolgens zorgen we er voor dat de body een bepaalde breedte heeft en centraal in de pagina staat. Eveneens zorgen we voor een zekere marge tussen de rand van de body en de inhoud.
+
+```css
+body {
+    width: 1080px;
+    margin: auto;
+    background-color: floralwhite;
+    padding: 25px;
+}
+```
+Nu leggen we de opmaak van de `h1` titel vast.
+```css
+h1 {
+    font-family: Calibri;
+    color: rgb(0,169,199);
+    text-shadow: 3px 2px black;
+    text-align: center;
+}
+```
+Daarna komen de paragrafen aan de beurt.
+```css
+p {
+    font-family: Arial;
+    text-align: left;
+    line-height: 25px;    
+}
+```
+
+Nu is de afbeelding aan de beurt. Hier willen we dat de afbeelding links staat en de navigatie rechts.
+
+```css
+img {
+    border: grey;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    float: left;
+}
+
+#nav{
+    float: right;
+}
+```
+
+Om de navigatiebar wat mooier te maken kiezen we voor een knop uitzicht.
+
+```css
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+a:hover, a:active {
+    background-color: red;
+}
+```
+
+Ook de tabel en de lijst krijgen een leuk uitzicht mee.
+
+```css
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption{
+    text-transform: uppercase;
+}
+
+th {
+    height: 50px;
+    background-color: whitesmoke;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    line-height: 30px;
+}
+```
+
+Proficiat je eerste pagina met stijl.
 
 ## Herhaling via zelfstudie
 

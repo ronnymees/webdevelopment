@@ -1102,4 +1102,101 @@ Test even uit.
 
 ## Web API
 
-![download](./images/construction.jpg)
+Laten we even een IoT toepassing bekijken.
+
+We gaan aan de slag met Philps Hue:
+* domotical oplossing van Signify (Philips lighting)
+* bridge (vierkant bakje, met drukknop in het midden) maakt connectie tussen ethernet en zigbee
+* lampen, schakelaars, ... communiceren via zigbee (werkt tot 100 meter ver, elk device is ook een range extender)
+
+![download](./images/afbeelding16.png)
+
+Op de campus Kortrijk is een bridge verbonden met een Telenet router. Via port forwarding is de bridge van thuis bereikbaar.
+
+De bridge  luistert op poort 80, de Telenet router is als volgt ingesteld: binnenkomende verbindingen op poort 49152 gaan naar poort 80
+
+![download](./images/afbeelding17.png)
+
+![download](./images/afbeelding18.png)
+
+Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat uitleg over de Web API van Philips Hue nalezen.
+
+### De status van de Philips HUE opvragen
+
+* GET request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights (via je browser).
+
+* Om het JSON formaat netjes op je browser te krijgen kan je de [json formatter chrome extensie](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) installeren.
+
+![download](./images/afbeelding19.png)
+
+### Een lamp aan- of uitzetten.
+
+* PUT request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state
+
+* body met JSON: {"on":false} merk op dat false een boolean is, geen string en dus zonder aanhalingstekens
+
+![download](./images/afbeelding20.png)
+
+Vanuit de console van je browser kan je dit testen met:
+
+```js
+fetch("http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state",
+{
+method: "PUT",
+body: JSON.stringify({"on":true})
+})
+.then(function(res){ console.log(res) })
+.catch(function(res){ console.log(res) })
+```
+
+Je zou volgende resultaat moeten zien:
+
+![download](./images/afbeelding21.png)
+
+### Aansturen via een webpagina
+
+Je kan nu een webpagina maken met een image waar er ofwel [lamp_on.jpg](/public/lamp_on.jpg) of [lamp_off.jpg](/public/lamp_off.jpg) in komt:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fetch lamp</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <img id="lamp" src="lamp_off.jpg">
+    </body>
+</html>
+```
+Vervolgens heb je een script nodig die enerzijds de lamp aanstuurd maar ook de afbeelding wisseld.
+
+```js
+window.addEventListener(('load'), (event) => {
+    console.log(document.getElementById("lamp").src);
+
+    document.getElementById("lamp").onclick = async () => {
+        let lamp_on=false;
+        if (document.getElementById("lamp").src.indexOf("lamp_on.jpg") != -1) {
+            document.getElementById("lamp").src = "lamp_off.jpg";
+            lamp_on=false;
+        }
+        else {
+            document.getElementById("lamp").src = "lamp_on.jpg";
+            lamp_on=true;
+        }
+
+        let response = await fetch("http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state",
+        {
+            method: "PUT",
+            body: JSON.stringify({"on":lamp_on})
+        })
+        let json= await response.json();
+        console.log(json);
+
+        };
+});
+```
+**Merk op**: Via indexOf wordt nagegaan op welke positie "lamp_on.jpg" in de src string voorkomt, dit omdat de string de volledige url bevat, -1 wil zeggen dat deze niet voorkomt
+
