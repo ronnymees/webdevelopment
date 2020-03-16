@@ -408,10 +408,20 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * [CSS tutorial op W3Schools](https://www.w3schools.com/css/default.asp)
 * [Style your website CSS tutorial op Giraffe Academy](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpNO7ScZFr-WTmtcBY3AN1M7)
 
-## Opdracht - Voeg stijl toe aan je HTML pagina
+## Opdracht - Een eenvoudige webpagina met stijl
+
 * [Opdrachtfiche](assignment1.html)
 
 # Het gebruik van online stylesheets
 
-## Opdracht - ??
+Naast het werken met je eigen stijl kan je ook gebruik maken van online stijlen. 
+
+Bekijk zelf even de mogelijkheden van:
+
+* [Bootstrap](https://www.w3schools.com/bootstrap4/default.asp)
+* [W3.CSS](https://www.w3schools.com/w3css/default.asp)
+* [Font Awesome](https://www.w3schools.com/icons/fontawesome5_intro.asp)
+
+## Opdracht - Een eenvoudige webpagina met online stijl
+
 * [Opdrachtfiche](assignment2.html)
