@@ -1092,7 +1092,14 @@ async function getData() {
 
 Test even uit.
 
+## Google chart & chart.js
+
+![download](./images/construction.jpg)
+
 ## Opdracht - JSON data visualiseren in een tabel en grafiek
 
 * [opdrachtfiche](assignment2.html)
 
+## Web API
+
+![download](./images/construction.jpg)

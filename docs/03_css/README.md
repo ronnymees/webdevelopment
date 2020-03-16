@@ -392,14 +392,7 @@ img {
 
 # Laten we een voorbeeld maken
 
-
-
-
-
-
-
-
-
+![download](./images/construction.jpg)
 
 ## Herhaling via zelfstudie
 
