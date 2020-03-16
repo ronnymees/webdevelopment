@@ -43,6 +43,7 @@ module.exports = {
 	['container', {
         type: 'output',
         defaultTitle: 'Output',
-      }]
+      }],
+    ['@dovyp/vuepress-plugin-clipboard-copy', true],
   ],
 }
