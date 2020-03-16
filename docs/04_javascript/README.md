@@ -1155,7 +1155,7 @@ Je zou volgende resultaat moeten zien:
 
 ### Aansturen via een webpagina
 
-Je kan nu een webpagina maken met een image waar er ofwel [lamp_on.jpg](/public/lamp_on.jpg) of [lamp_off.jpg](/public/lamp_off.jpg) in komt:
+Je kan nu een webpagina maken met een image waar er ofwel [lamp_on.jpg](/files/lamp_on.jpg) of [lamp_off.jpg](/files/lamp_off.jpg) in komt:
 
 ```html
 <!DOCTYPE html>
