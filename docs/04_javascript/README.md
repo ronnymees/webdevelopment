@@ -77,7 +77,7 @@ function goBackTitle() {
 * met de syntax `document.getElementById()` gaan we in de HTML pagina op zoek naar het element met de Id = ... 
 * met de syntax `.textContent` gaan we de inhoud van dit element gaan aanpassen.
 
-:::WARNING
+::: warning Aandacht
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 :::
 
@@ -201,11 +201,11 @@ const y = 11
 ```
 Const is de definitie van een constante, heeft dezelfde scope als let maar je kan de waarde niet aanpassen.
 
-::WARNING
+::: warning Aandacht
 Als je een variable definieerd zonder let, var of const dan is dit automatisch een globale variabele. Je moet dan ook goed opletten dat je nergens anders een variabele definieerd met dezelfde naam.
 ::: 
 
-:::TIP
+::: tip Tip
 Om te vermijden dat je die let, var of const per ongeluk zou vergeten kan je bovenaan je script file "use strict"; plaatsen. Je krijgt dan een foutmelding als je het vergeet.
 :::
 

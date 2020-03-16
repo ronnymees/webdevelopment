@@ -6,7 +6,6 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Company', link: 'https://www.vives.be' },      
     ],
-    logo: '/assets/afbeelding1.png',
     sidebarDepth: 1,
     repo: 'https://github.com/ronnymees/webdevelopment',
     docsDir: 'docs',

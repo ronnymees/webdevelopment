@@ -39,7 +39,7 @@ Het HTML element `<head>` is een container voor de metadata van het document. Me
 
 Het zichtbare deel van het HTML document kan je terugvinden tussen `<body>` en `</body>`.
 
-::TIP
+::: tip Tip
 Je gebruikt best insprongen bij het schrijven van HTML code. Het bevorderd de leesbaarheid van je HTML tekst.
 Je kan dit automatisch doen via het rechtermuis menu in Visual Studio Code, je kiest dan voor format document.
 :::
@@ -319,7 +319,7 @@ Een `<form>` element definieerd een deel in een pagina waar input van de gebruik
 
 Het meest belangrijke element is het `<input>` element. Het kan op verschillende manieren weergegeven worden afhankelijk van het gebruikte `type` attribuut.
 
-###### Text / password
+*Text / password*
 
 Een 1-lijns tekst input veld.
 
@@ -332,7 +332,7 @@ First name:<br>
   <input type="password" name="psw">
 </form>
 ```
-###### Submit / reset button
+*Submit / reset button*
 
 Een submiet of reset button voor het formulier.
 
@@ -347,7 +347,7 @@ Een submiet of reset button voor het formulier.
 </form>
 ```
 
-###### Radio button or checkbox
+*Radio button or checkbox*
 
 Een radio button of checkbox kan je gebruiken om een selectie tussen elementen toe te laten.
 
@@ -391,7 +391,7 @@ Het `<button>` element geeft een klikbare knop weer.
 ```
 # HTML Voorbeeld
 
-Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand 'index.html'.
+Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand **index.html**.
 
 Om de basisstructuur van een HTML pagina aan te maken in Visual Studio Code hoef je enkel in `html:5` in te tikken.
 
@@ -432,7 +432,7 @@ Laten we starten om de body van onze pagina op te bouwen.
     </div>
 ```
 Vervolgens voegen we een afbeelding toe aan ons voorbeeld. 
-Het is 'good practice' om alle afbeeldingen in een folder 'images' te plaatsen. [Hier](./images/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
+Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen. [Hier](./images/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
 
 ```html
 <body>
