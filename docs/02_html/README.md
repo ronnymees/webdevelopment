@@ -1,4 +1,4 @@
-﻿# Introductie tot HTML
+﻿# Een webpagina bouwen in HTML
 
 HTML is de standaard markup language om web pagina's aan te maken. HTML staat voor **H**yper **T**ext **M**arkup **L**anguage. Het beschrijft de structuur van een webpagina a.d.h.v. HTML elementen die de browser vertellen hoe de paginainhoud te tonen. De HTML elementen noemen we ook **tags**.
 

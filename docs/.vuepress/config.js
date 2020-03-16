@@ -2,18 +2,22 @@ module.exports = {
   title: 'Webdevelopment',
   description: 'Cursus Webdevelopment graduaat Internet of Things ( VIVES )',
   themeConfig: {
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Company', link: 'https://www.vives.be' },      
+    ],
+    sidebarDepth: 1,
+    repo: 'https://github.com/ronnymees/webdevelopment',
+    docsDir: 'docs',
+    docsBranch: 'master',
     sidebar: [
-		  '/00_software_installatie/',
+		      '/00_software_installatie/',
           '/01_introduction/',
           '/02_html/',
           '/03_css/',
           '/04_javascript/',
           '/05_php/',          
-    ],
-	sidebarDepth: 1,
-    repo: 'https://github.com/ronnymees/webdevelopment',
-    docsDir: 'docs',
-    docsBranch: 'master'
+    ]    
   },
   markdown: {
     lineNumbers: true,

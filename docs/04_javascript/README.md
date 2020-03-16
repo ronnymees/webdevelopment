@@ -1,4 +1,4 @@
-# Javascript
+# Het gebruik van javascript in web development
 
 JavaScript (JS) is een lichtgewicht, geïnterpreteerde programmeertaal met eersteklas functies. Hoewel het beste bekend als de scripttaal voor web pagina's, wordt het ook door vele niet-browser omgevingen gebruikt, zoals node.js. 
 

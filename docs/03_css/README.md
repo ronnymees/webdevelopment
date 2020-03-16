@@ -1,4 +1,4 @@
-# Introductie tot CSS
+# Een webpagina stylen in CSS
 
 **C**ascading **S**tyle **S**heets is een style sheet language die gebruikt wordt om de presentatie van een HTML document te beschrijven.
 

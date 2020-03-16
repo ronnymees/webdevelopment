@@ -17,7 +17,7 @@ Tijdens deze cursus wordt jullie de basisvaardigheden van webdevelopment aangele
 
 Deze cursus is ontwikkeld voor de opleiding graduaat Internet of Things van de hogeschool [VIVES](https://www.vives.be/nl/opleidingen/industriële-wetenschappen-en-technologie/graduaat-internet-of-things).
 
-![download](./images/afbeelding1.png)
+![download](./assets/afbeelding1.png)
 
 
 
