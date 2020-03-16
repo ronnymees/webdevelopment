@@ -511,7 +511,7 @@ Tot slot voegen we nog een footer toe.
     <p>Deze pagina was door [jou naam] ontworpen.</p>
 </footer>
 ```
-[Hier](/files/html_example.html) kan je het volledige voorbeeld downloaden.
+[Hier](/files/html_example.txt) kan je het volledige voorbeeld downloaden.
 
 ## Herhaling via zelfstudie
 
