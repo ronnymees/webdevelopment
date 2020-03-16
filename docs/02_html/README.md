@@ -432,7 +432,7 @@ Laten we starten om de body van onze pagina op te bouwen.
     </div>
 ```
 Vervolgens voegen we een afbeelding toe aan ons voorbeeld. 
-Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen. [Hier](./images/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
+Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen. [Hier](../assets/example1.jpg) kan je de afbeelding in ons voorbeeld downloaden.
 
 ```html
 <body>

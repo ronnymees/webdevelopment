@@ -287,9 +287,9 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * [Style your website CSS tutorial op Giraffe Academy](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpNO7ScZFr-WTmtcBY3AN1M7)
 
 ## Opdracht - Voeg stijl toe aan je HTML pagina
-* [Opdrachtfiche](./assignment1.html)
+* [Opdrachtfiche](assignment1.html)
 
 # Het gebruik van online stylesheets
 
 ## Opdracht - ??
-* [Opdrachtfiche](./assignment2.html)
+* [Opdrachtfiche](assignment2.html)
