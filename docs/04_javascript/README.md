@@ -1008,3 +1008,91 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * Hoofdstuk 1 en 3 van het handboek [ebook](https://limo.libis.be/primo-explore/fulldisplay?docid=TN_springer_s978-1-4842-4395-4_313453&context=PC&vid=VIVES_KATHO&search_scope=ALL_CONTENT&tab=all_content_tab&lang=nl_BE:)
 
 * Hoofdstuk 7 van [deze](https://www.linkedin.com/learning/learning-the-javascript-language-2) LinkedIn Learning videotutorial.
+
+# JSON data in een tabel weergeven
+
+We maken nu een pagina **formdata.html** aan die data uit formdata.json, die we in de vorige oefening via Node-red beschikbaar hebben gemaakt, leest en in een tabel weergeeft.
+
+We maken eerst een de **formdata.html** pagina aan:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>callback jquery get</title>
+    </head>
+    <body>
+        <div id="result"></div>
+        <button id="get">GET</button>
+        <script src="script.js"></script>
+    </body>
+</html>
+```
+
+Vervolgens schrijven we het **script.js** bestand.
+
+We starten met het ophalen van de JSON data en we tonen dit als tekst:
+
+```js
+document.getElementById('get').addEventListener('click', getData);
+
+async function getData() {
+    let response = await fetch("http://localhost:1880/formdata.json");
+    let json = await response.json();
+    document.getElementById('result').textContent=JSON.stringify(json);
+};
+```
+Test dit even uit:
+* start node-red
+* surf naar http://localhost:1880/index.html
+* vul enkele keren het formulier in zodat er data in onze array komt te staan.
+* Open nu in Visual Studio Code dit voorbeeld project en open **formdata.html** via de live server.
+* Druk op 'get' , je zou jou input moeten zien.
+
+![download](./images/afbeelding13.png)
+
+Wanneer je geen data krijgt wanneer je op GET drukt kan dit komen door CORS (**C**ross-**O**rigin **R**esource **S**haring). De browser verhindert dat er op "localhost:5500" data komt van een ander domein, "localhost:1180".
+
+* Mechanisme die via additionele HTTP headers een browser meldt dat een web applicatie die gestart werd op het origin domein permissie heeft om resources te gebruiken van een server in een ander domein
+* de server in het andere domein meldt via HTTP CORS headers dat resources mogen gebruikt worden door web applicaties in andere domeinen
+
+![download](./images/afbeelding14.png)
+
+Om domein B, in ons geval Node-RED cors headers mee te laten sturen dienen we het volgende aan te passen in het bestand: **c:\users\.node-red\settings.js**
+
+![download](./images/afbeelding15.png)
+
+Meer info hierover kan je op [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) terugvinden.
+
+Om nu de data in een tabel te tonen kunnen we gebruik maken van de eerder gemaakte oefening 'Een tabel aanvullen met javascript'.
+
+1. Maak een functie addRow:
+
+```js
+function addRow(email) {
+    let tBody=document.getElementById("formdataTable");
+    let row=tBody.insertRow(-1);
+
+    let cell=row.insertCell(-1);
+    let emailTextNode=document.createTextNode(email);
+    cell.appendChild(emailTextNode);
+}
+```
+
+2. Doe een fech, doorloop de verkregen array met een foreach:
+
+```js
+async function getData() {
+    let response = await fetch("http://localhost:1880/formdata.json");
+    let json = await response.json();
+    json.forEach (obj => addRow(obj.email));
+}    
+```
+
+Test even uit.
+
+## Opdracht - JSON data visualiseren in een tabel en grafiek
+
+* [opdrachtfiche](assignment2.html)
+
