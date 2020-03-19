@@ -13,7 +13,7 @@ Tijdens deze cursus wordt jullie de basisvaardigheden van webdevelopment aangele
 4. Het gebruik van javascript in web development
 5. Het gebruik van PHP in web development
 
-## Bron
+## Info
 
 Deze cursus is ontwikkeld voor de opleiding graduaat Internet of Things van de hogeschool [VIVES](https://www.vives.be/nl/opleidingen/industriële-wetenschappen-en-technologie/graduaat-internet-of-things).
 
