@@ -2,7 +2,7 @@ module.exports = {
   title: 'Webdevelopment',
   description: 'Cursus Webdevelopment graduaat Internet of Things ( VIVES )',
   themeConfig: {
-    logo: '/assets/afbeelding1.png',
+    logo: '/files/afbeelding1.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Company', link: 'https://www.vives.be' },      
