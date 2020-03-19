@@ -1,4 +1,7 @@
 # Javascript - Formvalidation opdracht
+
+![download](./images/assignment.png)
+
 ## Opdracht
 Ontwerp een registratie webpagina in HTML en stijl het met CSS.
 De webpagina moet volgens het ‘good-practice’ principe van web developers opgesteld zijn en minstens volgende inputvelden bevatten:

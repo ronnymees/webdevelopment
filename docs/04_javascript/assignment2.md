@@ -1,5 +1,7 @@
 # JSON data visualiseren in een tabel en grafiek
 
+![download](./images/assignment.png)
+
 ## Opdracht
 Ontwerp een webpagina  die de Bitcoin koers van een bepaalde periode toont in een tabel en op een grafiek.
 

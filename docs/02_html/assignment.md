@@ -1,4 +1,7 @@
 # HTML opdracht
+
+![download](./images/assignment.png)
+
 ## Opdracht
 * Bouw een eenvoudige webpagina door enkel gebruik te maken van HTML waarmee je jezelf voorsteld.
 * Deze webpagina moet volgens de good practices voor web development geschreven zijn.

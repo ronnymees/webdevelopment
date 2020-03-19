@@ -4,6 +4,8 @@ Voor het vak webdevelopment heb je eveneens behoefte aan ontwikkelingssoftware.
 
 ## Visual Studio Code
 
+![download](./images/codeicon.png)
+
 Om alle files voor een webpagina aan te maken, te visualiseren en te debuggen gebruiken we Visual Studio Code en Chrome.
 
 We veronderstellen even dat Chrome reeds op je laptop geïnstalleerd staat.
@@ -18,6 +20,8 @@ Na de installatie start je Visual Studio Code op en installer je de extensie 'Li
 
 ## Node.js
 
+![download](./images/nodeicon.png)
+
 Node.js is een applicatie die toelaat om JavaScript uit te voeren.
 
 Om dit te installeren ga je naar [Nodejs.org](https://nodejs.org/en/) en kies je voor de **LTS** versie.
@@ -27,6 +31,8 @@ Tijdens de installatie gebruik je gewoon de default settings.
 **Let op**: Node.js beschikt over een eigen console, gebruik die nooit, we gebruiken steeds powershell.
 
 ## Node-red
+
+![download](./images/redicon.png)
 
 **Merk op**: Node.js moet reeds op je systeem geïnstalleerd steen voor je Node-red kan installeren.
 

@@ -1,5 +1,7 @@
 # Een eenvoudige webpagina met stijl
 
+![download](./images/assignment.png)
+
 ## Opdracht
 
 In deze opdracht maken we een webpagina voor een restaurant met een extern stylesheet zodat die mooi en gebruiksvriendelijk overkomt.

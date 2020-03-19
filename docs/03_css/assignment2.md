@@ -1,5 +1,7 @@
 # Een eenvoudige webpagina met online stijl
 
+![download](./images/assignment.png)
+
 ## Opdracht
 
 Bouw een webpagina voor de opleiding Graduaat Internet of Things m.b.v. Font Awesome & Bootstrap/W3.CSS.

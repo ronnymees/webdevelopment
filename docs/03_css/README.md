@@ -1,5 +1,7 @@
 # Een webpagina stylen in CSS
 
+![download](./images/cssicon.png) 
+
 **C**ascading **S**tyle **S**heets is een style sheet language die gebruikt wordt om de presentatie van een HTML document te beschrijven.
 
 CSS is ontworpen om het scheiden van presentatie en inhoud van een webpagin mogelijk te maken. Hierdoor is het geheel beter toegankelijk, flexibeler en heeft een een betere controle op de presentatie characteristieken. Meerdere webpagina's kunnen ook dezelfde opmaak delen door gebruik te maken van eenzelfde .css bestand.
@@ -511,6 +513,8 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 ## Opdracht - Een eenvoudige webpagina met stijl
 
+![download](./images/assignment.png)
+
 * [Opdrachtfiche](assignment1.html)
 
 ## Het gebruik van online stylesheets
@@ -524,5 +528,7 @@ Bekijk zelf even de mogelijkheden van:
 * [Font Awesome](https://www.w3schools.com/icons/fontawesome5_intro.asp)
 
 ## Opdracht - Een eenvoudige webpagina met online stijl
+
+![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment2.html)

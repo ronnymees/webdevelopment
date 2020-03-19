@@ -1,5 +1,7 @@
 ﻿# Een webpagina bouwen in HTML
 
+![download](./images/htmlicon.png)
+
 HTML is de standaard markup language om web pagina's aan te maken. HTML staat voor **H**yper **T**ext **M**arkup **L**anguage. Het beschrijft de structuur van een webpagina a.d.h.v. HTML elementen die de browser vertellen hoe de paginainhoud te tonen. De HTML elementen noemen we ook **tags**.
 
 Een HTML element start meestal met een **opening tag** en eindigd dan ook met een **closing tag**.
@@ -8,7 +10,7 @@ Een HTML element start meestal met een **opening tag** en eindigd dan ook met ee
 For example
 <h1>This is a header element</h1>
 ```
-## What heb je nodig om HTML code te schrijven en het resultaat te bekijken?
+## Wat heb je nodig om HTML code te schrijven en het resultaat te bekijken?
 
 Omdat HTML eigenlijk gewoon tekst is, kan je jou favoriete tekstverwerker zoals Notepad, Notepad++, Visual Studio Code, Brackets, ... hiervoor gebruiken. Sommige van die editors bieden ook een 'live preview' wat zeer handig is terwijl je jou pagina ontwerpt.
 
@@ -522,6 +524,8 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * [HTML videotutorial](https://www.youtube.com/watch?v=pQN-pnXPaVg) op Giraffe Academy.
 
 ## Opdracht - HTML pagina
+
+![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment.html)
 

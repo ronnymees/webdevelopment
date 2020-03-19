@@ -1,6 +1,8 @@
 # Het gebruik van javascript in web development
 
-JavaScript (JS) is een lichtgewicht, geïnterpreteerde programmeertaal met eersteklas functies. Hoewel het beste bekend als de scripttaal voor web pagina's, wordt het ook door vele niet-browser omgevingen gebruikt, zoals node.js. 
+![download](./images/javascripticon.png) 
+
+**JavaScript** (JS) is een lichtgewicht, geïnterpreteerde programmeertaal met eersteklas functies. Hoewel het beste bekend als de scripttaal voor web pagina's, wordt het ook door vele niet-browser omgevingen gebruikt, zoals node.js. 
 
 De standaard voor JavaScript is ECMAScript. Met de ingang van 2012, ondersteunen alle moderne browsers volledig ECMAScript 5.1. Op 17 juni 2015, publiceerde ECMA International de zesde hoofdversie (major version) van ECMAScript, dit heet officieel ECMAScript 2015, en wordt in het algemeen vaker aangeduid als ECMAScript 2015 of ES2015. Sindsdien worden de ECMAScript standaarden op jaarlijkse basis vrijgegeven.
 
@@ -460,6 +462,8 @@ In dit voorbeeld werken we met een geneste if structuur om alle input te valider
 Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moesten we dit niet doen zou de pagina gewoon refreshen.
 
 ## Opdracht - Formvalidation
+
+![download](./images/assignment.png)
 
 * [opdrachtfiche](assignment1.html)
 
@@ -966,6 +970,8 @@ De functie zal bij elke Await de code verlaten en later op dat punt dan verder d
 
 ## JavaScript Object Notation (JSON)
 
+![download](./images/jsonicon.png) 
+
 JSON is een formaat om op eenvoudige en compacte manier data te kunnen uitwisselen. Er zijn 2 structuren, objecten te herkennen aan {} en array’s te herkennen aan [].
 
 ![download](./images/afbeelding12.png)
@@ -1097,6 +1103,8 @@ Test even uit.
 ![download](./images/construction.jpg)
 
 ## Opdracht - JSON data visualiseren in een tabel en grafiek
+
+![download](./images/assignment.png)
 
 * [opdrachtfiche](assignment2.html)
 
