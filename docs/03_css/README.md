@@ -394,7 +394,7 @@ img {
 }
 ```
 
-## Laten we een voorbeeld maken
+::: tip We werken een voorbeeld uit
 
 We passen een stijl to op ons HTML voorbeeld die we eerder hebben aangemaakt.
 
@@ -505,6 +505,7 @@ ol {
 ```
 
 Proficiat je eerste pagina met stijl.
+:::
 
 ## Herhaling via zelfstudie
 
@@ -513,11 +514,12 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * [CSS tutorial op W3Schools](https://www.w3schools.com/css/default.asp)
 * [Style your website CSS tutorial op Giraffe Academy](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpNO7ScZFr-WTmtcBY3AN1M7)
 
-## Opdracht - Een eenvoudige webpagina met stijl
+::: tip Taak 2 - Een eenvoudige webpagina met stijl
 
 ![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment1.html)
+:::
 
 ## Het gebruik van online stylesheets
 
@@ -529,8 +531,9 @@ Bekijk zelf even de mogelijkheden van:
 * [W3.CSS](https://www.w3schools.com/w3css/default.asp)
 * [Font Awesome](https://www.w3schools.com/icons/fontawesome5_intro.asp)
 
-## Opdracht - Een eenvoudige webpagina met online stijl
+::: tip Taak 3 - Een eenvoudige webpagina met online stijl
 
 ![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment2.html)
+:::

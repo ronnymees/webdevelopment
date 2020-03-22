@@ -535,7 +535,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 ::: tip Taak 1 - Het bouwen van een HTML pagina
 
-![download](./images/assignment_trans.png)
+![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment.html)
 :::
