@@ -43,9 +43,9 @@ Of je kan terug met een aparte file werken, wat de voorkeur geniet.
 </body>
 ```
 
-### Enkele voorbeelden
+::: tip We maken enkele voorbeelden
 
-**Voorbeeld 4.1** - Content aanpassen
+**4.1** Content aanpassen
 
 Maak het bestand **index.html** aan
 ```html
@@ -83,7 +83,7 @@ function goBackTitle() {
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 :::
 
-**Voorbeeld 4.2** - style aanpassen
+**4.2** style aanpassen
 
 Maak het bestand **index.html** aan
 ```html
@@ -118,7 +118,7 @@ function changeBackground2() {
 ```
 * met de syntax `.style` kan je de stijl van  een element aanpassen.
 
-**Voorbeeld 4.3** - complete style aanpassen
+**4.3** complete style aanpassen
 
 Maak het bestand **index.html** aan
 ```html
@@ -176,6 +176,7 @@ function changeCSS() {
     }
 }
 ```
+:::
 
 ## Syntax
 
@@ -205,9 +206,7 @@ Const is de definitie van een constante, heeft dezelfde scope als let maar je ka
 
 ::: warning Aandacht
 Als je een variable definieerd zonder let, var of const dan is dit automatisch een globale variabele. Je moet dan ook goed opletten dat je nergens anders een variabele definieerd met dezelfde naam.
-::: 
 
-::: tip Tip
 Om te vermijden dat je die let, var of const per ongeluk zou vergeten kan je bovenaan je script file "use strict"; plaatsen. Je krijgt dan een foutmelding als je het vergeet.
 :::
 
@@ -406,6 +405,8 @@ Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadp
 * [Form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 * [HTML5 input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)
 
+::: tip Form validatie via javascript
+
 In dit voorbeeld zullen we een form validatie doen aan de client-side d.m.v. javascript en html.
 
 ![download](./images/afbeelding1.png)
@@ -460,12 +461,15 @@ Een handige tool om die reguliere expressies te ontleden is [regexper](https://r
 In dit voorbeeld werken we met een geneste if structuur om alle input te valideren. Als je meer inputvelden moet valideren is het aangewezen om via een boolean variabele te werken die bijhoud of de volledige form valid of niet is.
 
 Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moesten we dit niet doen zou de pagina gewoon refreshen.
+:::
 
-## Opdracht - Formvalidation
+
+::: Taak 4 - Formvalidation 
 
 ![download](./images/assignment.png)
 
 * [opdrachtfiche](assignment1.html)
+:::
 
 ## Een rekenmachine via javascript
 
