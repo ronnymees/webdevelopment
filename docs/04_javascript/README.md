@@ -81,6 +81,7 @@ function goBackTitle() {
 
 ::: warning Aandacht
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
+:::
 
 ### **Style aanpassen**
 
