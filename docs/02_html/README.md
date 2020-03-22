@@ -88,7 +88,10 @@ Een hoofding kan je aangeven met de `<h1>` tot `<h6>` tags. Waarbij de `<h1>` de
 <h6>Heading 6</h6>
 ```
 
-**Noot**: Hoofdingen worden door zoekmachines gebruik om de structuur van je webpagina te bepalen. Je gebruikt ze dan ook uitsluitend daarvoorr en niet om bepaalde tekst groter of vetjes te krijgen.
+::: warning Noot
+
+Hoofdingen worden door zoekmachines gebruik om de structuur van je webpagina te bepalen. Je gebruikt ze dan ook uitsluitend daarvoorr en niet om bepaalde tekst groter of vetjes te krijgen.
+:::
 
 ### Paragraaf
 
@@ -99,7 +102,10 @@ Een paragraf kan je herkennen aan het `<p>` element.
 <p>This is another paragraph.</p>
 ```
 
-**Noot**: In jou html code kan je extra spacies of lijnen toevoegen, maar de browser zal deze negeren en de tekst als een lange doorlopende tekst weergeven.
+::: warning Noot
+
+In jou html code kan je extra spacies of lijnen toevoegen, maar de browser zal deze negeren en de tekst als een lange doorlopende tekst weergeven.
+:::
 
 ### Formatering
 
@@ -155,7 +161,9 @@ Links kan je op bijna elke webpagina terugvinden, ze stellen de gebruiker in sta
 
 Hyperlinks worden in HTML aangeduid met het `<a>` element en volgt volgende syntax `<a href="url">link text</a>`.
 
-**Noot**: URL staat voor **U**niform **R**esource **L**ocator beter gekend als web adres.
+::: warning Noot
+URL staat voor **U**niform **R**esource **L**ocator beter gekend als web adres.
+:::
 
 Ook hier kan je terug gebruik maken van absolute of relative links.
 

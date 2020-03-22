@@ -47,7 +47,9 @@ Dit .css bestand moet dan uiteraard gekoppeld worden aan de HTML pagina.
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
 
-**Deze manier van werken geniet de voorkeur!**
+::: warning 'Good-practice'
+Het werken met een external CSS file geniet de voorkeur.
+:::
 
 ## CSS basis
 
