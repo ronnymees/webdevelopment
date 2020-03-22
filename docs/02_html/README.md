@@ -399,7 +399,7 @@ Het `<button>` element geeft een klikbare knop weer.
 ```html
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
-## HTML Voorbeeld
+::: tip We werken een voorbeeld uit
 
 Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand **index.html**.
 
@@ -521,7 +521,9 @@ Tot slot voegen we nog een footer toe.
     <p>Deze pagina was door [jou naam] ontworpen.</p>
 </footer>
 ```
+
 [Hier](/files/html_example.txt) kan je het volledige voorbeeld downloaden.
+:::
 
 ## Herhaling via zelfstudie
 
@@ -531,9 +533,10 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 * [HTML videotutorial](https://www.youtube.com/watch?v=pQN-pnXPaVg) op Giraffe Academy.
 
-## Opdracht - HTML pagina
+
+::: tip Taak 1 - Het bouwen van een HTML pagina
 
 ![download](./images/assignment.png)
 
 * [Opdrachtfiche](assignment.html)
-
+:::

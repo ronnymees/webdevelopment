@@ -28,13 +28,17 @@ Om dit te installeren ga je naar [Nodejs.org](https://nodejs.org/en/) en kies je
 
 Tijdens de installatie gebruik je gewoon de default settings.
 
-**Let op**: Node.js beschikt over een eigen console, gebruik die nooit, we gebruiken steeds powershell.
+::: danger Let op
+Node.js beschikt over een eigen console, gebruik die nooit, we gebruiken steeds powershell.
+:::
 
 ## Node-red
 
 ![download](./images/redicon.png)
 
-**Merk op**: Node.js moet reeds op je systeem geïnstalleerd steen voor je Node-red kan installeren.
+::: waring Merk op
+Node.js moet reeds op je systeem geïnstalleerd steen voor je Node-red kan installeren.
+:::
 
 Open een powershell venster en tik het volgende in:
 ```powershell
