@@ -79,7 +79,7 @@ function goBackTitle() {
 * met de syntax `document.getElementById()` gaan we in de HTML pagina op zoek naar het element met de Id = ... 
 * met de syntax `.textContent` gaan we de inhoud van dit element gaan aanpassen.
 
-::: warning Aandacht
+::: danger Waarschuwing
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 :::
 
@@ -461,7 +461,7 @@ In dit voorbeeld werken we met een geneste if structuur om alle input te valider
 
 Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moesten we dit niet doen zou de pagina gewoon refreshen.
 
-::: Taak 4 - Formvalidation 
+::: tip Taak 4 - Formvalidation 
 
 ![download](./images/assignment.png)
 
