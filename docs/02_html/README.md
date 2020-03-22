@@ -533,10 +533,9 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 * [HTML videotutorial](https://www.youtube.com/watch?v=pQN-pnXPaVg) op Giraffe Academy.
 
-
-![download](./images/assignment.png)
-
 ::: tip Taak 1 - Het bouwen van een HTML pagina
+
+![download](./images/assignment_trans.png)
 
 * [Opdrachtfiche](assignment.html)
 :::
