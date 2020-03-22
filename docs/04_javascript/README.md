@@ -43,9 +43,9 @@ Of je kan terug met een aparte file werken, wat de voorkeur geniet.
 </body>
 ```
 
-::: tip We maken enkele voorbeelden
+## We maken enkele voorbeelden
 
-**4.1** Content aanpassen
+### **Content aanpassen**
 
 Maak het bestand **index.html** aan
 ```html
@@ -81,9 +81,8 @@ function goBackTitle() {
 
 ::: warning Aandacht
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
-:::
 
-**4.2** style aanpassen
+### **Style aanpassen**
 
 Maak het bestand **index.html** aan
 ```html
@@ -118,7 +117,7 @@ function changeBackground2() {
 ```
 * met de syntax `.style` kan je de stijl van  een element aanpassen.
 
-**4.3** complete style aanpassen
+### **Complete style aanpassen**
 
 Maak het bestand **index.html** aan
 ```html
@@ -176,7 +175,6 @@ function changeCSS() {
     }
 }
 ```
-:::
 
 ## Syntax
 
@@ -405,7 +403,7 @@ Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadp
 * [Form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 * [HTML5 input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)
 
-::: tip Form validatie via javascript
+### **Form validatie via javascript**
 
 In dit voorbeeld zullen we een form validatie doen aan de client-side d.m.v. javascript en html.
 
@@ -461,8 +459,6 @@ Een handige tool om die reguliere expressies te ontleden is [regexper](https://r
 In dit voorbeeld werken we met een geneste if structuur om alle input te valideren. Als je meer inputvelden moet valideren is het aangewezen om via een boolean variabele te werken die bijhoud of de volledige form valid of niet is.
 
 Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moesten we dit niet doen zou de pagina gewoon refreshen.
-:::
-
 
 ::: Taak 4 - Formvalidation 
 
@@ -1106,11 +1102,12 @@ Test even uit.
 
 ![download](./images/construction.jpg)
 
-## Opdracht - JSON data visualiseren in een tabel en grafiek
+::: tip Taak 5 - JSON data visualiseren in een tabel en grafiek
 
 ![download](./images/assignment.png)
 
 * [opdrachtfiche](assignment2.html)
+:::
 
 ## Web API
 
