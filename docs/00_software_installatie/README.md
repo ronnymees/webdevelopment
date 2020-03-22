@@ -36,7 +36,7 @@ Node.js beschikt over een eigen console, gebruik die nooit, we gebruiken steeds 
 
 ![download](./images/redicon.png)
 
-::: waring Merk op
+::: warning Merk op
 Node.js moet reeds op je systeem geïnstalleerd steen voor je Node-red kan installeren.
 :::
 

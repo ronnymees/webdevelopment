@@ -41,7 +41,7 @@ Het HTML element `<head>` is een container voor de metadata van het document. Me
 
 Het zichtbare deel van het HTML document kan je terugvinden tussen `<body>` en `</body>`.
 
-::: tip Tip
+::: warning Noot
 Je gebruikt best insprongen bij het schrijven van HTML code. Het bevorderd de leesbaarheid van je HTML tekst.
 Je kan dit automatisch doen via het rechtermuis menu in Visual Studio Code, je kiest dan voor format document.
 :::
@@ -534,9 +534,9 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 * [HTML videotutorial](https://www.youtube.com/watch?v=pQN-pnXPaVg) op Giraffe Academy.
 
 
-::: tip Taak 1 - Het bouwen van een HTML pagina
-
 ![download](./images/assignment.png)
+
+::: tip Taak 1 - Het bouwen van een HTML pagina
 
 * [Opdrachtfiche](assignment.html)
 :::
