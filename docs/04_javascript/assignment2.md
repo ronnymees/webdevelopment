@@ -17,6 +17,24 @@ Stap 3:
 
 Plaats de bekomen JSON data in een tabel.
 
+::: tip Tip
+
+Wat je binnenkrijgt (json.bpi) is een object en niet een array.
+
+Om de data van dit object te doorlopen kan je 2 methoden gebruiken:
+
+**Methode 1**: Een object om zetten naar een array via de functie `Objects.keys()`. [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+```js
+Object.keys(json.bpi).forEach (date => addRow(date,json.bpi[date]));
+```
+
+**Methode 2**: Met een for-lus
+```js
+for(let date in json.bpi) { addRow(date,json.bpi[date])};
+```
+
+:::
+
 Stap 4:
 
 Plaats een Google Line Chart op je webpagina. Gebruik de [voorbeeldcode](https://developers.google.com/chart/interactive/docs/gallery/linechart) van de Google Line Chart en pas deze aan zodat de Bitcoin koers in de grafiek wordt weergegeven.

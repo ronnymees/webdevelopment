@@ -1099,9 +1099,177 @@ async function getData() {
 
 Test even uit.
 
-## Google chart & chart.js
+## Google chart
 
-![download](./images/construction.jpg)
+Google chart is een bibliotheek die grafieken tekent met HTML en SVG.
+
+Je kan een Quickstart [hier](https://developers.google.com/chart/interactive/docs/quick_start) terugvinden.
+
+### Laten we even een voorbeeld bekijken
+
+![download](./images/afbeelding22.png)
+
+In je HTML moet je de bibliotheek laden:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google chart</title>
+    <!-- De bibliotheek laden -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <!-- Plaats voor grafiek -->
+    <div id="chart_div"></div>
+    <!-- Onze eigen script file -->
+    <script src="script.js"></script>
+</body>
+</html>
+```
+::: warning Let op
+  Dit moet voor je eigen script geladen worden.
+  :::
+
+Vervolgens maken we het script:
+
+```js
+// De load functie starten met als argument de nodige packages (afhankelijk van welk type grafieken je wilt gebruiken
+google.charts.load('current', {'packages':['corechart']});
+
+// Daarna een functie (hier drawchart) registreren die aangeroepen wordt als het laden compleet is
+google.charts.setOnLoadCallback(drawChart);
+
+// De functie drawChart aanmaken
+function drawChart() {
+
+  // Een DataTable aanmaken
+  var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+        ['Mushrooms', 3],
+        ['Onions', 1],
+        ['Olives', 1],
+        ['Zucchini', 1],
+        ['Pepperoni', 2]
+      ]);
+  
+  // De grafiek opties definiëren
+  var options = {'title':'How Much Pizza I Ate Last Night',
+                  'width':400,
+                  'height':300};
+
+  // De grafiek definiëren
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+  // De grafiek tekenen
+  chart.draw(data, options);
+}
+```
+
+### Een voorbeeld met een lijngrafiek
+
+Je kan [hier](https://developers.google.com/chart/interactive/docs/gallery/linechart) meer info nalezen over het maken van lijngrafieken. 
+
+![download](./images/afbeelding23.png)
+
+We gebruiken dezelfde html als in het vorige voorbeeld.
+
+Het script ziet er als volgt uit:
+
+```js
+// We laden terug de functie met de line package
+google.charts.load('current', { 'packages': ['line'] });
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+    // We maken terug zelf onze data aan
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Date');
+    data.addColumn('number', 'value');
+
+
+    data.addRows([
+        ["2020-01-01", 10],
+        ["2020-01-02", 1],
+        ["2020-01-03", 3],
+        ["2020-01-04", 2],
+        ["2020-01-05", 2],
+        ["2020-01-06", 1]
+    ]);
+    
+    // Stellen de grafiekopties in
+    var options = {
+        chart: {
+            title: 'date versus value',
+            subtitle: 'none'
+        },
+        width: 900,
+        height: 500
+    };
+
+    // Definiëren de grafiek
+    var chart = new google.charts.Line(document.getElementById('chart_div'));
+
+    // En tot slot tekenen we de grafiek
+    chart.draw(data, google.charts.Line.convertOptions(options));
+}
+```
+
+### Een voorbeeld van een lijngrafiek uit JSON data
+
+We gebruiken terug dezelfde html pagina
+
+We maken een data.json bestand aan met volgende inhoud:
+
+```json
+{
+    "2020-03-23": 10,
+    "2020-03-24": 5,
+    "2020-03-25": 7,
+    "2020-03-26": 8,
+    "2020-03-27": 8,
+    "2020-03-28": 8,
+    "2020-03-29": 12
+}
+```
+Ons script ziet er dan als volgt uit:
+
+```js
+google.charts.load('current', { 'packages': ['line'] });
+google.charts.setOnLoadCallback(drawChart);
+
+// async definitie voor fetch data
+async function drawChart() {
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Date');
+    data.addColumn('number', 'value');
+
+    // await definitie voor fetch data
+    let response = await fetch("data.json");
+    let json = await response.json();
+    // ontvangen data toevoegen aan dataTable
+    Object.keys(json).forEach (date => data.addRows([[date,json[date]]]));     
+
+    var options = {
+        chart: {
+            title: 'date versus value',
+            subtitle: 'none'
+        },
+        width: 900,
+        height: 500
+    };
+
+    var chart = new google.charts.Line(document.getElementById('chart_div'));
+
+    chart.draw(data, google.charts.Line.convertOptions(options));
+}
+```
 
 ::: tip Taak 5 - JSON data visualiseren in een tabel en grafiek
 
