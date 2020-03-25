@@ -903,7 +903,7 @@ Je kan [hier](https://www.w3schools.com/jquery/jquery_intro.asp) meer info over 
 
 Onthou vooral dat als je **een $-teken** in Javascript ziet staan dan heb je te maken met JQuery.
 
-:::Tip
+::: tip
 Jquery moet eerst geladen zijn voor je de javascript laadt andersom zal de javascript die $ verwijzing niet begrijpen.
 :::
 
