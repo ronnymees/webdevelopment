@@ -1499,6 +1499,7 @@ Test dit even uit:
 * your api key = de key die je kreeg bij de aanvraag 
 * local units = metric
 * local language = nl
+
 Kijk even welke info je allemaal binnenkrijgt.
 
 Laten we even een oefening maken om het huidige weer te visualiseren.
@@ -1514,13 +1515,13 @@ const units = "metric";
 const language = "nl";
 ```
 
-Vervolgens wil ik dat het weer telkens up to date blijft op mijn pagina:
+Vervolgens willen we dat het weer telkens up to date blijft op de pagina:
 
 ```js
 window.setInterval(getWeather,1000); // elke seconde wordt de functie getWeather terug opgeroepen
 ```
 
-Vervolgens moet ik in de `getWeather()` functie de api fetch doen:
+Nu moeten we in de `getWeather()` functie een api fetch doen:
 
 ```js
 async function getWeather(){
@@ -1548,7 +1549,7 @@ In jou html moet je dus elementen voorzien die deze informatie kunnen ontvangen.
 
 De `.slice(1,-1)` zorgt er voor dat de "-tekens van de string verwijderd worden.
 
-Om het icoon op te vragen moet je een klein ommewegetje maken. nl je hebt het url van het icoon nodig. Dit ziet er als volgt uit: http://openweathermap.org/img/wn/10d@2x.png  waar die 10d de verwijziging is die je via de json data krijgt.
+Om het icoon op te vragen moet je een klein ommewegetje maken. nl je hebt het url van het icoon nodig. Dit ziet er als volgt uit: `http://openweathermap.org/img/wn/10d@2x.png`  waar die `10d` de verwijziging is die je via de json data krijgt.
 
 Je kan het icoon dus als volgt ophalen:
 
