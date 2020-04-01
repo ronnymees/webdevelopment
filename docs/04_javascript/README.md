@@ -1271,6 +1271,64 @@ async function drawChart() {
 }
 ```
 
+## Chart.js
+
+De bibliotheek **chart.js** is gelijkaardig aan google chart, je kan [hier](https://www.chartjs.org/) meer informatie terugvinden.
+
+### Html
+
+Om de biblotheek te gebruiken moet je de **C**ontent **D**elivery **N**etwork toevoegen aan je HTML
+
+```html
+<script type="text/javascript" src="https://cdnjs.com/libraries/Chart.js"></script>
+```
+
+In jou html pagina moet je dan een canvas element voorzien waar de grafiek moet komen.
+
+```html
+<canvas id="myChart" width="400" height="400"></canvas>
+```
+
+### Javascript
+
+In jou script moet je eerst een variabele maken die verwijst naar het 2D gedeelte van jou canvas.
+
+```js
+var ctx = document.getElementById('myChart').getContext('2d');
+```
+
+De data moet in array's komen.
+
+```js
+var labels=["2020-10-1","2020-10-2","2020-10-3"]; // labels voor de x-as
+var data=[6000,6500,6300];  // data gegevens
+```
+
+Meestal zit de data in een JSON object, je kan key's en value's als volgt tot array's vormen:
+
+```js
+var labels = Object.keys(json) // een array met alle key's
+var data = Object.values(json) // een array met alle value's
+```
+
+Vervolgens kan je de grafiek tekenen.
+
+```js
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {        
+        labels: labels,
+        datasets: [{
+            data: data,
+            lineTension: 0, 
+        }],
+    },
+    //options: hier kan je nog opties voor de grafiek plaatsen.
+});
+```
+
+Je kan meer info terugvinden op [chartjs.org](https://www.chartjs.org/docs/latest/getting-started/).
+
 ::: tip Taak 5 - JSON data visualiseren in een tabel en grafiek
 
 ![download](./images/assignment.png)
@@ -1279,6 +1337,8 @@ async function drawChart() {
 :::
 
 ## Web API
+
+### Philips Hue API
 
 Laten we even een IoT toepassing bekijken.
 
@@ -1299,7 +1359,7 @@ De bridge  luistert op poort 80, de Telenet router is als volgt ingesteld: binne
 
 Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat uitleg over de Web API van Philips Hue nalezen.
 
-### De status van de Philips HUE opvragen
+#### De status van de Philips HUE opvragen
 
 * GET request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights (via je browser).
 
@@ -1307,7 +1367,7 @@ Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat 
 
 ![download](./images/afbeelding19.png)
 
-### Een lamp aan- of uitzetten.
+#### Een lamp aan- of uitzetten.
 
 * PUT request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state
 
@@ -1331,7 +1391,7 @@ Je zou volgende resultaat moeten zien:
 
 ![download](./images/afbeelding21.png)
 
-### Aansturen via een webpagina
+#### Aansturen via een webpagina
 
 Je kan nu een webpagina maken met een image waar er ofwel [lamp_on.jpg](/files/lamp_on.jpg) of [lamp_off.jpg](/files/lamp_off.jpg) in komt:
 
@@ -1378,3 +1438,137 @@ window.addEventListener(('load'), (event) => {
 ```
 **Merk op**: Via indexOf wordt nagegaan op welke positie "lamp_on.jpg" in de src string voorkomt, dit omdat de string de volledige url bevat, -1 wil zeggen dat deze niet voorkomt
 
+### Rest API
+
+Om data naar een server te sturen en op te halen wordt veelal gebruik gemaakt van een **rest api**.
+
+Bekijk [hier](https://www.restapitutorial.com/lessons/whatisrest.html) even het filmpje en de informatie over de 6 eigenschappen van REST API.
+
+#### HTTP methodes
+
+Meer informatie over de gebruikte methodes kan je [hier](https://www.restapitutorial.com/lessons/httpmethods.html) nalezen.
+
+**GET**
+
+Wordt gebruikt door de browser om een url op te halen. Het is mogelijk om data mee te sturen naar de server doordat in de url te plaatsen:
+
+https://httpbin.org/get?a=1&b=test
+
+
+Na het vraagteken komen de parameters:
+* parameter "a" met als waarde 1
+* parameter "b" met als waarde test
+* tussen de verschillende parameters staat er telkens een &
+
+**POST**
+
+Wordt gebruikt om iets te creëren op de server.
+Bij de browser is het zo dat een form veelal gesubmit wordt met een POST, de submit veroorzaakt immers de creatie van iets op de server (bijvoorbeeld data aan database toevoegen)
+De parameters worden meegstuurd in de body van de HTTP POST en zijn niet zichtbaar in de URL
+
+**PUT en PATH**
+
+Wordt gebruikt om data te wijzigen op de server.
+
+**DELETE**
+
+Wordt gebruikt om data te wissen op de server.
+
+#### Uittesten van een rest api
+
+Je kan hiervoor [postman](https://www.postman.com/) gebruiken.
+
+Installeer de app, voeg een http get request toe naar `https://httpbin.org/get?a=1&b=test ` en test uit.
+
+![download](./images/afbeelding24.png)
+
+### Weather API
+
+Openweathermap.org stelt een api ter beschikken waarmee je, afhankelijke van jou licentie, weersinformatie kan ophalen.
+
+Laten we starten met een gratis API key aan te vragen door naar [licentie](https://openweathermap.org/price) te surfen en op **Get API key and start** te klikken.
+
+![download](./images/afbeelding25.png)
+
+Met deze gratis API key kunnen we het huidige weer voor een locatie opvragen. De API ziet er als volgt uit:
+
+`https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}&units={local units}&lang={your language}`
+
+Test dit even uit:
+* city name = brugge of kortrijk
+* your api key = de key die je kreeg bij de aanvraag 
+* local units = metric
+* local language = nl
+Kijk even welke info je allemaal binnenkrijgt.
+
+Laten we even een oefening maken om het huidige weer te visualiseren.
+
+Het html en css gedeelte laat ik aan jullie over, dus laten we onmiddelijk starten met het script.
+
+We starten met enkele constanten te definieren:
+
+```js
+const country = "kortrijk"; // of brugge
+const API_key = "your API key"; // vul hier je eigen API key in.
+const units = "metric";
+const language = "nl";
+```
+
+Vervolgens wil ik dat het weer telkens up to date blijft op mijn pagina:
+
+```js
+window.setInterval(getWeather,1000); // elke seconde wordt de functie getWeather terug opgeroepen
+```
+
+Vervolgens moet ik in de `getWeather()` functie de api fetch doen:
+
+```js
+async function getWeather(){
+
+    let response = await fetch("https://api.openweathermap.org/data/2.5/weather?id="+country_id+"&units="+units+"&lang="+language+"&appid="+API_key);
+    let json = await response.json();   
+    console.log(json);
+
+
+}
+```
+In de console kan je nu kijken welke info je krijgt en waar die staat.
+
+We vullen nu onze functie aan met die informatie:
+
+```js
+document.getElementById('curtemp').textContent=JSON.stringify(Math.round(json.main.temp))+" °C";
+    document.getElementById('curhumi').textContent=JSON.stringify(json.main.humidity)+" %";
+    document.getElementById('curwind').textContent=JSON.stringify(Math.round(3.6*json.wind.speed))+" km/h";
+    document.getElementById('curwinddir').textContent=JSON.stringify(json.wind.deg)+" °";
+    document.getElementById('curtekst').textContent=JSON.stringify(json.weather[0].description).slice(1,-1);
+```
+
+In jou html moet je dus elementen voorzien die deze informatie kunnen ontvangen.
+
+De `.slice(1,-1)` zorgt er voor dat de "-tekens van de string verwijderd worden.
+
+Om het icoon op te vragen moet je een klein ommewegetje maken. nl je hebt het url van het icoon nodig. Dit ziet er als volgt uit: http://openweathermap.org/img/wn/10d@2x.png  waar die 10d de verwijziging is die je via de json data krijgt.
+
+Je kan het icoon dus als volgt ophalen:
+
+```js
+document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+JSON.stringify(json.weather[0].icon).slice(1,-1)+"@2x.png";
+```
+
+::: tip oefening
+Probeer nu zelf even de verwachte temperatuur voor de komende 5 dagen per 3 uur in een chart.js grafiek uit te zetten.
+
+De API dat je hiervoor kan gebruiken is:
+
+`https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}&units={local units}&lang={your language}`
+
+Gebruik de zelfde methodiek, kijk eerst wat je binnen krijgt aan json object en vertrek van daar uit.
+:::
+
+## Herhaling via zelfstudie
+
+Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande hoofdstukken van het [handboek](https://limo.libis.be/primo-explore/fulldisplay?docid=TN_springer_s978-1-4842-4395-4_313453&context=PC&vid=VIVES_KATHO&search_scope=ALL_CONTENT&tab=all_content_tab&lang=nl_BE:) even bekijken:
+
+* Hoofdstuk 4 **Objects and Arrays**
+* Hoofdstuk 5 **Functions and Context**
