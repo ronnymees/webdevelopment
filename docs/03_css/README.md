@@ -398,7 +398,7 @@ img {
 
 ![download](./images/afbeelding3.png)
 
-We passen een stijl to op ons HTML voorbeeld die we eerder hebben aangemaakt.
+We passen een stijl toe op ons HTML voorbeeld die we eerder hebben aangemaakt.
 
 Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style sheet toevoegen.
 
