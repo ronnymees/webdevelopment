@@ -401,6 +401,8 @@ Het `<button>` element geeft een klikbare knop weer.
 ```
 ::: tip We werken een voorbeeld uit
 
+![download](./images/afbeelding1.png)
+
 Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand **index.html**.
 
 Om de basisstructuur van een HTML pagina aan te maken in Visual Studio Code hoef je enkel in `html:5` in te tikken.
@@ -436,7 +438,7 @@ Laten we starten om de body van onze pagina op te bouwen.
 <body>
     <!-- Container met een hoofding, paragraaf en formatering -->
     <div>
-        <h1>Een container met een hoodfding, paragraaf en wat formatering</h1>
+        <h1>Een container met een hoofding, paragraaf en wat formatering</h1>
         <p><b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         <p><mark>Lorem ipsum</mark> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
     </div>
