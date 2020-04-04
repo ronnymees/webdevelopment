@@ -1538,23 +1538,21 @@ In de console kan je nu kijken welke info je krijgt en waar die staat.
 We vullen nu onze functie aan met die informatie:
 
 ```js
-document.getElementById('curtemp').textContent=JSON.stringify(Math.round(json.main.temp))+" °C";
-    document.getElementById('curhumi').textContent=JSON.stringify(json.main.humidity)+" %";
-    document.getElementById('curwind').textContent=JSON.stringify(Math.round(3.6*json.wind.speed))+" km/h";
-    document.getElementById('curwinddir').textContent=JSON.stringify(json.wind.deg)+" °";
-    document.getElementById('curtekst').textContent=JSON.stringify(json.weather[0].description).slice(1,-1);
+document.getElementById('curtemp').textContent=Math.round(json.main.temp)+" °C";
+    document.getElementById('curhumi').textContent=json.main.humidity+" %";
+    document.getElementById('curwind').textContent=Math.round(3.6*json.wind.speed)+" km/h";
+    document.getElementById('curwinddir').textContent=json.wind.deg+" °";
+    document.getElementById('curtekst').textContent=json.weather[0].description;
 ```
 
 In jou html moet je dus elementen voorzien die deze informatie kunnen ontvangen.
-
-De `.slice(1,-1)` zorgt er voor dat de "-tekens van de string verwijderd worden.
 
 Om het icoon op te vragen moet je een klein ommewegetje maken. nl je hebt het url van het icoon nodig. Dit ziet er als volgt uit: `http://openweathermap.org/img/wn/10d@2x.png`  waar die `10d` de verwijziging is die je via de json data krijgt.
 
 Je kan het icoon dus als volgt ophalen:
 
 ```js
-document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+JSON.stringify(json.weather[0].icon).slice(1,-1)+"@2x.png";
+document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+json.weather[0].icon+"@2x.png";
 ```
 
 ::: tip oefening
