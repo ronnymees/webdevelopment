@@ -399,7 +399,7 @@ Het `<button>` element geeft een klikbare knop weer.
 ```html
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
-::: tip We werken een voorbeeld uit
+::: tip **We werken een voorbeeld uit**
 
 ![download](./images/afbeelding1.png)
 

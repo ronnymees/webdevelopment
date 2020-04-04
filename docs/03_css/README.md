@@ -394,7 +394,9 @@ img {
 }
 ```
 
-::: tip We werken een voorbeeld uit
+::: tip **We werken een voorbeeld uit**
+
+![download](./images/afbeelding3.png)
 
 We passen een stijl to op ons HTML voorbeeld die we eerder hebben aangemaakt.
 
