@@ -155,8 +155,6 @@ Download MySQL voor Windows [hier](https://dev.mysql.com/downloads/mysql/), kies
 
 Start de installatie door op het bestand te dubbelklikken en kies voor de optie **Developer Default**.
 
-![download](./images/afbeelding2.png)
-
 Als er meldingen komen van "Failing requirements" kan je die gewoon negeren en op "Next" klikken (klik "Yes" als je een popup venster krijgt).
 
 Vervolgens klik je gewoon op "Execute".
