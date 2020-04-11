@@ -495,7 +495,7 @@ De structuur van functies in PHP is terug vrij vergelijkbaar aan die van andere 
 ?>
 ```
 
-::: warning **Noot**
+::: warning Noot
 Als je meerdere gegevens als resultaat uit een functie wil teruggeven kan je dat doen a.d.h.v. een array.
 :::
 
@@ -536,7 +536,7 @@ Om dit op te lossen moeten we 1 regeltje toevoegen:
 ?>
 ```
 
-::: warning **Noot**
+::: warning Noot
 De techniek hierboven met het gebruik van `global` zal zelden gebruikt worden, maar het verduidelijkt wel het onderscheid tussen een globaal en lokaal gedefinieerde variabele.
 :::
 
