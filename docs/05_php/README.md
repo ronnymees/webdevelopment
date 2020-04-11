@@ -117,7 +117,7 @@ Laten we nu even wat frequent gebruikte bewerkingen met strings bekijken.
     // herhaal een aantal keer de string
     echo str_repeat($tekst3, 2);
 
-    // geef het stukje string weer vanaf letter 5 tot 10
+    // geef het stukje string weer vanaf letter 5 en 10 letters lang
     echo substr($tekst3, 5, 10);
 
     // geeft de positie van het woord 'brown' weer in de string
