@@ -547,4 +547,82 @@ Je kan de leerstof herhalen via:
 * [LinkedIn Learning - PHP Essential Training](https://www.linkedin.com/learning/php-essential-training-2)
 * [W3Schools](https://www.w3schools.com/php/default.asp)
 
+## PHP verkennen via een voorbeeld
+
+We maken een pagina die de maaltafels zal tonen. De inhoud van die pagina zal op de server gegenereerd worden via PHP.
+
+We maken onder `C:\Apache\htdocs` een folder `Webdevelopment` aan en creëren daar het bestand `maaltafels.php` met volgende inhoud:
+
+```php
+<html>
+    <head>
+        <title>Maaltafels</title>
+    </head>
+    <body>
+        <h1> Maaltafels </h1>
+        <?php 
+            for($i=1;$i<=12;$i++)
+            {
+                echo "<h2>Maaltafel van {$i}\n</h2>";
+            }
+        ?> 
+    </body>
+</html>
+```
+We plaatsen de `\n` in de code om dat de door php gegenereerde html code dan mooier/leesbaarder is. Je kan die code zien door de paginabron van je webpagina te bekijken.
+
+Als we in Visual Studio Code `Listen for XDebug` starten, dan kunnen we breakpoints plaatsen waar de pagina zal tegengehouden worden om te debuggen.
+
+![download](./images/afbeelding3.png)
+
+Vervolgens maken we de effectieve maaltafel aan in een tabel:
+
+```php
+echo "<table>\n";
+for($j=1;$j<=10;$j++)
+{
+    echo "<tr>";
+    echo "<td>{$j}x{$i}</td>";
+    echo "<td>".($j*$i)."</td>";
+    echo "</tr>\n";
+}
+echo "</table>\n";
+```
+::: warning Noot
+"<td>{$j*$i}</td>" zou fout zijn, er mogen geen uitdrukkingen in {} geplaatst worden.
+:::
+
+Tot slot vervangen we de binnenste geneste for-lus door een functie:
+
+```php
+<html>
+    <head>
+        <title>Maaltafels</title>
+    </head>
+    <body>
+        <?php 
+            function maaltafel($k)
+            {
+                echo "<table>\n";
+                for($j=1;$j<=10;$j++)
+                {
+                    echo "<tr>";
+                    echo "<td>{$j}x{$k}</td>";
+                    echo "<td>".($j*$k)."</td>";
+                    echo "</tr>\n";
+                }
+                echo "</table>\n";
+            }
+        ?>
+        <h1> Maaltafels </h1>
+        <?php 
+            for($i=1;$i<=12;$i++)
+            {
+                echo "<h2>Maaltafel van {$i}\n</h2>";
+                maaltafel($i);
+            }
+        ?> 
+    </body>
+</html>
+```
 

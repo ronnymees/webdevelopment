@@ -16,7 +16,17 @@ Volg de standaard installatie maar vink volgende 2 vinkjes zeker aan:
 
 ![download](./images/afbeelding1.png)
 
-Na de installatie start je Visual Studio Code op en installer je de extensie 'Live preview'.
+### Extensies
+
+Na de installatie start je Visual Studio Code op en installeer je de volgende extensies:
+*  'Live preview'
+*  'PHP Extension Pack'
+
+### PHP debugging
+
+Eenmaal Apache en PHP op je systeem geïnstalleerd zijn open je de folder `C:\Apache\htdocs` in Visual Studio Code.
+
+Je gaat vervolgens naar het tabblad RUN (CTRL-SHIFT-D), en klikt op `create a launch.json file`, kies voor PHP als envirenment.
 
 ## Node.js
 
@@ -124,8 +134,24 @@ LoadModule php7_module "C:/PHP/php7apache2_4.dll"
 AddHandler application/x-httpd-php .php
 PHPIniDir "C:/PHP"
 ```
+### PHP debugging extensie installeren
+
+Je kan de XDebug extensie [hier](https://xdebug.org/download) downloaden, kies voor de hoogste versie voor windows 64 bit.
+
+Plaats het bestand vervolgens in `C:\PHP\ext`.
+
+### PHP ini-file
 
 Maak een kopie van het bestand `C:\PHP\php.ini-development` en noem het `C:\PHP\php.ini`.
+
+Open het bestand in jou favoriete editor en voeg onderaan het volgende toe:
+
+```ìni
+zend_extension=[naam van de xdebug extensie file]
+[XDebug]
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+```
 
 Start of herstart de Apache service in Windows zodat de nieuwe instellingen van kracht worden.
 
