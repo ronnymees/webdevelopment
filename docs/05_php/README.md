@@ -589,7 +589,7 @@ for($j=1;$j<=10;$j++)
 echo "</table>\n";
 ```
 ::: warning Noot
-"<td>{$j*$i}</td>" zou fout zijn, er mogen geen uitdrukkingen in {} geplaatst worden.
+`"<td>{$j*$i}</td>"` zou fout zijn, er mogen geen uitdrukkingen in {} geplaatst worden.
 :::
 
 Tot slot vervangen we de binnenste geneste for-lus door een functie:
