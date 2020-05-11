@@ -626,3 +626,88 @@ Tot slot vervangen we de binnenste geneste for-lus door een functie:
 </html>
 ```
 
+## Een WEB-API raadplegen vanuit PHP
+
+Het verschil met wat we in javascript hebben gedaan is hier dat de client geen verbinding meer hoeft te maken met een andere server. Het is de server die dit nu zal doen en het resultaat gewoon naar de client browser sturen.
+
+We gebruiken hiervoor cURL (client URL library), een techniek die veel gebruikt wordt in LINIX/UNIX en de protocols FTP, HTTP, telnet, ... ondersteunt.
+
+Meer informatie kan je steeds terugvinden op [PHP.net](https://www.php.net/manual/en/book.curl.php) of [PHPPOT.com](https://phppot.com/php/php-curl/).
+
+### De techniek even uitproberen
+
+We gebruiken terug httpbin.org om cURL even te testen:
+
+Maak het bestand **curl.php**:
+```php
+<?php
+    $url = "https://httpbin.org/get?a=1&b=test";
+    $content = curlRequest($url);
+    print $content;
+    
+    function curlRequest($url)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+?>
+```
+
+Plaats een breakpoint en browse nu naar het bestand:
+
+![download](./images/afbeelding4.png)
+
+Je stelt vast dat de variabele $content nu een string bevat, je kan die als volgt decoderen naar een JSON formaat:
+
+```php
+$data = json_decode($content);
+```
+
+Om de informatie nu op je webpagina te krijgen kan je als volgt tewerk gaan: 
+
+```php
+echo "<div>a is {$data->args->a}<div>";
+echo "<div>b is {$data->args->b}<div>";
+```
+
+### openweathermap API met PHP
+
+We gebruiken terug cURL om via openweathermap het weer op te vragen:
+
+```php
+<?php
+    $stad = "brugge";
+    $apiid = "plaats hier je eigen api id voor openweathermap";
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=".$stad."&appid=".$apiid."&units=metric&lang=nl";
+    $content = curlRequest($url);
+    $data = json_decode($content);
+    echo "<div>temperatuur is {$data->main->temp}</div>";
+    echo "<div>de weersomschrijving: \"{$data->weather[0]->description}\"</div>";
+    echo "<img id=\"icoon\" src=\"http://openweathermap.org/img/wn/{$data->weather[0]->icon}@2x.png\"></img>";
+?>
+```
+
+Probeer nu zelf even een forcast uit:
+
+PHP:
+* opvragen weather forcast via https://api.openweathermap.org/data/2.5/forecast
+* de elementen in de array "list" in een tabel tonen.
+
+Javascript:
+* een linechart maken van de temperaturen via Google chart.
+
+## PHP en mySQL
+
+
+
+### Zelfstudie
+
+Bekijk alvast hoofdstukken 1 t.e.m. 4 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
