@@ -704,10 +704,185 @@ PHP:
 Javascript:
 * een linechart maken van de temperaturen via Google chart.
 
-## PHP en mySQL
-
-
+## PHP en Forms
 
 ### Zelfstudie
 
 Bekijk alvast hoofdstukken 1 t.e.m. 4 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
+
+**HTTP GET** : Er gebeuren geen wijzigingen op de server.
+
+* De data zit in de url geëncodeerd bv `http://...?a=2&b=test`
+* De browser geeft geen waarschuwing als je de pagina herlaadt en de GET dus nogmaals uitvoerd.
+
+**HTTP POST** : De server ontvangt data en doet een wijziging, bv de ontvangen data toevoegen aan een database.
+
+* De data wordt meegstuurd in 'content' van de HTTP POST
+* De browser geeft een waarschuwing als je de pagina herlaadt en de POST nogmaals zou gebeuren.
+* Een HTTP POST wordt meestal uitgevoerd door een FORM met als ACTION POST
+
+Meer informatie hierover kan je terugvinden op [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+
+### Laten we dit even toepassen in een voorbeeld
+
+We maken een bestand `form.php` met volgende inhoud:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+    </head>
+    <body>
+        <form action="./form-handling.php" method="post">
+            <ul>
+                <li>
+                    <label for="number1">Number 1:</label>
+                    <input type="number" id="number1" name="number1">
+                </li>
+                <li>
+                    <label for="operation">operation</label>
+                    <select id="operation" name="operation">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="number2">Number 1:</label>
+                    <input type="number" id="number2" name="number2">
+                </li>
+            </ul>
+            <button type="submit">Calculate</button>
+        </form>
+    </body>
+</html>
+```
+We kiezen dus duidelijk voor een POST methode bij de ACTION van deze form.
+
+Onze form ziet er als volgt uit:
+
+![afbeelding](./images/afbeelding5.png)
+
+De form stuurt hetvolgende naar de server:
+
+![afbeelding](./images/afbeelding6.png)
+
+De afhandeling hiervan gebeurt in het bestand `form-handling.php` met volgende inhoud:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form handling</title>
+    </head>
+    <body>
+        <?php
+            // parameters uit content halen
+            $number1 = (float) ($_POST['number1'] ?? 0); 
+            $operation = $_POST['operation'] ?? '+'; 
+            $number2 = (float) ($_POST['number2'] ?? 0); 
+
+            // berekening uitvoeren
+            switch ($operation) {
+                case '+':
+                    $result=$number1+$number2;
+                    break;
+                case '-':
+                    $result=$number1+$number2;
+                    break;
+                case '*':
+                    $result=$number1*$number2;
+                    break;
+                case '/':
+                    $result=$number1/$number2;
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+
+            // het resultaat weergeven
+            echo "{$number1} {$operation} {$number2} is {$result}";
+        ?>
+    </body>
+</html>
+```
+
+We kunnen de doorgekregen gegevens uit de content halen met de superglobal `$_POST`. Als je echter de pagina herlaadt krijg je een error, door met de operator ?? te werken kan je dit omzijlen.
+
+Als we dit nu allemaal op één pagina willen kunnen we dit doen door te controleren of we een POST request ontvangen. 
+
+Dit ziet er dan als volgt uit:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Single page form</title>
+    </head>
+    <body>
+        <form action="./form-single-page.php" method="post">
+            <ul>
+                <li>
+                    <label for="number1">Number 1:</label>
+                    <input type="number" id="number1" name="number1">
+                </li>
+                <li>
+                    <label for="operation">operation</label>
+                    <select id="operation" name="operation">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="number2">Number 1:</label>
+                    <input type="number" id="number2" name="number2">
+                </li>
+            </ul>
+            <button type="submit">Calculate</button>
+        </form>
+        <?php
+            if($_SERVER['REQUEST_METHOD']=='POST')
+            {
+                $number1 = (float) ($_POST['number1'] ?? 0); 
+                $operation = $_POST['operation'] ?? '+'; 
+                $number2 = (float) ($_POST['number2'] ?? 0); 
+                switch ($operation) {
+                    case '+':
+                        $result=$number1+$number2;
+                        break;
+                    case '-':
+                        $result=$number1+$number2;
+                        break;
+                    case '*':
+                        $result=$number1*$number2;
+                        break;
+                    case '/':
+                        $result=$number1/$number2;
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+                echo "{$number1} {$operation} {$number2} is {$result}";
+            }
+        ?>
+    </body>
+</html>
+```
+## PHP en mySQL
+
+### Zelfstudie
+
+Bekijk hoofdstukken 5 t.e.m. 9 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
+

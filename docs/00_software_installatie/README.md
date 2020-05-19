@@ -109,6 +109,18 @@ Je kan op dezelfde wijze de service stoppen door op stop te klikken.
 
 Indien je later geen behoefte meer hebt aan de service kan je die verwijderen door terug powershell te openen, naar de folder `C:\Apache\bin` te gaan en `.\httpd.exe -k uninstall` in te tikken gevolgd door enter.
 
+#### Troubleshooting
+
+Wat als poort 80 reeds bezet is? Je kan jou Apache server ook via een andere poort laten werken. Ga naar `C:\Apache\conf\httpd.conf` en wijzig daar het volgende:
+
+```conf
+Servername localhost:80 // wijzig de 80 naar bv 8000
+...
+listen 80 // wijzig ook hier de 80 naar dezeflde poort als je hierboven hebt gekozen
+```
+
+Na elke wijziging aan deze file moet je de Apacheserver herstarten om de nieuwe instellingen te implementeren.
+
 ### Videotutorials
 
 * [Installatie](https://www.linkedin.com/learning/installing-apache-mysql-and-php-3/install-apache-on-windows)
@@ -166,6 +178,12 @@ Maak nu een testbestand `C:\Apache\htdocs\phpinfo.php` aan met volgende inhoud:
 ```
 
 In jou browser surf je nu naar `localhost\phpinfo.php`, de informatiepagina van php zou moeten verschijnen.
+
+#### Troubleshooting
+
+Soms werken bepaalde bibliotheken zoals XDebug en cURL niet omdat Windows de exe of dll niet weet staan. Windows gebruikt hiervoor de `path` environment variable. Om ontbrekende folders hieraan toe te voegen druk je op start en tik je `environment variable` of `omgevingsvariabelen` in. Daarna vindt je een variable `path` die je kan bewerken en er de folders `C:\PHP` en `C:\PHP\ext` aan toevoegen.
+
+Mocht dit voor cURL geen afdoende oplossing zijn kan je ook het bestand `C:\PHP\libssh2.dll` kopieren naar de map `C:\Apache\bin`.
 
 ### Videotutorial
 
