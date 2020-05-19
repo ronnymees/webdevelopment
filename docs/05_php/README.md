@@ -794,7 +794,7 @@ De afhandeling hiervan gebeurt in het bestand `form-handling.php` met volgende i
                     $result=$number1+$number2;
                     break;
                 case '-':
-                    $result=$number1+$number2;
+                    $result=$number1-$number2;
                     break;
                 case '*':
                     $result=$number1*$number2;
@@ -862,7 +862,7 @@ Dit ziet er dan als volgt uit:
                         $result=$number1+$number2;
                         break;
                     case '-':
-                        $result=$number1+$number2;
+                        $result=$number1-$number2;
                         break;
                     case '*':
                         $result=$number1*$number2;
