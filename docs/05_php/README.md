@@ -882,6 +882,70 @@ Dit ziet er dan als volgt uit:
 ```
 ## PHP en mySQL
 
+Voor alle database gerelateerde acties verwijs ik naar de cursus Databases.
+
+Een typische interactie met een database vanuit PHP ziet er als volgt uit:
+
+1. Connecteren met de database
+2. Een query uitvoeren op de database
+3. De ontvangen resultaten gebruiken
+4. De ontvangen resultaten loslaten
+5. De verbinding met de database afsluiten
+
+```php
+<?php
+    // de database login gegevens
+    $dbhost = 'localhost';
+    $dbuser = 'webuser';
+    $dbpass = 'secretpassword';
+    $dbname = 'globe_bank';
+
+    // 1. Verbinden met de database
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    // 2. Een query uitvoeren
+    $query = "SELECT * FROM subjects";
+    $result_set = mysqli_query($connection, $query);
+
+    // 3. De ontvangen resultaten gebruiken
+    while($subject = mysqli_fetch_assoc($result_set)) {
+      echo $subject["menu_name"] . "<br />";
+    }
+
+    // 4. De ontvangen resultaten loslaten
+    mysqli_free_result($result_set);
+
+    // 5. De verbinding met de database afsluiten
+    mysqli_close($connection);
+?>
+```
+
+Bij interacties met een database in de vorm van een query zal vaak verwezen worden naar **CRUD** wat staat voor Create, Read, Update en Delete.
+
+Enkele voorbeelden:
+```sql
+/* Create */
+INSERT INTO subjects(id, menu_name, position, visible) VALUES (1, 'about global bank', 1 , 1);
+/* Read */
+SELECT * FROM subjects WHERE id=2;
+/* Update */
+UPDATE subjects SET postion='3', visible='0' WHERE id=2;
+/* Delete */
+DELETE FROM subjects WHERE id=4 LIMIT 1;
+```
+
+Je kan ook de ontvangen data in een JSON formaat plaatsen.
+
+```php
+// De query uitvoeren
+$query = "SELECT * FROM subjects";
+$result_set = mysqli_query($connection, $query);
+// De data in een associatieve array plaatsen
+$data=mysqli_fetch_all($result_set,MYSQLI_ASSOC);
+// De data in een JSON formaat plaatsen
+echo json_encode($data);
+```
+
 ### Zelfstudie
 
 Bekijk hoofdstukken 5 t.e.m. 9 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing

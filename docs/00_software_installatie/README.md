@@ -167,6 +167,8 @@ xdebug.remote_autostart = 1
 
 Ga nu op zoek naar `;extension=curl` en verwijder de `;` zodat de cURL module actief wordt.
 
+Ga op zoek naar `;extension=mysqli` en verwijder de `;` zodat de mysqli module actief wordt.
+
 Start of herstart de Apache service in Windows zodat de nieuwe instellingen van kracht worden.
 
 Maak nu een testbestand `C:\Apache\htdocs\phpinfo.php` aan met volgende inhoud:
