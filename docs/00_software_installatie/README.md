@@ -221,4 +221,19 @@ Op het venster "Installation Complete" verwijder je de vinkjes bij beide opties 
 
 ### Management
 
+#### MySQL Workbench
+
 Bekijk [hier](https://www.linkedin.com/learning/installing-apache-mysql-and-php-3/use-mysql-workbench-on-windows) even kort hoe je de meegeleverde MySQL Workbench kan gebruiken.
+
+#### phpMyAdmin
+
+Je kan phpMyAdmin eenvoudig installeren via Composer, indien je die nog niet hebt staan kan je die [hier](https://getcomposer.org/download/) downloaden.
+
+Open vervolgens je Powershell in de folder `C:\Apache\htdocs` en start het volgend commando om phpMyAdmin te installeren:
+
+```shell
+composer create-project phpmyadmin/phpmyadmin
+```
+
+Na de installatie kan je nu phpmyadmin gebruiken door in browser te surfen naar `localhost/phpmyadmin/index.php`.
+
