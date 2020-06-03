@@ -1056,7 +1056,7 @@ Pas de code als volgt aan:
 ```php
     // De ontvangen resultaten gebruiken
     while($subject = mysqli_fetch_assoc($result_set)) {
-      echo $subject["menu_name"]";
+      echo $subject["menu_name"];
       echo "<input type='checkbox' name='checkboxes[]' value={$subject['id']} /><br/>";
     }
 ```
