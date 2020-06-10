@@ -1228,7 +1228,7 @@ Om bij te houden als een gebruiker ingelogd is moet je dit steeds doen via een s
 
 Die gebruikersnaam en paswoord worden bij registratie bewaard in een database. Om er voor te zorgen dat een paswoord veilig bewaard is in een database moet deze versleuteld worden. Doe je dit niet dan kan een hacker eenmaal toegang gekregen tot jou database met alle gebruikersnamen en paswoorden aan de slag.
 
-::: warning Waarschuwing
+::: danger Waarschuwing
 Het is bij wet verplicht om paswoorden versleuteld te bewaren. Hier staan zeer hoge boetes op!
 :::
 
