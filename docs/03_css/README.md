@@ -511,10 +511,9 @@ Proficiat je eerste pagina met stijl.
 
 ## Herhaling via zelfstudie
 
-Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even bekijken:
+Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande videotutorial even bekijken:
 
-* [CSS tutorial op W3Schools](https://www.w3schools.com/css/default.asp)
-* [Style your website CSS tutorial op Giraffe Academy](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpNO7ScZFr-WTmtcBY3AN1M7)
+* [CSS Essential Traininng](https://www.linkedin.com/learning/css-essential-training-3) op LinkedIn Learning
 
 ::: tip Taak 2 - Een eenvoudige webpagina met stijl
 
@@ -529,9 +528,9 @@ Naast het werken met je eigen stijl kan je ook gebruik maken van online stijlen.
 
 Bekijk zelf even de mogelijkheden van:
 
-* [Bootstrap](https://www.w3schools.com/bootstrap4/default.asp)
-* [W3.CSS](https://www.w3schools.com/w3css/default.asp)
-* [Font Awesome](https://www.w3schools.com/icons/fontawesome5_intro.asp)
+* [Bootstrap](https://www.linkedin.com/learning/bootstrap-4-essential-training)
+
+* [Font Awesome](https://www.youtube.com/watch?v=rXiO4bm2Zpc)
 
 ::: tip Taak 3 - Een eenvoudige webpagina met online stijl
 

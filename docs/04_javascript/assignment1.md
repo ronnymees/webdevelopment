@@ -34,7 +34,7 @@ Om de leeftijd te bereken uit de geboortedatum kan je op volgende [link](https:/
 
 ## Evaluatie
 
-Deze opdracht staat op **10%** van de totaalscore voor het vak Web Development 2.
+Deze opdracht staat op **20%** van de totaalscore voor het vak Web Development 2.
 
 Er zal op het volgende geëvalueerd worden:
 * Is je opbouw van de pagina volgens het ‘good-practice’ principe is.

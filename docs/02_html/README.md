@@ -529,11 +529,10 @@ Tot slot voegen we nog een footer toe.
 
 ## Herhaling via zelfstudie
 
-Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even bekijken:
+Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande videotutorial even bekijken:
 
-* [HTML tutorial](https://www.w3schools.com/html/default.asp) op W3Schools
+* [HTML Essential Traininng](https://www.linkedin.com/learning/html-essential-training-4) op LinkedIn Learning
 
-* [HTML videotutorial](https://www.youtube.com/watch?v=pQN-pnXPaVg) op Giraffe Academy.
 
 ::: tip Taak 1 - Het bouwen van een HTML pagina
 

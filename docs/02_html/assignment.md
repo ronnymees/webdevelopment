@@ -24,7 +24,7 @@ Je zou hetvolgende op je pagina kunnen voorzien:
 
 ## Evaluatie
 
-Deze opdracht staat op **10%** van de totale score voor web development 1.
+Deze opdracht staat op **15%** van de totale score voor web development 1.
 
 De evaluatie gebeurt op basis van:
 * Is de pagina gebouwd volgens de good practices van web development?

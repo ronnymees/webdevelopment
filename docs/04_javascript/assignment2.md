@@ -52,7 +52,7 @@ for(let date in json.bpi) { addRow(date,json.bpi[date])};
 
 ## Evaluatie
 
-Deze opdracht staat op **10%** van de totaalscore voor het vak Web Development 2.
+Deze opdracht staat op **30%** van de totaalscore voor het vak Web Development 2.
 
 Er zal op het volgende geëvalueerd worden:
 * Is je opbouw van de pagina volgens het ‘good-practice’ principe is.
