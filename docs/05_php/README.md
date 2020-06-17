@@ -48,6 +48,10 @@ Zoals je in de code hierboven reeds kon vaststellen is het bij PHP eveneens moge
 
 Net zoals in andere programeercode kunnen we variabelen definiëren van verschillende datatypes.
 
+::: tip Tip
+Variabele namen zijn hoofdletter gevoelig in PHP, m.a.w. $color, $Color en $COLOR zijn drie verschillende variabelen!
+:::
+
 #### Strings
 
 Net zoals bij Javascript kan je je string met `"` of `'` definiëren. Maak er een gewoonte van om dit steeds met `"` te doen.
@@ -545,7 +549,7 @@ De techniek hierboven met het gebruik van `global` zal zelden gebruikt worden, m
 Je kan de leerstof herhalen via:
 
 * [LinkedIn Learning - PHP Essential Training](https://www.linkedin.com/learning/php-essential-training-2)
-* [W3Schools](https://www.w3schools.com/php/default.asp)
+* [TutorialRepublic - PHP Tutorial](https://www.tutorialrepublic.com/php-tutorial/)
 
 ## PHP verkennen via een voorbeeld
 
@@ -714,12 +718,16 @@ Bekijk alvast hoofdstukken 1 t.e.m. 4 van de videotutorial [PHP with mySQL essen
 
 * De data zit in de url geëncodeerd bv `http://...?a=2&b=test`
 * De browser geeft geen waarschuwing als je de pagina herlaadt en de GET dus nogmaals uitvoerd.
+* De data is dus leesbaar in de URL, bijgevolg is dit geen geschikte manier om gevoelige informatie door te sturen.
+* De lengte van een URL is beperkt, bijgevolg ook de hoeveelheid data dat je kan doorsturen.
 
 **HTTP POST** : De server ontvangt data en doet een wijziging, bv de ontvangen data toevoegen aan een database.
 
 * De data wordt meegstuurd in 'content' van de HTTP POST
 * De browser geeft een waarschuwing als je de pagina herlaadt en de POST nogmaals zou gebeuren.
 * Een HTTP POST wordt meestal uitgevoerd door een FORM met als ACTION POST
+* Deze methode is meer geschikt om gevoelige data te versturen.
+* Je kan veel meer data op die manier versturen.
 
 Meer informatie hierover kan je terugvinden op [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
 
@@ -1122,8 +1130,8 @@ Bekijk hoofdstuk 4 van de videotutorial [PHP with mySQL essential training 2 bui
 
 Andere relevantie informatiebronnen zijn:
 
-* [W3Schools - cookies](https://www.w3schools.com/php/php_cookies.asp)
-* [W3Schools - sessions](https://www.w3schools.com/php/php_sessions.asp)
+* [TutorialRepublic - PHP cookies](https://www.tutorialrepublic.com/php-tutorial/php-cookies.php)
+* [TutorialRepublic - PHP sessions](https://www.tutorialrepublic.com/php-tutorial/php-sessions.php)
 * [Guru99 - cookies and sessions](https://www.guru99.com/cookies-and-sessions.html)
 * Hoofdstuk 5 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms/user-authentication-overview) op LinkedIn Learing.
 
