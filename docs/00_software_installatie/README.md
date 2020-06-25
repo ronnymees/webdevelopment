@@ -237,3 +237,43 @@ composer create-project phpmyadmin/phpmyadmin
 
 Na de installatie kan je nu phpmyadmin gebruiken door in browser te surfen naar `localhost/phpmyadmin/index.php`.
 
+## Wordpress
+
+![download](./images/wordpress.png)
+
+### Installatie
+
+Download Worpress van [wordpress.org](https://wordpress.org/download/) en pak de bestanden uit naar `C:\Apache\htdocs\wordpress`.
+
+Maak een nieuwe database aan via jou favorite tool.
+
+```sql
+CREATE DATABASE wordpress;
+USE wordpress;
+CREATE USER 'webuser'@'localhost' IDENTIFIED BY "secretpassword";
+GRANT ALL ON wordpress.* TO 'webuser'@'localhost’;
+```
+
+Hernoem het bestand `wp-config-sample.php` naar `wp-config.php` en wijzig de database details.
+
+```php
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress' );
+
+/** MySQL database username */
+define( 'DB_USER', 'webuser' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'secretpassword' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+```
+
+Ga naar `localhost/wordpress/wp-admin/install.php` en volg de instructies om de installatie af te ronden.
+
+Je kan je blog nu opzetten via `http://localhost/wordpress/wp-admin/index.php`.
+
+Meer info over het gebruik van Wordpress kan je terugvinden op de LinkedIn Learning:
+
+* [Wordpress 5 essential traning](https://www.linkedin.com/learning/wordpress-5-essential-training)
