@@ -19,7 +19,7 @@ Volg de standaard installatie maar vink volgende 2 vinkjes zeker aan:
 ### Extensies
 
 Na de installatie start je Visual Studio Code op en installeer je de volgende extensies:
-*  'Live preview'
+*  'Live Server'
 *  'PHP Extension Pack'
 
 ### PHP debugging
