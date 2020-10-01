@@ -86,14 +86,19 @@ Open het ZIP-bestand en kopieer de map `Apache24` naar `C:\` en hernoem vervolge
 Open het bestand [C:\Apache\conf\httpd.conf](c:\Apache\conf\httpd.conf) en zoek naar :
 
 * `Define SRVROOT "C:/Apache24"` en wijzig dit in `Define SRVROOT "C:/Apache"`
-*  `#ServerName www.example.com:80` en wijzig dit in `Servername localhost`
+*  `#ServerName www.example.com:80` en wijzig dit in `ServerName localhost`
 
 Bewaar het bestand en sluit jou editor af.
 
 Om te testen of de Apache server werkt starten we deze even op:
 
-* Open powershell en ga naar de folder `C:\Apache\bin`
+* Open powershell als admin en ga naar de folder `C:\Apache\bin`
 * Start de server op door `.\httpd.exe` in te tikken gevolgd door enter (mogelijks moet je toestemming geven in je firewall).
+    >Als je een foutmelding krijgt omtrent de gebruikte poort 80 zal je in de `httpd.conf` file volgende aanpassingen moeten maken :
+    >
+    >* listen 8000
+    >* ServerName localhost:8000
+
 * Met de powershell nog steeds open ga je naar je browser en surf je naar http://localhost. Als je "It works!" ziet verschijnen dan draait de Apache server.
 * Om de server te stoppen ga je terug naar powershell en druk je `CTRL+C`.
 
