@@ -168,7 +168,7 @@ URL staat voor **U**niform **R**esource **L**ocator beter gekend als web adres.
 Ook hier kan je terug gebruik maken van absolute of relative links.
 
 ```html
-<a href="www.vives.be">University College VIVES</a>
+<a href="http://www.vives.be">University College VIVES</a>
 <a href="contact.html">Contact Form</a>
 ```
 Je kan een `target` referentie specifieren zodat de browser weet waar de pagina moet geopend worden. Een `target` referentie kan volgende waarde hebben:
@@ -179,12 +179,12 @@ Je kan een `target` referentie specifieren zodat de browser weet waar de pagina 
 * `_top` - wordt geopend in de volledige body van de huidige pagina
 
 ```html
-<a href="www.vives.be" target="_blank">University College VIVES</a>
+<a href="http://www.vives.be" target="_blank">University College VIVES</a>
 ```
 Je kan eveneens een hyperlink tovoegen aan een afbeelding:
 
 ```html
-<a href="www.vives.be" target="_blank">
+<a href="http://www.vives.be" target="_blank">
     <img src="logo.png" alt="VIVES">    
 </a>
 ```
