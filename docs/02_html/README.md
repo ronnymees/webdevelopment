@@ -20,9 +20,9 @@ Tijdens deze cursus zullen we gebruik maken van **Visual Studio Code**. Mocht je
 
 Alle HTML documenten moeten starten met een document type declaration `<!DOCTYPE html>`.
 
-Het HTML document zelf start met `<html>` en eindigd met `</html>`.
+Het HTML document zelf start met `<html>` en eindigt met `</html>`.
 
-Het HTML element `<head>` is een container voor de metadata van het document. Metadata wordt niet getoond op de pagina. Het `<meta>` element wordt gebruikt metadata zoals de pagina beschrijving, zoektermen, auteur, ... te specifieren.
+Het HTML element `<head>` is een container voor de metadata van het document. Metadata wordt niet getoond op de pagina. Het `<meta>` element wordt gebruikt metadata zoals de pagina beschrijving, zoektermen, auteur, ... te specificeren.
 
 ```html
 <meta charset="UTF-8">
@@ -90,7 +90,7 @@ Een hoofding kan je aangeven met de `<h1>` tot `<h6>` tags. Waarbij de `<h1>` de
 
 ::: warning Noot
 
-Hoofdingen worden door zoekmachines gebruik om de structuur van je webpagina te bepalen. Je gebruikt ze dan ook uitsluitend daarvoorr en niet om bepaalde tekst groter of vetjes te krijgen.
+Hoofdingen worden door zoekmachines gebruik om de structuur van je webpagina te bepalen. Je gebruikt ze dan ook uitsluitend daarvoor en niet om bepaalde tekst groter of vetjes te krijgen.
 :::
 
 ### Paragraaf
@@ -104,12 +104,12 @@ Een paragraf kan je herkennen aan het `<p>` element.
 
 ::: warning Noot
 
-In jou html code kan je extra spacies of lijnen toevoegen, maar de browser zal deze negeren en de tekst als een lange doorlopende tekst weergeven.
+In jou html code kan je extra spaties of lijnen toevoegen, maar de browser zal deze negeren en de tekst als een lange doorlopende tekst weergeven.
 :::
 
 ### Formatering
 
-Alle tekst in een html document kan geformateerd worden door volgende elementen:
+Alle tekst in een html document kan geformatteerd worden door volgende elementen:
 
 * `<b>` -   vet
 * `<strong>` - belangrijk
@@ -171,7 +171,7 @@ Ook hier kan je terug gebruik maken van absolute of relative links.
 <a href="http://www.vives.be">University College VIVES</a>
 <a href="contact.html">Contact Form</a>
 ```
-Je kan een `target` referentie specifieren zodat de browser weet waar de pagina moet geopend worden. Een `target` referentie kan volgende waarde hebben:
+Je kan een `target` referentie specificeren zodat de browser weet waar de pagina moet geopend worden. Een `target` referentie kan volgende waarde hebben:
 
 * `_blank` - wordt geopend in een nieuw tabblad
 * `_self` - wordt geopend in het huidige tabblad
@@ -181,7 +181,7 @@ Je kan een `target` referentie specifieren zodat de browser weet waar de pagina 
 ```html
 <a href="http://www.vives.be" target="_blank">University College VIVES</a>
 ```
-Je kan eveneens een hyperlink tovoegen aan een afbeelding:
+Je kan eveneens een hyperlink toevoegen aan een afbeelding:
 
 ```html
 <a href="http://www.vives.be" target="_blank">
@@ -193,7 +193,7 @@ Je kan eveneens een hyperlink tovoegen aan een afbeelding:
 
 Je kan een tabel in verschillende manieren gebruiken in een HTML document. Gewoon als een *Excel-achtige* inhoud of om deeltjes beter te kunnen schikken op je pagina.
 
-Een HTML tabel kan je herkennen aan het `<table>` element. Elke rij aan het `<tr>` element en een hoofding aan het `<th>` element. Een cel is dan gedefineerd met het `<td>` element. Een onderschift kan onmiddelijk onder de tabel toegevoegd worden met het `<caption>` element.
+Een HTML tabel kan je herkennen aan het `<table>` element. Elke rij aan het `<tr>` element en een hoofding aan het `<th>` element. Een cel is dan gedefineerd met het `<td>` element. Een onderschift kan onmiddellijk onder de tabel toegevoegd worden met het `<caption>` element.
 
 ```html
 <table>
@@ -264,15 +264,15 @@ Een niet geordende lijst start met het `<ul>` element, elk element van de lijst 
 
 #### Geordende lijst
 
-Een geordende lijst start met het `<ol>` element en kent het atribuut `type` om het type van lijst markering te bepalen.
+Een geordende lijst start met het `<ol>` element en kent het attribuut `type` om het type van lijst markering te bepalen.
 
 |Type | Beschrijving  |
 |---- | ------------ |
 |type="1" | De lijst zal genummerd worden met nummers |
 |type="A" | De lijst zal genummerd worden met hoofdletters |
 |type="a" | De lijst zal genummerd worden met kleine letters |
-|type="I" | De lijst zal genummerd worden met Romijnse cijfers in hoofdletters |
-|type="i" | De lijst zal genummerd worden met Romijnse cijfers in kleine letters |
+|type="I" | De lijst zal genummerd worden met Romeinse cijfers in hoofdletters |
+|type="i" | De lijst zal genummerd worden met Romeinse cijfers in kleine letters |
 
 ```html
 <ol type="1">
@@ -283,7 +283,7 @@ Een geordende lijst start met het `<ol>` element en kent het atribuut `type` om 
 ```
 #### Beschrijvende lijst
 
-Een beschrijvende lijst is een lijst van termen met elk een beschrijving van de term. Het `<dl>` element definieerd dergelijke lijst waarbij het `<dt>` element voor de term staat en het `<dd>` voor de beschrijving.
+Een beschrijvende lijst is een lijst van termen met elk een beschrijving van de term. Het `<dl>` element definieert dergelijke lijst waarbij het `<dt>` element voor de term staat en het `<dd>` voor de beschrijving.
 
 ```html
 <dl>
@@ -317,13 +317,13 @@ Een `<span>` element kan eveneens HTML elementen grouperen en wordt meestal gebr
 
 Een `<section>` element kan gebruik worden om een sectie of hoofdstuk van een pagina aan te duiden.
 
-#### Horizonale lijn
+#### Horizontale lijn
 
 Het `<hr>` element geeft een opsplitsing in het document weer op een visueel gescheiden mannier.
 
 ### HTML Forms
 
-Een `<form>` element definieerd een deel in een pagina waar input van de gebruiker wordt verwacht.
+Een `<form>` element definieert een deel in een pagina waar input van de gebruiker wordt verwacht.
 
 #### Input
 

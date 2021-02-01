@@ -4,7 +4,7 @@
 
 **C**ascading **S**tyle **S**heets is een style sheet language die gebruikt wordt om de presentatie van een HTML document te beschrijven.
 
-CSS is ontworpen om het scheiden van presentatie en inhoud van een webpagin mogelijk te maken. Hierdoor is het geheel beter toegankelijk, flexibeler en heeft een een betere controle op de presentatie characteristieken. Meerdere webpagina's kunnen ook dezelfde opmaak delen door gebruik te maken van eenzelfde .css bestand.
+CSS is ontworpen om het scheiden van presentatie en inhoud van een webpagina mogelijk te maken. Hierdoor is het geheel beter toegankelijk, flexibeler en heeft een een betere controle op de presentatie karakteristieken. Meerdere webpagina's kunnen ook dezelfde opmaak delen door gebruik te maken van eenzelfde .css bestand.
 
 ## Verschillende methoden om stijl aan jou html pagina te koppelen
 
@@ -67,7 +67,7 @@ Elke opmaak staat tussen haakjes.
 
 ### Commentaar
 
-In CSS start commentaar met een `/*` en eindigd met `*/`. Commentaar kan gerust over meerdere lijnen lopen.
+In CSS start commentaar met een `/*` en eindigt met `*/`. Commentaar kan gerust over meerdere lijnen lopen.
 
 ```css
 p {
@@ -187,10 +187,10 @@ Als je een specifiek kleur zoekt kan deze [color picker](https://www.w3schools.c
 
 Naast het aanpassen van de achtergrond kleur van een HTML element kan je ook een afbeelding laden als achtergrond.
 
-* **background-image** : specifieert de afbeelding die als achtergrond moet gebruikt worden. Standaard wordt deze afbeelding herhaalt over het volledige element.
+* **background-image** : specificeert de afbeelding die als achtergrond moet gebruikt worden. Standaard wordt deze afbeelding herhaalt over het volledige element.
 * **background-repeat** : op welke manier die herhaling moet gebeuren.
 * **background-position** : op welke positie die afbeelding moet geplaatst worden.
-* **background-attachment** : specifieert of de afbeelding met de pagina moet mee scrollen of vast moet staan.
+* **background-attachment** : specificeert of de afbeelding met de pagina moet mee scrollen of vast moet staan.
 ```css
     body {
         background-image: url("img_tree.png");
@@ -354,7 +354,7 @@ th, td {
 
 ### Display
 
-De CSS **display** eigenschap zal bepalen als en hoe een element getoont wordt.
+De CSS **display** eigenschap zal bepalen als en hoe een element getoond wordt.
 
 ```css
 /*inline */ 
@@ -408,7 +408,7 @@ Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 ```
-We starten met een achtergrond kleur te definieren voor onze html pagina.
+We starten met een achtergrond kleur te definiëren voor onze html pagina.
 
 ```css
 html {
