@@ -36,7 +36,6 @@ Probeer ook deze methode zoveel mogelijk te vermijden tenzij je een one-page-web
 
 Deze methode gebruikt de informatie die in de style-tag stond bij de internal methode en plaatst deze in een .css bestand.
 ```css
-style.css file
 body {
    background-color: green;
 }
@@ -44,7 +43,7 @@ body {
 Dit .css bestand moet dan uiteraard gekoppeld worden aan de HTML pagina.
 
 ```html
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
 ```
 
 ::: warning 'Good-practice'
@@ -141,7 +140,7 @@ We kennen verschillende manieren om kleur toe te passen in CSS:
         background-color: red;
     }
     ```
-2. Via de RGB warde
+2. Via de RGB waarde
  
     Je kan naar een kleur refereren via zijn RBG waarde waarbij elke parameter (rood, groen, blauw) een kleurintensiteit tussen 0 en 255 weergeeft.
     
@@ -193,7 +192,7 @@ Naast het aanpassen van de achtergrond kleur van een HTML element kan je ook een
 * **background-attachment** : specificeert of de afbeelding met de pagina moet mee scrollen of vast moet staan.
 ```css
     body {
-        background-image: url("img_tree.png");
+        background-image: url("/images/img_tree.png");
         background-repeat: no-repeat;
         background-position: right top;
         background-attachment: fixed;
@@ -227,7 +226,7 @@ p {
   margin: 25px 50px 75px;
 }
 ```
-### padding
+### Padding
 
 De CSS **padding** eigenschap doet net hetzelfde als margin maar dan langs de binnenkant van de rand van een element.
 
@@ -329,7 +328,7 @@ of zelfs een afbeelding als markering gebruiken:
 
 ```css
 ul {
-  list-style-image: url('sqpurple.gif');
+  list-style-image: url('/images/sqpurple.gif');
 }
 ```
 
@@ -405,7 +404,7 @@ Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style
 ```html
 <head>
   <!--metadata -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 ```
 We starten met een achtergrond kleur te definiëren voor onze html pagina.
