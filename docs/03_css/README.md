@@ -537,3 +537,7 @@ Bekijk zelf even de mogelijkheden van:
 
 * [Opdrachtfiche](assignment2.html)
 :::
+
+## Cheatsheet
+
+[Hier](/files/cheatsheet_css.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
