@@ -496,7 +496,7 @@ We gebruiken hierbij een container, een header, een paragraaf en een link.
 ```html
 <body>
     <!-- container met hoofding -->
-    <div>
+    <div class="banner">
         <h1>Dashboard weerstation</h1>
         <p>locatie: <a href="https://www.brugge.be/" target="_blank">Brugge</a></p>        
     </div>
@@ -507,7 +507,8 @@ Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen
 
 ```html
 <!-- container met het weer actueel -->
-    <div>
+    <br>
+    <div class="actueel">
         <h3>Weer actueel</h3>
         <img src="/images/sun.png" alt="sunny">
         <ul>
@@ -520,18 +521,20 @@ Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen
     </div>
 ```
 
-Tot slot voegen we een container met het weerpraatje en een container met de weersvoorspellingen toe.
-We gebruikern hiervoor een tabel.
+Nu voegen we een container met het weerpraatje en een container met de weersvoorspellingen toe.
+We gebruikern hiervoor een tabel. De afbeelding kan je [hier](/files/zonnen.jpg) downloaden.
 
 ```html
 <!-- container met weerpraatje -->
-    <div>
+    <div class="praatje">
         <h3>Weerpraatje</h3>
+        <img src="/images/zonnen.jpg">
         <p>Een dag zonder wolken met veel zon. De temperatuur stijgt tot 26 °C.</p>
         <p> Er staat een lichte bries vanuit het noordwesten die voor wat afkoeling zorgt.</p>
     </div>
     <!-- container met tabel -->
-    <div>
+    <br>
+    <div class="forcast">
         <h3>Weersvoorspelling</h3>
         <table>
             <tr>
@@ -571,6 +574,15 @@ We gebruikern hiervoor een tabel.
                 <td>Z 5 km/u</td>
             </tr>
         </table>
+    </div>
+```
+
+Tot slot voegen we nog een footer container toe:
+
+```html
+<!-- container met footer-->
+    <div class="footer">
+        <p>laatste update 10:15</p>
     </div>
 ```
 :::

@@ -50,6 +50,18 @@ Dit .css bestand moet dan uiteraard gekoppeld worden aan de HTML pagina.
 Het werken met een external CSS file geniet de voorkeur.
 :::
 
+::: tip Tip
+Als je meerdere stylesheets wil gebruiken en je html code hiermee niet wil overbelasten kan je de link naar jouw master style.css file in je html code plaatsen en vervolgens in je style.css de andere importeren.
+
+```css
+@import "/styles/forms.css"
+
+html {
+  background-color: #334455;
+}
+```
+:::
+
 ## CSS basis
 
 ### Opmaak set
@@ -127,6 +139,33 @@ comment */
         color: red;
     }
     ```
+
+6. Pseudo class selector
+
+    De pseudo class selector zal een toestand of relatie van een element selecteren:
+    ```css
+    a:hover {
+      background-color: green;
+      color: white;
+    }
+    ```
+7. Pseudo element selector
+
+    Een deel van een element selecteren:
+    ```css
+    p::first-line {
+      font-size: 12px;
+    }
+    ```
+
+8. Attribuut selector
+
+    Je kan op basis van attribuut waarde iets selecteren:
+    ```css
+    input[type=button]{
+      color: green;
+    }
+    ```
 ### Kleur toepassen
 
 We kennen verschillende manieren om kleur toe te passen in CSS:
@@ -179,6 +218,18 @@ We kennen verschillende manieren om kleur toe te passen in CSS:
     Ook hier kan je gebruik maken van **hsla(hue, saturation, lightness, alpha)** om transparentheid toe te voegen.
 
 Als je een specifiek kleur zoekt kan deze [color picker](https://www.w3schools.com/colors/colors_picker.asp) een handige tool zijn.
+
+### Eenheden
+
+Je kan vrij door elkaar onderstaande eenheden gebruiken:
+
+
+| Eenheid | Type | Relatie | Voorbeeld |
+| --- | --- | --- | --- |
+| px | absoluut | scherm pixels | p{font-size: 14px} |
+| em | percentage | % van parent element font size | p{font-size: 1.2em} |
+| rem | percentage | % van root element font size | p{font-size: 0.75rem} |
+| % | percentage | % van parent afmeting of font size | .left {width: 20%} |
 
 ## CSS eigenschappen
 
@@ -275,6 +326,9 @@ h1 {
   font-family: "Times New Roman", Times, serif;
 }
 ```
+::: tip Tip
+Gebruik steeds `" "` rond tekst met spacies.
+:::
 
 ### Links
 
@@ -356,15 +410,15 @@ th, td {
 De CSS **display** eigenschap zal bepalen als en hoe een element getoond wordt.
 
 ```css
-/*inline */ 
+/*maak een blocklevel element inline*/ 
 li {
   display: inline;
 }
-/*block*/
+/*maak een inline element blocklevel*/
 span {
   display: block;
 }
-/*hidden*/
+/*verwijder het element*/
 h1.hidden {
   display: none;
 }
@@ -392,12 +446,71 @@ img {
   float: right;
 }
 ```
+::: tip Tip
+Als een float element buiten het parent element komt dan kan je dat verhinderen door `overflow: hidden` toe te voegen aan het parent element.
+:::
 
-::: tip **We werken een voorbeeld uit**
+### Berekeningen
+
+Het kan soms handig zijn dat je ipv een vaste waarde te gebruiken die kan berekenen.
+
+```css
+ul {
+  border: 3px solid black;
+  width: calc(100% - 6px);
+}
+```
+
+## Responsief webdesign
+
+Als we spreken over responsief dan hebben we het over de aanpassing aan de schermgrootte van de gebruiker.
+
+![download](./images/afbeelding4.png)
+
+We maken onze website responsief in 6 stappen:
+
+1. Gebruik enkel em of rem als eenheid.
+
+2. Zorg dat de viewport metatag aanwezig is.
+
+3. Maak je layout flexibel.
+
+    * gebruik flexbox en/of float, zeker geen absolute positionering
+    * gebruik min-width en max-width, zeker geen width
+    * gebruik % voor kolommen, zeker geen vaste eenheden
+    * gebruik geen height voor rijen
+    * gebruik width:100% en max-width voor containers en afbeeldingen, zeker geen vaste eenheden.
+
+4. Bepaal je breekpunten waar de overgang plaatsvindt tussen de grote en kleine versie van je pagina.
+
+    Dit kan je best doen door in je browser zelf de schermbreedte aan te passen en te zien wanneer je best overschakelt.
+
+5. Voeg media queries toe
+
+    Stel dat je breekpunten wil op 600px, 800px en 1000px. Start dan met de css voor het kleinste scherm en zo verder tot het grootste scherm.
+
+    ```css
+    @media (min-width: 37.5em) { /* 37.5 * 16 = 600px */
+      /* extra CSS voor schermen vanaf 600px */
+      ...
+    }
+    @media (min-width: 50em) { /* 50 * 16 = 800px  */
+      /* extra CSS voor schermen vanaf 800px */
+      ...
+    }
+    @media (min-width: 62.5em) { /* 62.5 * 16 = 1000px  */
+      /* extra CSS voor schermen vanaf 1000px */
+      ...
+    }
+    ```
+
+6. Pas je CSS aan tot het voor alle schermen er goed uit ziet.
+
+## Voorbeeld
+
+::: tip We werken de styling van het voorbeeld uit het hoofdstuk HTML uit
 
 ![download](./images/afbeelding3.png)
-
-We passen een stijl toe op ons HTML voorbeeld die we eerder hebben aangemaakt.
 
 Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style sheet toevoegen.
 
@@ -407,105 +520,113 @@ Eerst en vooral moeten we in de HTML code een verwijzing naar onze externe style
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 ```
-We starten met een achtergrond kleur te definiëren voor onze html pagina.
+We starten met een achtergrond kleur en tekst stijl te definiëren voor onze html pagina.
 
 ```css
 html {
     background-color: grey;
+    font-family: Calibri;
+    color: black;    
 }
 ```
 Vervolgens zorgen we er voor dat de body een bepaalde breedte heeft en centraal in de pagina staat. Eveneens zorgen we voor een zekere marge tussen de rand van de body en de inhoud.
 
 ```css
 body {
-    width: 1080px;
+    width: 62.5em ;
     margin: auto;
     background-color: floralwhite;
-    padding: 25px;
+    padding: 1em;    
 }
 ```
-Nu leggen we de opmaak van de `h1` titel vast.
+Nu definiëren we de algemene opmaak van de verschillende containers vast.
 ```css
-h1 {
-    font-family: Calibri;
-    color: rgb(0,169,199);
-    text-shadow: 3px 2px black;
+.banner, .actueel, .praatje, .forcast{
+    background-color: white;
+    padding: 0.5em;
+    overflow: hidden;
+}
+```
+Vervolgens definiëren we de opmaak van de verschillende elementen in de banner.
+```css
+.banner h1{
+    font-family: sans-serif;
+    font-size: 3em;
     text-align: center;
 }
-```
-Daarna komen de paragrafen aan de beurt.
-```css
-p {
-    font-family: Arial;
-    text-align: left;
-    line-height: 25px;    
+
+.banner p{
+    float: right;
+    border: 1px solid gray;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+
+.banner a{
+    text-decoration: none;
+    color: tomato;
+}
+
+.banner a:hover{
+    color: #006347;
 }
 ```
-
-Nu is de afbeelding aan de beurt. Hier willen we dat de afbeelding links staat en de navigatie rechts.
-
+Nu kijken we voor de stijl van de actueel container en leggen de algemene stijl vast voor `h3`.
 ```css
-img {
-    border: grey;
-    border-style: solid;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: white;
+.actueel{
     float: left;
+    margin-right: 2em;
+    width: 35%;    
 }
 
-#nav{
+h3{
+    font-size: 1.5em;
+    color: tomato;
+}
+
+.actueel img{
     float: right;
 }
-```
 
-Om de navigatiebar wat mooier te maken kiezen we voor een knop uitzicht.
-
-```css
-a:link, a:visited {
-    background-color: #f44336;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-a:hover, a:active {
-    background-color: red;
+ul{
+    list-style-type: none;    
 }
 ```
-
-Ook de tabel en de lijst krijgen een leuk uitzicht mee.
-
+Voor het weerpraatje willen we de afbeelding rechts naast de tekst krijgen.
+```css
+.praatje img{
+    width: 30%;
+    float: right;
+    margin: 0.1em;
+    border: 1px solid black;
+    padding: 0.2em;
+}
+```
+De tabel van de weersvoorspelling krijgt ook een mooie opmaak.
 ```css
 table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-caption{
-    text-transform: uppercase;
-}
-
-th {
-    height: 50px;
-    background-color: whitesmoke;
+    border-collapse: collapse;    
+    margin: 2em 0;    
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 40em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 th, td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid black;
+    text-align: center;
+    padding: 0.5em;
 }
-
-ol {
-    list-style-type: decimal-leading-zero;
-    line-height: 30px;
+```
+Tot slot zorgen we voor een mooie footer.
+```css
+.footer{
+    color: gray;    
+    text-align: right;    
 }
 ```
 
-Proficiat je eerste pagina met stijl.
+Proficiat je eerste pagina met stijl is klaar.
 :::
 
 ## Herhaling via zelfstudie
