@@ -639,7 +639,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande videotutorial e
 
 ![download](./images/assignment.png)
 
-* [Opdrachtfiche](assignment1.html)
+* [Opdrachtfiche](assignment2.html)
 :::
 
 ## Het gebruik van online stylesheets
@@ -656,7 +656,7 @@ Bekijk zelf even de mogelijkheden van:
 
 ![download](./images/assignment.png)
 
-* [Opdrachtfiche](assignment2.html)
+* [Opdrachtfiche](assignment3.html)
 :::
 
 ## Cheatsheet

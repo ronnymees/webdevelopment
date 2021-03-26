@@ -1,33 +1,33 @@
-# Een eenvoudige webpagina met online stijl
+# Een eenvoudige webpagina met stijl
 
 ![download](./images/assignment.png)
 
 ## Opdracht
 
-Bouw een webpagina voor de opleiding Graduaat Internet of Things m.b.v. Font Awesome & Bootstrap.
+In deze opdracht maken we een webpagina voor een restaurant met een extern stylesheet zodat die mooi en gebruiksvriendelijk overkomt.
+
+Het restaurant (de specialiteit mag je zelf kiezen) in kwestie is gelegen op een pittoreske plaats en heeft de gebruikelijke horeca-openingsuren.
 
 De webpagina moet volgens het ‘good-practice’ principe van web developers opgesteld zijn en minstens volgende items bevatten:
-* Algemene informatie omtrent de opleiding
-* Het curriculum van de opleiding
-* Wat kan je doen na de opleiding
-* Iets omtrent de organisatie (labo’s, duur van de opleiding, 1/3 werkplekleren, …)
-* De toelatingsvoorwaarden
-* Een link naar de online inschrijftool
-* Bij wie kan je informatie bekomen
+* Verschillende pagina’s (waaronder een contactpagina)
+* Een foto met een mooie toets (vb kadertje er rond)
+* Een weblink via een icoon (vb facebook, michelin, ...)
+* Een tabel voorzien van styling
+* Een lijst voorzien van styling
+* Achtergrond en tekstkleur
+* Het gebruik van minstens 2 verschillende fonts
+* Zorg dat minstens 1 item van stijl wijzigt als de cursor er boven komt.
 
 ## Tips
 
-De meeste informatie die je nodig hebt kan je terugvinden op de huidige webpagina van de opleiding.
-
-Gebruik je eigen woorden en stijl, maak er ‘jouw’ pagina van.
+Kijk even rond op internet hoe andere webpagina’s opgebouwd zijn, zo kan je al vlug wat inspiratie op doen voor jou pagina.
 
 ## Evaluatie
 
-Deze opdracht staat op **20%** van de totaalscore voor het vak Web Development 1.
+Deze opdracht staat op **15%** van de totaalscore voor het vak Web Development 1.
 
 Er zal op het volgende geëvalueerd worden:
 * Is je opbouw van de pagina volgens het ‘good-practice’ principe is.
-* Is de styling door gebruik te maken van Font Awesome & Bootstrap correct geimplementeerd.
+* Is de basis HTML en CSS correct gebruikt.
 * Zijn de minimum gevraagde items aanwezig en correct geïmplementeerd.
 * Is de algemene stijl van je pagina samenhangend, duidelijk en aantrekkelijk.
-

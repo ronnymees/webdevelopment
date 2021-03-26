@@ -598,7 +598,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande videotutorial e
 
 ![download](./images/assignment.png)
 
-* [Opdrachtfiche](assignment.html)
+* [Opdrachtfiche](assignment1.html)
 :::
 
 ## Cheatsheet

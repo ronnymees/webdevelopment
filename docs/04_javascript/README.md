@@ -8,7 +8,7 @@ De standaard voor JavaScript is ECMAScript. Met de ingang van 2012, ondersteunen
 
 Verwar JavaScript niet met de Java programmertaal. Beiden "Java" and "JavaScript" zijn handelsmerken of geregistreerde handelsmerken van Oracle in de VS en andere landen. Daarentegen hebben de twee programmeertalen hele verschillende syntaxis, semantiek en toepassingen.
 
-## Extra digitaal studiemateriaal
+Javascript zorgt ervoor dat je een webpagina **dynamisch** kan maken. Elke actie die moet gebeuren verloopt via een **script** en wordt door de browser, dus aan de **client-side**, verwerkt.
 
 We raden jullie volgend ondersteunend leermateriaal aan:
 
@@ -18,34 +18,15 @@ We raden jullie volgend ondersteunend leermateriaal aan:
 
 * [LinkedIn Learning](https://www.academicsoftware.eu/) via Academic Software (kies voor Web Platform)
 
-## Introductie
+## We bestuderen enkele voorbeelden
 
-Javascript zorgt ervoor dat je een webpagina dynamisch kan maken. Elke actie die moet gebeuren verloopt via een script en wordt door de browser (dus de client-side) verwerkt.
+Als je javascript ontwikkeld is het goed om de ontwikkelomgeving (F12) in Chrome te openen en de console in het oog te houden voor foutmeldingen.
 
-### Best practice
+![Afbeelding](./images/afbeelding26.png)
 
-Je kunt ervoor kiezen om het script inline (dus in de HTML) te plaatsen.
+### Content aanpassen
 
-```html
-<body>
-    <script type="text/javascript">
-        // hier komt dan de java code
-    </script>
-</body>
-```
-Of je kan terug met een aparte file werken, wat de voorkeur geniet.
-
-```html
-<body>
-    <!-- hier komt de volledige body van de html pagina -->
-
-    <script src="script.js"></script>
-</body>
-```
-
-## We maken enkele voorbeelden
-
-### **Content aanpassen**
+Je kan javascript gebruiken om de inhoud van een element aan te passen.
 
 Maak het bestand **index.html** aan
 ```html
@@ -83,7 +64,9 @@ function goBackTitle() {
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 :::
 
-### **Style aanpassen**
+### Style aanpassen
+
+Je kan javascript gebruiken om de opmaak van iets aan te passen.
 
 Maak het bestand **index.html** aan
 ```html
@@ -106,8 +89,8 @@ Maak het bestand **index.html** aan
 ```
 Maak het bestand **script.js** aan
 ```js
-var bgcolors = ["#FF00FF", "#00FFFF", "#0000FF", "#FFFFFF", "#FF0000", "#00FF00"];
-var bgcolors_tel = 0;
+let bgcolors = ["#FF00FF", "#00FFFF", "#0000FF", "#FFFFFF", "#FF0000", "#00FF00"];
+let bgcolors_tel = 0;
 function changeBackground2() {
     document.getElementById("body1").style.backgroundColor = bgcolors[bgcolors_tel];
     bgcolors_tel++;
@@ -118,7 +101,9 @@ function changeBackground2() {
 ```
 * met de syntax `.style` kan je de stijl van  een element aanpassen.
 
-### **Complete style aanpassen**
+### Complete style aanpassen
+
+Je kan javascript gebruiken om de volledige opmaak van je pagina, zeg maar het thema, te wijzigen.
 
 Maak het bestand **index.html** aan
 ```html
@@ -164,7 +149,7 @@ body {
 Maak het bestand **script.js** aan
 ```js
 function changeCSS() {
-    var whichCSS = document.getElementsByName("whichCSS");
+    let whichCSS = document.getElementsByName("whichCSS");
     if(whichCSS[0].checked==true) {
         document.getElementById("cssFile").setAttribute("href","css1.css");
     }
@@ -177,9 +162,47 @@ function changeCSS() {
 }
 ```
 
-## Syntax
+## Vertrouwd raken met de syntax
 
-Voor eerst moet je begrijpen dat javascript lijn per lijn geïnterpreteerd wordt door de browser. Terwijl je bij c# het programma compileerd tot machinetaal instructies en dan zelfstandig kan laten runnen.
+Voor eerst moet je begrijpen dat javascript lijn per lijn geïnterpreteerd wordt door de browser. Terwijl je bij c# het programma compileert tot machinetaal instructies en dan zelfstandig kan laten runnen.
+
+### Javascript toevoegen aan je html pagina.
+
+Je kunt ervoor kiezen om een script block toe te voegen aan je html pagina. Indien mogelijk vermijd je deze techniek.
+
+```html
+<body>
+    <script type="text/javascript">
+        // hier komt dan de java code
+    </script>
+</body>
+```
+Of je kan terug met een aparte file werken, wat de voorkeur geniet.
+
+```html
+<body>
+    <!-- hier komt de volledige body van de html pagina -->
+
+    <script src="/scripts/script.js"></script>
+</body>
+```
+
+::: tip Tip
+Voeg je script steeds **onderaan je body** toe, zo krijgt de gebruiker je webpagina reeds te zien terwijl het script nog aan het laden is bij een trage internetverbinding.
+
+Als je in javascript andere javascripts gebruikt moet je die voor jou script link plaatsen in de body.
+:::
+
+### De console als debug tool
+
+Je kan de console van je browser gebruiken als debug tool door er informatie naar te sturen.
+
+```js
+let school = 'Vives';
+console.log('school = ' + school);
+```
+
+Je kan tevens javascript uittesten in de console voor je het gaat toevoegen aan je script.
 
 ### Variabelen
 
@@ -195,7 +218,7 @@ Let is een variabele definitie die enkel geldig is binnen de block-scope `{}` wa
 ```js
 var y = 12
 ```
-Var is een algemene variabele definitie, als je die dus binnen een functie definieerd is de functie de scope van de variabele, als je die bovenaan plaatst wordt de volledige script-file de scope.
+Var is een algemene variabele definitie, als je die dus binnen een functie definieert is de functie de scope van de variabele, als je die bovenaan plaatst wordt de volledige script-file de scope.
 
 **const**
 ```js
@@ -204,9 +227,15 @@ const y = 11
 Const is de definitie van een constante, heeft dezelfde scope als let maar je kan de waarde niet aanpassen.
 
 ::: warning Aandacht
-Als je een variable definieerd zonder let, var of const dan is dit automatisch een globale variabele. Je moet dan ook goed opletten dat je nergens anders een variabele definieerd met dezelfde naam.
+Als je een variable definieert zonder let, var of const dan is dit automatisch een globale variabele. Je moet dan ook goed opletten dat je nergens anders een variabele definieert met dezelfde naam.
 
 Om te vermijden dat je die let, var of const per ongeluk zou vergeten kan je bovenaan je script file "use strict"; plaatsen. Je krijgt dan een foutmelding als je het vergeet.
+
+```js
+'use strict';
+
+let somevariable;
+```
 :::
 
 ### Datatypes
@@ -216,13 +245,13 @@ Binnen javascript worden 7 primitieve datatypes gebruikt:
 * Number : integer of float
 * BigInt : een integer met onbeperkte grootte, te herkennen aan een kleine n na het getal bv `23232n`
 * String : tekst
-* Undefined : het datatype is nog niet gedefinieerd bv `var a;`
+* Undefined : het datatype is nog niet gedefinieerd bv `let a;`
 * Null : om een speciale waarde 'null' aan te geven
 * Symbol : elke instantie is uniek, bv `Symbol("description");`
 
 Daarnaast heb je nog het object type die gebruikt kan worden om een verzameling van waarden te bewaren.
 ```js
-var obj = {name: 'Piet', age : 5};
+let obj = {name: 'Piet', age : 5};
 ```
 Er zijn nog 4 speciale object type:
 * Function
@@ -233,14 +262,14 @@ Er zijn nog 4 speciale object type:
 Laten we dit even bekijken in de console van chrome. Start Chrome op en ga naar  `about:blank` om een lege webpagina te krijgen. Druk vervolgens op F12 en ga naar de console.
 
 ```js
-var n=5   // het resultaat is 5
+let n=5   // het resultaat is 5
 n = 0xF   // het resultaat is 15 (hexadecimaal getalstelsel)
 n = 015   // het restulaat is 13 (octaal getalstelsel)
 
 '5'== 5   // het resultaat is true (== kijkt niet naar het datatype)
 '5'===5   // het resultaat is false (==== doet dat wel)
 
-var myString = "Hello World";
+let myString = "Hello World";
 myString.lenght         // het resultaat is 11
 myString.toUpperCase()  // het resultaat is HELLO WORLD
 
@@ -249,16 +278,16 @@ myString.toUpperCase()  // het resultaat is HELLO WORLD
 `value of n is ${n}`    // geformateerde string
 n.toString()            // datatype conversie
 
-var obj = { name: 'Carrot', for: 'Max', details: { color: 'orange', size: 12}};
+let obj = { name: 'Carrot', for: 'Max', details: { color: 'orange', size: 12}};
 obj.name                // het resultaat is Carrot
 
-var obj2=obj            // let op is geen kopie maar een 2de verwijzing naar hetzelfde object
+let obj2=obj            // let op is geen kopie maar een 2de verwijzing naar hetzelfde object
 obj2.name = 'Apple'     // dit zal dus bij beide objecten de name wijzigen naar Apple.
 
 let a = { x: {z:1} , y:2};
 let b = JSON.parse(JSON.stringify(a)); // dit zorgt voor een deepcopy van het object, dit zijn dus twee verschillende objecten.
 
-var myArray = [];
+let myArray = [];
 myArray = [5,'Hello',{name:'Piet'}];
 myArray[1];             // Het resultaat is Hello, een array start steeds op positie 0
 myArray[10]='hi';       // Voegt een nieuw item toe op positie 10 maar zal ook tussen positie 2 en 10 lege plaatsen aanmaken
@@ -311,18 +340,30 @@ Daarnaast hebben we ook de ternary operator:
 We kunnen in javascipt ook met lussen werken:
 
 ```js
-// sequentiele lus
-for (var i=0; i<10; i++){}
-// enumeratief met array
-var names = ['Piet','Jan','Pol'];
-for (var i in names) {
-   	console.log(names[i]);
+// for lus
+for (let i=0; i<10; i++){}
+// for-of lus
+let names = ['Piet','Jan','Pol'];
+for (let name of names) {
+   	console.log(name);
 };
-// enumeratief met objecten
-var names = {n1:'Piet',n2:'Jan',n3:'Pol'};
-for (var i in names) {
+// for-in lus
+let names = {n1:'Piet',n2:'Jan',n3:'Pol'};
+for (let i in names) {
    	if(names.hasOwnProperty(i)) console.log(names[i]);
 };
+// while lus
+let count = 5;
+while (count > 0){
+  console.log(count);
+  count--;
+}
+//do-while lus
+let count = 5;
+do {
+  console.log(count);
+  count--;
+} while (count > 0);
 ```
 ### Functies
 
@@ -337,7 +378,7 @@ function isEven(n) {
   return ((n%2)===0); 
 }
 // oproepen van de functie
-var even=isEven(10);
+let even=isEven(10);
 ```
 Daarnaast kunnen we hier eveneens met parameters werken:
 ```js
@@ -345,19 +386,19 @@ Daarnaast kunnen we hier eveneens met parameters werken:
 function sayMessage(message, times){
   times=(typeof(times)!=='undefined') ? times:10;
   if(typeof(message)==='string'){
-    for(var i=0;i<times;i++) console.log(message);
+    for(let i=0;i<times;i++) console.log(message);
   }
 }
 // functie met het aantal parameters naar keuze, parameters komen in de array 'arguments'
 function sayMessages(){
-  for (var i=0; i< arguments.length; i++) console.log(arguments[i]);
+  for (let i=0; i< arguments.length; i++) console.log(arguments[i]);
 }
 ```
 Het doorgeven van parameters werkt hier eveneens op het principe van 'pass by value', d.w.z. dat de waarde van tijdelijk wordt gekopierd naar een lokale variabele. Dat is echter niet het geval voor reference variablen zoals bv een object. daar geld het principe van 'pass by reference' en is er sprake van een tijdelijke variabele die verwijst naar de originele.
 
 ```js
 // pass by value voorbeeld
-var boodschap='hi';
+let boodschap='hi';
 function changeMessage(message){
   message="test";
 }
@@ -365,7 +406,7 @@ changeMessage(boodschap);
 console.log(boodschap);    // het resultaat is 'hi'
 
 // pass by reference voorbeeld
-var obj={msg:'hi'};
+let obj={msg:'hi'};
 function changeMessage(message){
   message.msg="test";
 }
@@ -377,11 +418,11 @@ Verder kan je creatief omgaan met functies.
 
 ```js
 // een functie als een variabele
-var sayMessage= function(message){ console.log(message); }
+let sayMessage= function(message){ console.log(message); }
 // een functie meegeven als een parameter
 window.setTimeout(sayMessage,5000,'Hi');
 // een functie als deel van een object
-var obj= { f: function(message){ console.log(message); } };
+let obj= { f: function(message){ console.log(message); } };
 obj.f('Hi');
 // een anonieme functie ( die heeft geen naam)
 nummers.forEach( function(i) {console.log("array bevat ",i);})
@@ -390,92 +431,110 @@ verdubbel = i => (i*2);
 ```
 Een functie die meegeven wordt als parameter met een andere functie noemen we een **'callback functie'**.
 
-## Herhaling via zelfstudie
+### Error afhandeling
+
+Net zoals in C# kan je met `try` en `catch` de error afhandeling voorzien.
+
+```js
+try {
+  // hier komt de code die je wil uitvoeren
+} catch (e){
+  console.warn(e); // als er een fout optreed zal deze naar de console worden gestuurd.
+}
+```
+
+### Commentaar voorzien
+
+Zoals steeds is het 'good-practice' om je code van commentaar te voorzien.
+
+```js
+/**
+  * Een blok aan commentaar
+  * over meerdere lijnen
+  */
+
+// Commentaar op 1 enkele lijn.
+```
+
+### HTML elementen vinden
+
+Om in javascript elementen van een html pagina op te vragen bestaan er enkele mogelijkheden:
+
+* getElementById() : één element met een bepaald id
+* getElementByName() : lijst van elementen met een bepaalde naam
+* getElementByTagName() : lijst van een bepaald type elementen
+* querySelectorAll() : lijst van elementen die voldoet aan een CSS selector
+* querySelector() : eerste element die voldoet aan een CSS selector
+
+### Good practices
+
+* Als je manuele indentatie voorziet, gebruik dan steeds ofwel spaties ofwel tabs maar combineer ze niet.
+* Voorzie je code van commentaar zodat je code vlotter begrijpbaar is.
+* Plaats spaties:
+  * na een `,`, `:`, `;` maar niet er voor
+  * na een `if`, `for`, `while` en `function`
+  * voor en na een operator (`==`, `<`, `&&`, `+`, ...)
+* Vermijd het gebruik van `var` om een variabele te definiëren
+
+### Herhaling via zelfstudie
 
 Volg onderstaande videotutorials van LinkedIn Learning op je eigen tempo tegen de volgende les:
 
 * [Learning the javascript Language](https://www.linkedin.com/learning/learning-the-javascript-language-2) (Hoofdstuk 7 is optioneel)
 * [Using input validation](https://www.linkedin.com/learning/validating-and-processing-forms-with-javascript-and-php) (Hoofdstuk 1 t.e.m. 3)
 
-## Form validatie via javascript
+## JavaScript Object Notation (JSON)
 
-Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadplegen:
+![download](./images/jsonicon.png) 
 
-* [Form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
-* [HTML5 input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)
+JSON is een formaat om op eenvoudige en compacte manier data te kunnen uitwisselen. Er zijn 2 structuren, objecten te herkennen aan {} en array’s te herkennen aan [].
 
-### **Form validatie via javascript**
+![download](./images/afbeelding12.png)
 
-In dit voorbeeld zullen we een form validatie doen aan de client-side d.m.v. javascript en html.
-
-![download](./images/afbeelding1.png)
-
-Je kan de files van dit voorbeeld [hier](/files/formvalidation.rar) downloaden.
-
-We gebruiken hier geen HTML validatie, enkel javascript validatie.
-Laten we even kijken naar het script.
-
-```js
-// Functie die uitgevoerd wordt bij een on submit
-function ValidationEvent() {
-    // Input in variabelen bewaren
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var contact = document.getElementById("contact").value;
-    // Reguliere expressie voor email
-    var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // Validatie testen
-    if (name != '' && email != '' && contact != '') {
-        if (email.match(emailReg)) {
-            if (document.getElementById("male").checked || document.getElementById("female").checked) {
-                if (contact.length >= 9 ) {
-                    return true;
-                } else {
-                    alert("The Contact No. must be at least 9 digit long!");
-                    return false;
-                }
-            } else {
-                alert("You must select gender.....!");
-                return false;
-            }
-        } else {
-            alert("Invalid Email Address...!!!");
-            return false;
-        }
-    } else {
-        alert("All fields are required.....!");
-        return false;
-    }
+```json
+{
+  "my_name": "Piet",
+  "my_number": 23,
+  "my_object": {
+    "my_array": [
+      5,
+      6,
+      7
+    ]
+  }
 }
 ```
 
-Je merkt dat we eerst alle input van de gebruiker gaan bewaren in variabelen. Dat is steeds een goed idee, meestal moet dit toch in een database raken en de controle loopt op die manier vlotter.
+Om een JSON string om te zetten naar een JSON object gebruik je de .parse() methode. 
 
-Om het email-adres te valideren maken we gebruik van een reguliere expressie.
+Test dit even uit in de console:
+```js
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+```
 
-Je kan meer informatie hierover lezen op [mozilla developer](https://developer.mozilla.org/nl/docs/Web/JavaScript/Guide/Reguliere_Expressies).
+**Merk op** dat bij een combinatie van “, je hier best de buitenste aanpast naar ‘.
 
-Een handige tool om die reguliere expressies te ontleden is [regexper](https://regexper.com/#%2F%5Ethis%5C.%2F).
+Om een JSON object om te zetten naar een string gebruik je de .stringify() methode.
 
-In dit voorbeeld werken we met een geneste if structuur om alle input te valideren. Als je meer inputvelden moet valideren is het aangewezen om via een boolean variabele te werken die bijhoud of de volledige form valid of niet is.
+Test dit even uit in de console:
+```js
+console.log(JSON.stringify({ x: 5, y: 6 }));
+// expected output: "{"x":5,"y":6}"
+```
 
-Je merkt ook dat telkens iets niet valid is er een false wordt retourneerd, moesten we dit niet doen zou de pagina gewoon refreshen.
+## Nog even verder oefenen
 
-::: tip Taak 4 - Formvalidation 
+We oefenen javascript verder in a.d.h.v. twee oefeningen.
 
-![download](./images/assignment.png)
-
-* [opdrachtfiche](assignment1.html)
-:::
-
-## Een rekenmachine via javascript
+### Een rekenmachine via javascript
 
 Om javascript nog verder in te oefenen maken we een rekenmachine als voorbeeld.
 
 Om een pagina te stylen en er terzelfdertijd voor te zorgen dat die responsief is kunnen we volgende technieken gebruiken:
 
 * Block : line breaks voor en na
-* Inline : zonder line breaks, op de zelde lijn als er plaats is
+* Inline : zonder line breaks, op de zelfde lijn als er plaats is
 * Grid : volgens het grid model
 * Flex : volgens het flex model
 
@@ -555,14 +614,6 @@ button {
 Nu kunnen we starten aan het javascript.
 Omdat we willen dat de gebruiker zo snel mogelijk interactie kan hebben wachten we niet op het laden van figuren of style. Dit kunnen we doen d.m.v. het 'DOMContentLoaded' event.
 
-Om in javascript elementen van een html pagina op te vragen bestaan er enkele mogelijkheden:
-
-* getElementById() : één element met een bepaald id
-* getElementByName() : lijst van elementen met een bepaalde naam
-* getElementByTagName() : lijst van een bepaald type elementen
-* querySelectorAll() : lijst van elementen die voldoet aan een CSS selector
-* querySelector() : eerste element die voldoet aan een CSS selector
-
 Laten we reeds starten met ons script:
 
 ```js
@@ -591,7 +642,9 @@ document.getElementById("equal").onclick=(event) => {
 ```
 Dit is een eenvoudige techniek die gebruik maakt van de functionaliteit van javascript om een tekst te evalueren en daar het resultaat van weer te geven.
 
+::: danger Waarschuwing
 Echter is deze functie geen 'good practice' omwille van de gekende **beveiligsproblemen**. Een pagina die hier gebruik van maakt zal nooit 'Secure' genoemd worden.
+:::
 
 Daarom zullen we ons script moeten aanpassen met de iets complexere maar veilige methode:
 ```js
@@ -605,7 +658,7 @@ We maken gebruik van een anonieme functie om hetzelfde resultaat te bekomen.
 
 Je kan het volledige voorbeeld [hier](/files/rekenmachine.rar) downloaden. 
 
-## Een tabel aanvullen met javascript
+### Een tabel aanvullen met javascript
 
 In dit voorbeeld kijken we hoe we inhoud aan een tabel kunnen toevoegen d.m.v. javascript.
 
@@ -769,7 +822,75 @@ function processForm() {
 };
 ```
 
-## Verder werken op de formvalidation opdracht met Node-red
+## Form validatie via javascript
+
+Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadplegen:
+
+* [Form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+* [HTML5 input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)
+
+We gaan in dit voorbeeld een stapje verder en combineren HTML, CSS en JAVASCRIPT met Node-red en Google Mail.
+
+Je zou bv op basis van dit voorbeeld een webinterface kunnen maken voor een IoT-device.
+
+### Form validatie via javascript
+
+We maken eerst een form waarvan we de validatie doen aan de client-side d.m.v. javascript en html.
+
+![download](./images/afbeelding1.png)
+
+Je kan de files van dit voorbeeld [hier](/files/formvalidation.rar) downloaden.
+
+We gebruiken hier geen HTML validatie, enkel javascript validatie.
+Laten we even kijken naar het script.
+
+```js
+// Functie die uitgevoerd wordt bij een on submit
+function ValidationEvent() {
+    // Input in variabelen bewaren
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let contact = document.getElementById("contact").value;
+    // Reguliere expressie voor email
+    let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // Validatie testen
+    if (name != '' && email != '' && contact != '') {
+        if (email.match(emailReg)) {
+            if (document.getElementById("male").checked || document.getElementById("female").checked) {
+                if (contact.length >= 9 ) {
+                    return true;
+                } else {
+                    alert("The Contact No. must be at least 9 digit long!");
+                    return false;
+                }
+            } else {
+                alert("You must select gender.....!");
+                return false;
+            }
+        } else {
+            alert("Invalid Email Address...!!!");
+            return false;
+        }
+    } else {
+        alert("All fields are required.....!");
+        return false;
+    }
+}
+```
+
+Je merkt dat we eerst alle input van de gebruiker gaan bewaren in variabelen. Dat is steeds een goed idee, meestal moet dit toch in een database raken en de controle loopt op die manier vlotter.
+
+Om het email-adres te valideren maken we gebruik van een reguliere expressie.
+
+Je kan meer informatie hierover lezen op [mozilla developer](https://developer.mozilla.org/nl/docs/Web/JavaScript/Guide/Reguliere_Expressies).
+
+Een handige tool om die reguliere expressies te ontleden is [regexper](https://regexper.com/#%2F%5Ethis%5C.%2F).
+
+In dit voorbeeld werken we met een geneste if structuur om alle input te valideren. Als je meer inputvelden moet valideren is het aangewezen om via een boolean variabele te werken die bijhoud of de volledige form valid of niet is.
+
+Je merkt ook dat telkens iets niet valid is er een false wordt retourneert, moesten we dit niet doen zou de pagina gewoon refreshen.
+
+### De informatie van het form ontvangen in Node-red en een bevestigingsmail sturen
 
 We starten node-red op door in een powershell venster `node-red` in te tikken.
 
@@ -779,7 +900,7 @@ Om te werken in node-red surfen we naar [http://127.0.0.1:1880](http://127.0.0.1
 
 Als node-red nieuw is voor je, is het aangewezen om de [documentatie](https://nodered.org/docs/) omtrent node-red eerst even door te nemen.
 
-Goed, we zullen in dit voorbeeld even verder werken op de eerder gemaakte opdracht omtrent formvalidation. Hiervoor zullen we node-red gebruiken als onze server die enkele handelingen voor als zal verzorgen.
+Goed, we zullen nu Node-red gebruiken als onze server die enkele handelingen voor ons zal verzorgen.
 
 Dit is een veel gebruikte techniek binnen de web development wereld, op die manier kan je compleet lokaal de volledige functionaliteit van je website uittesten.
 
@@ -797,7 +918,7 @@ Laten we eerst de basis van onze node-red flow [hier](/files/node-red-basis.json
 
 Om die flow nu te importeren in node-red klik je op de 3 streepjes rechtsboven en kies je voor import.
 
-**index.html hosten**
+#### index.html hosten
 
 Laten we even het linker boven deeltje van de flow bekijken die ervoor zal zorgen dat de index.html pagina aan de browser zal aangeboden worden.
 
@@ -820,7 +941,7 @@ Geeft tot slot de informatie van de server terug aan de browser die ze origineel
 
 Klik nu op deploy en test uit door naar [http://localhost:1880/index.html](http://localhost:1880/index.html) te surfen.
 
-**bevestigingsmail versturen**
+#### bevestigingsmail versturen
 
 In dit stukje code zorgen we ervoor dat als de confirm.html pagina opgeroepen wordt eveneens een email verstuurd wordt.
 
@@ -828,16 +949,16 @@ Vooraleer we hieraan beginnen moeten we een aantal zaken nog doen:
 
 1. De module email installeren
 
-* Klik terug op de 3 streepjes rechtsboven en dan manage pallet
-* In het tabblad install zoek je nu naar node-red-node-email en klik dan op install.
+    * Klik terug op de 3 streepjes rechtsboven en dan manage pallet
+    * In het tabblad install zoek je nu naar node-red-node-email en klik dan op install.
 
 2. Je googleaccount voorbereiden zodat node-red die kan gebruiken
 
-*	Je bent er vrij van te doen wat je wil, maar hiervoor heb ik een nieuw account aangemaakt zodat er geen interactie is met mijn persoonlijk googleaccount.
-*	Log in en ga naar googleaccount beheren en kies vervolgens voor beveiligen.
-*	Kies voor dubbele authenticatie. Zorg dat je jouw gsm bij de hand hebt!
-*	Kies voor App-wachtwoorden, als app kies je email en als apparaat windows computer.
-*	Klik vervolgens op genereren en kopieer de toegangscode zodat je die straks kan gebruiken.
+    *	Je bent er vrij van te doen wat je wil, maar hiervoor heb ik een nieuw account aangemaakt zodat er geen interactie is met mijn persoonlijk googleaccount.
+    *	Log in en ga naar googleaccount beheren en kies vervolgens voor beveiligen.
+    *	Kies voor dubbele authenticatie. Zorg dat je jouw gsm bij de hand hebt!
+    *	Kies voor App-wachtwoorden, als app kies je email en als apparaat windows computer.
+    *	Klik vervolgens op genereren en kopieer de toegangscode zodat je die straks kan gebruiken.
 
 Laten we het stukje flow hiervoor even bekijken:
 
@@ -849,7 +970,7 @@ Vervolgens moeten we nog de email node instellen. Plaats hierin je google-emaila
 
 Klik terug deploy en test. Je zou nu een email moeten ontvangen.
 
-**De data van het form bewaren**
+#### De data van het form bewaren
 
 Aan de server kant willen we uiteraard de ingevulde informatie bewaren. Normaal doen we dit uiteraard in een database, in deze oefening bewaren we dit tijdelijk lokaal. Als we de server afsluiten zijn we uiteraard al onze informatie op dat ogenblik terug kwijt.
 
@@ -861,17 +982,18 @@ Via de functie-node kunnen we een stukje javascript gaan toevoegen. Hiermee zal 
 
 In het stukje javascript maken we gebruik van de flow variabele, dit is de data die via de lijntjes van de code van node naar node wordt doorgegeven.
 
-Om te vermijden dat bij de opstart, als er nog geen data is, er geen undefined in de array zou komen passen we de truc **||[]** toe. Hierdoor zal de eerste maal een lege array worden toegekend, vanaf dat er data is zal deze code niet meer uitgevoerd worden ( zie leerstof rond condities, wordt bekeken tot het punt dat de beslissing zeker is, rest van de code wordt dan niet meer doorlopen ) 
+Om te vermijden dat bij de opstart, als er nog geen data is, er geen undefined in de array zou komen passen we de truc `||[]` toe. Hierdoor zal de eerste maal een lege array worden toegekend, vanaf dat er data is zal deze code niet meer uitgevoerd worden ( zie leerstof rond condities, wordt bekeken tot het punt dat de beslissing zeker is, rest van de code wordt dan niet meer doorlopen ) 
 
 Als je de javascript hebt toegevoegd kan je dit terug gaan uittesten.
 
-Tips:
+::: tip TIP
 
-*Je kan altijd een debug-node verbinden aan een output van een functie om te onderzoeken wat er precies wordt doorgegeven.
+* Je kan altijd een debug-node verbinden aan een output van een functie om te onderzoeken wat er precies wordt doorgegeven.
 
-*Als je debugt kan je tijdelijk ook de emails tegenhouden door te dubbelklikken op de node en die onderaan te disabelen (niet vergeten terug aan te zetten dan)
+* Als je debugt kan je tijdelijk ook de emails tegenhouden door te dubbelklikken op de node en die onderaan te disabelen (niet vergeten terug aan te zetten dan)
+:::
 
-**De data beschikbaar stellen in een JSON formaat**
+#### De data beschikbaar stellen in een JSON formaat
 
 Met dit laatste stukje code zorgen we ervoor dat de date in een JSON-formaat wordt geplaatst.
 
@@ -887,7 +1009,17 @@ Voor de header is het **application/json** dat moet doorgegeven worden. (deze in
 
 Test uit door te surfen naar [http://localhost:1880/formdata.json](http://localhost:1880/formdata.json)
 
-## Asynchronous Javascript And XML (AJAX)
+
+::: tip Taak 4 - Formvalidation 
+
+![download](./images/assignment.png)
+
+* [opdrachtfiche](assignment4.html)
+:::
+
+## AJAX met tabellen en grafieken
+
+### Asynchronous Javascript And XML (AJAX)
 
 AJAX is een techniek om je webpagina te updaten zonder dat de volledige pagina opnieuw moet worden geladen.
 Het is Google die deze techniek heeft geïntroduceerd in hun zoekmachine (als je in google iets begint te type worden suggesties gegeven).
@@ -915,7 +1047,7 @@ Om dus te kunnen wachten op iets moet je het anders aanpakken:
 *	Via Promise (is iets nieuwer)
 *	Via Async en Await (is de nieuwste ontwikkeling)
 
-**Een callback voorbeeld via JQuery**
+#### Een callback voorbeeld via JQuery
 
 ```js
 $(document).ready(function(){
@@ -937,7 +1069,7 @@ $(document).ready(function(){
 
 Het grootste probleem hierbij is als je een callback functie in een andere callback functie gebruikt is error afhandeling bijzonder moeilijk.
 
-**Een promise voorbeeld via fetch API**
+#### Een promise voorbeeld via fetch API
 
 ```js
 document.getElementById('get').addEventListener('click', getData);
@@ -951,7 +1083,7 @@ De fetch API is ingebouwd in de browser en werkt via promises. Op het einde van 
 
 De response komt al vanaf de eerste data die de server teruggestuurd, daarom moeten we response.json() gebruiken om alle response te verzamelen.
 
-**Een async/await voorbeeld**
+#### Een async/await voorbeeld
 
 ```js
 document.getElementById('get').addEventListener('click', getData);
@@ -969,46 +1101,7 @@ De functie zal bij elke Await de code verlaten en later op dat punt dan verder d
 
 **Let op**: Deze techniek werkt niet bij oude browsers!
 
-## JavaScript Object Notation (JSON)
-
-![download](./images/jsonicon.png) 
-
-JSON is een formaat om op eenvoudige en compacte manier data te kunnen uitwisselen. Er zijn 2 structuren, objecten te herkennen aan {} en array’s te herkennen aan [].
-
-![download](./images/afbeelding12.png)
-
-```json
-{
-  "my_name": "Piet",
-  "my_number": 23,
-  "my_object": {
-    "my_array": [
-      5,
-      6,
-      7
-    ]
-  }
-}
-```
-
-Om een JSON string om te zetten naar een JSON object gebruik je de .parse() methode. 
-
-Test dit even uit in de console:
-```js
-const json = '{"result":true, "count":42}';
-const obj = JSON.parse(json);
-```
-
-**Merk op** dat bij een combinatie van “, je hier best de buitenste aanpast naar ‘.
-
-Om een JSON object om te zetten naar een string gebruik je de .stringify() methode.
-
-Test dit even uit in de console:
-```js
-console.log(JSON.stringify({ x: 5, y: 6 }));
-// expected output: "{"x":5,"y":6}"
-```
-## Herhaling via zelfstudie
+#### Herhaling via zelfstudie
 
 Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even bekijken:
 
@@ -1016,7 +1109,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 * Hoofdstuk 7 van [deze](https://www.linkedin.com/learning/learning-the-javascript-language-2) LinkedIn Learning videotutorial.
 
-## JSON data in een tabel weergeven
+### JSON-data in een tabel weergeven via AJAX
 
 We maken nu een pagina **formdata.html** aan die data uit formdata.json, die we in de vorige oefening via Node-red beschikbaar hebben gemaakt, leest en in een tabel weergeeft.
 
@@ -1059,18 +1152,13 @@ Test dit even uit:
 
 ![download](./images/afbeelding13.png)
 
-Wanneer je geen data krijgt wanneer je op GET drukt kan dit komen door CORS (**C**ross-**O**rigin **R**esource **S**haring). De browser verhindert dat er op "localhost:5500" data komt van een ander domein, "localhost:1180".
-
-* Mechanisme die via additionele HTTP headers een browser meldt dat een web applicatie die gestart werd op het origin domein permissie heeft om resources te gebruiken van een server in een ander domein
-* de server in het andere domein meldt via HTTP CORS headers dat resources mogen gebruikt worden door web applicaties in andere domeinen
-
-![download](./images/afbeelding14.png)
-
-Om domein B, in ons geval Node-RED cors headers mee te laten sturen dienen we het volgende aan te passen in het bestand: **c:\users\.node-red\settings.js**
-
-![download](./images/afbeelding15.png)
-
-Meer info hierover kan je op [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) terugvinden.
+> Wanneer je geen data krijgt wanneer je op GET drukt kan dit komen door CORS (**C**ross-**O**rigin **R**esource **S**haring). De browser verhindert dat er op "localhost:5500" data komt van een ander domein, "localhost:1180".
+> * Mechanisme die via additionele HTTP headers een browser meldt dat een web applicatie die gestart werd op het origin domein permissie heeft om resources te gebruiken van een server in een ander domein
+> * de server in het andere domein meldt via HTTP CORS headers dat resources mogen gebruikt worden door web applicaties in andere domeinen
+> ![download](./images/afbeelding14.png)
+> Om domein B, in ons geval Node-RED cors headers mee te laten sturen dienen we het volgende aan te passen in het bestand: **c:\users\.node-red\settings.js**
+> ![download](./images/afbeelding15.png)
+> Meer info hierover kan je op [Mozilla Developer](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) terugvinden.
 
 Om nu de data in een tabel te tonen kunnen we gebruik maken van de eerder gemaakte oefening 'Een tabel aanvullen met javascript'.
 
@@ -1087,7 +1175,7 @@ function addRow(email) {
 }
 ```
 
-2. Doe een fech, doorloop de verkregen array met een foreach:
+2. Doe een fetch, doorloop de verkregen array met een foreach:
 
 ```js
 async function getData() {
@@ -1099,13 +1187,13 @@ async function getData() {
 
 Test even uit.
 
-## Google chart
+### JSON-data in een Google chart weergeven via AJAX
 
 Google chart is een bibliotheek die grafieken tekent met HTML en SVG.
 
 Je kan een Quickstart [hier](https://developers.google.com/chart/interactive/docs/quick_start) terugvinden.
 
-### Laten we even een voorbeeld bekijken
+#### Laten we even een voorbeeld bekijken met Google Chart
 
 ![download](./images/afbeelding22.png)
 
@@ -1146,7 +1234,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
   // Een DataTable aanmaken
-  var data = new google.visualization.DataTable();
+  let data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
@@ -1158,19 +1246,19 @@ function drawChart() {
       ]);
   
   // De grafiek opties definiëren
-  var options = {'title':'How Much Pizza I Ate Last Night',
+  let options = {'title':'How Much Pizza I Ate Last Night',
                   'width':400,
                   'height':300};
 
   // De grafiek definiëren
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  let chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 
   // De grafiek tekenen
   chart.draw(data, options);
 }
 ```
 
-### Een voorbeeld met een lijngrafiek
+#### Een voorbeeld met een lijngrafiek
 
 Je kan [hier](https://developers.google.com/chart/interactive/docs/gallery/linechart) meer info nalezen over het maken van lijngrafieken. 
 
@@ -1188,7 +1276,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
     // We maken terug zelf onze data aan
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Date');
     data.addColumn('number', 'value');
 
@@ -1203,7 +1291,7 @@ function drawChart() {
     ]);
     
     // Stellen de grafiekopties in
-    var options = {
+    let options = {
         chart: {
             title: 'date versus value',
             subtitle: 'none'
@@ -1213,14 +1301,14 @@ function drawChart() {
     };
 
     // Definiëren de grafiek
-    var chart = new google.charts.Line(document.getElementById('chart_div'));
+    let chart = new google.charts.Line(document.getElementById('chart_div'));
 
     // En tot slot tekenen we de grafiek
     chart.draw(data, google.charts.Line.convertOptions(options));
 }
 ```
 
-### Een voorbeeld van een lijngrafiek uit JSON data
+#### Een voorbeeld van een lijngrafiek uit JSON data
 
 We gebruiken terug dezelfde html pagina
 
@@ -1246,7 +1334,7 @@ google.charts.setOnLoadCallback(drawChart);
 // async definitie voor fetch data
 async function drawChart() {
 
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Date');
     data.addColumn('number', 'value');
 
@@ -1256,7 +1344,7 @@ async function drawChart() {
     // ontvangen data toevoegen aan dataTable
     Object.keys(json).forEach (date => data.addRows([[date,json[date]]]));     
 
-    var options = {
+    let options = {
         chart: {
             title: 'date versus value',
             subtitle: 'none'
@@ -1265,17 +1353,17 @@ async function drawChart() {
         height: 500
     };
 
-    var chart = new google.charts.Line(document.getElementById('chart_div'));
+    let chart = new google.charts.Line(document.getElementById('chart_div'));
 
     chart.draw(data, google.charts.Line.convertOptions(options));
 }
 ```
 
-## Chart.js
+### Chart.js als alternatief op Google Chart
 
 De bibliotheek **chart.js** is gelijkaardig aan google chart, je kan [hier](https://www.chartjs.org/) meer informatie terugvinden.
 
-### Html
+#### Html
 
 Om de biblotheek te gebruiken moet je de **C**ontent **D**elivery **N**etwork toevoegen aan je HTML
 
@@ -1289,12 +1377,12 @@ In jou html pagina moet je dan een canvas element voorzien waar de grafiek moet 
 <canvas id="myChart" width="400" height="400"></canvas>
 ```
 
-### Javascript
+#### Javascript
 
 In jou script moet je eerst een variabele maken die verwijst naar het 2D gedeelte van jou canvas.
 
 ```js
-var ctx = document.getElementById('myChart').getContext('2d');
+let ctx = document.getElementById('myChart').getContext('2d');
 ```
 
 De data moet in array's komen.
@@ -1307,8 +1395,8 @@ var data=[6000,6500,6300];  // data gegevens
 Meestal zit de data in een JSON object, je kan key's en value's als volgt tot array's vormen:
 
 ```js
-var labels = Object.keys(json) // een array met alle key's
-var data = Object.values(json) // een array met alle value's
+let labels = Object.keys(json) // een array met alle key's
+let data = Object.values(json) // een array met alle value's
 ```
 
 Vervolgens kan je de grafiek tekenen.
@@ -1333,10 +1421,24 @@ Je kan meer info terugvinden op [chartjs.org](https://www.chartjs.org/docs/lates
 
 ![download](./images/assignment.png)
 
-* [opdrachtfiche](assignment2.html)
+* [opdrachtfiche](assignment5.html)
 :::
 
 ## Web API
+
+Een Application Programming Interface is een software service dat een set aan functies online beschikbaar stelt voor anderen.
+
+Zoals bv:
+* lezen en opzoeken van data
+* weer service
+* het updaten van content
+* autentificatie
+* complexe berekeningen
+* comprimeren of converteren van afbeeldingen
+
+Het vinden van een API kan lastig zijn. Alle grote web applicaties zoals Youtube, Google Maps, Dropbox, Twitter, ... hebben er een, maar er zijn ook ontelbare kleine specifieke API's die je ofwel doorkrijgt van een fabrikant of eventueel kan opzoeken via [rapidapi.com](https://rapidapi.com/marketplace).
+
+**Let op:** Niet alle API's zijn zomaar gratis!
 
 ### Philips Hue API
 
@@ -1555,19 +1657,13 @@ Je kan het icoon dus als volgt ophalen:
 document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+json.weather[0].icon+"@2x.png";
 ```
 
-::: tip oefening
-Probeer nu zelf even de verwachte temperatuur voor de komende 5 dagen per 3 uur in een chart.js grafiek uit te zetten.
+::: tip Taak 6 - Weersvoorspelling
 
-De API dat je hiervoor kan gebruiken is:
+![download](./images/assignment.png)
 
-`https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}&units={local units}&lang={your language}`
-
-Gebruik de zelfde methodiek, kijk eerst wat je binnen krijgt aan json object en vertrek van daar uit.
+* [opdrachtfiche](assignment6.html)
 :::
 
-## Herhaling via zelfstudie
+## Cheatsheet
 
-Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande hoofdstukken van het [handboek](https://limo.libis.be/primo-explore/fulldisplay?docid=TN_springer_s978-1-4842-4395-4_313453&context=PC&vid=VIVES_KATHO&search_scope=ALL_CONTENT&tab=all_content_tab&lang=nl_BE:) even bekijken:
-
-* Hoofdstuk 4 **Objects and Arrays**
-* Hoofdstuk 5 **Functions and Context**
+[Hier](/files/cheatsheet_js.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.

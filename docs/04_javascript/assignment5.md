@@ -25,9 +25,7 @@ Stap 5:
 
 Maak het geheel responsief, de tabel en de Google Chart dienen naast elkaar weergegeven te worden op een laptop en onder elkaar op een smaller beeldscherm.
 
-Uitbreiding:
-
-Maak een bijkomende grafiek aan met behulp van [Chart.js](https://www.chartjs.org/docs/latest/charts/line.html).
+**Extra uitdaging**: Maak een bijkomende grafiek aan met behulp van [Chart.js](https://www.chartjs.org/docs/latest/charts/line.html).
 
     
 ## Tips
@@ -52,7 +50,7 @@ for(let date in json.bpi) { addRow(date,json.bpi[date])};
 
 ## Evaluatie
 
-Deze opdracht staat op **30%** van de totaalscore voor het vak Web Development 2.
+Deze opdracht staat op **20%** van de totaalscore voor het vak Web Development 2.
 
 Er zal op het volgende geëvalueerd worden:
 * Is je opbouw van de pagina volgens het ‘good-practice’ principe is.

@@ -19,7 +19,9 @@ Na het klikken op de submit knop gebeuren volgende controles via Javascript:
 * Is de persoon 18+
 * Is het paswoord geldig (minstens 1 hoofdletter, minstens 1 kleine letter, minstens 1 cijfer en minstens 8 tekens lang)? (melding met de voorwaarde waaraan het paswoord moet voldoen)
 
-Indien alles goed is worden deze in een object bewaard en wordt het registratieformulier vervangen door “bedankt voor de registratie, er is een email verstuurd ter bevestiging van uw account”.
+Indien alles goed is worden deze in een JSON-object bewaard en wordt het registratieformulier vervangen door “bedankt voor de registratie, er is een email verstuurd ter bevestiging van uw account”.
+
+**Extra uitdaging**: Je host de pagina via Node-red en verstuurd dan ook effectief de mail.
     
 ## Tips
 Om de reguliere expressie te maken voor het paswoord kan je je inspireren op [link](http://html5pattern.com/Passwords) die aangehaald wordt in de te bekijken [video](https://www.linkedin.com/learning/validating-and-processing-forms-with-javascript-and-php/dynamic-validation-with-regular-expressions)
@@ -34,11 +36,13 @@ Om de leeftijd te bereken uit de geboortedatum kan je op volgende [link](https:/
 
 ## Evaluatie
 
-Deze opdracht staat op **20%** van de totaalscore voor het vak Web Development 2.
+Deze opdracht staat op **15%** van de totaalscore voor het vak Web Development 2.
 
 Er zal op het volgende geëvalueerd worden:
 * Is je opbouw van de pagina volgens het ‘good-practice’ principe is.
 * Is de basis HTML en CSS correct gebruikt.
 * Is je javascript correct geschreven.
 * Zijn de minimum gevraagde items aanwezig en correct geïmplementeerd.
+
+ 
 
