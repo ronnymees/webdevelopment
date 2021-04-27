@@ -270,7 +270,7 @@ n = 015   // het restulaat is 13 (octaal getalstelsel)
 '5'===5   // het resultaat is false (==== doet dat wel)
 
 let myString = "Hello World";
-myString.lenght         // het resultaat is 11
+myString.length         // het resultaat is 11
 myString.toUpperCase()  // het resultaat is HELLO WORLD
 
 // ook hier kan je \n en \t gebruiken voor nieuwe lijn of tab
