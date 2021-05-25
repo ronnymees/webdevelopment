@@ -1205,13 +1205,13 @@ In je HTML moet je de bibliotheek laden:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google chart</title>
-    <!-- De bibliotheek laden -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Google chart</title>    
 </head>
 <body>
     <!-- Plaats voor grafiek -->
     <div id="chart_div"></div>
+    <!-- De bibliotheek laden -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Onze eigen script file -->
     <script src="script.js"></script>
 </body>
@@ -1368,7 +1368,7 @@ De bibliotheek **chart.js** is gelijkaardig aan google chart, je kan [hier](http
 Om de biblotheek te gebruiken moet je de **C**ontent **D**elivery **N**etwork toevoegen aan je HTML
 
 ```html
-<script type="text/javascript" src="https://cdnjs.com/libraries/Chart.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 ```
 
 In jou html pagina moet je dan een canvas element voorzien waar de grafiek moet komen.
