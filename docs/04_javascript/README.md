@@ -1451,19 +1451,21 @@ We gaan aan de slag met Philps Hue:
 
 ![download](./images/afbeelding16.png)
 
-Op de campus Kortrijk is een bridge verbonden met een Telenet router. Via port forwarding is de bridge van thuis bereikbaar.
+Op de campus Kortrijk is een bridge met 3 lampen verbonden met het VIVES netwerk.
 
-De bridge  luistert op poort 80, de Telenet router is als volgt ingesteld: binnenkomende verbindingen op poort 49152 gaan naar poort 80
+::: tip 
+Je kan die bereiken via [VPN pulse secure](https://admin.kuleuven.be/icts/services/extranet/ssl-vpn-pulse-client).
+Installeer deze client voor jou laptop en login met je VIVES account om de VPN verbinding te maken.
 
-![download](./images/afbeelding17.png)
-
-![download](./images/afbeelding18.png)
+* IP adress = 10.198.120.60
+* User = QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz
+:::
 
 Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat uitleg over de Web API van Philips Hue nalezen.
 
 #### De status van de Philips HUE opvragen
 
-* GET request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights (via je browser).
+* GET request naar volgende URL `http://<ip-adress>/api/<user>/lights` (via je browser).
 
 * Om het JSON formaat netjes op je browser te krijgen kan je de [json formatter chrome extensie](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) installeren.
 
@@ -1471,7 +1473,7 @@ Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat 
 
 #### Een lamp aan- of uitzetten.
 
-* PUT request naar volgende URL http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state
+* PUT request naar volgende URL `http://<ip-adress>/api/<user>/lights/1/state`
 
 * body met JSON: {"on":false} merk op dat false een boolean is, geen string en dus zonder aanhalingstekens
 
@@ -1480,7 +1482,7 @@ Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat 
 Vanuit de console van je browser kan je dit testen met:
 
 ```js
-fetch("http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state",
+fetch("http://10.198.120.60/api/QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz/lights/1/state",
 {
 method: "PUT",
 body: JSON.stringify({"on":true})
@@ -1527,7 +1529,7 @@ window.addEventListener(('load'), (event) => {
             lamp_on=true;
         }
 
-        let response = await fetch("http://178.119.181.201:49152/api/d8cHvqBsSW9iVf6lLMlisoJj96RfV7VybBRwmD42/lights/1/state",
+        let response = await fetch("http://10.198.120.60/api/QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz/lights/1/state",
         {
             method: "PUT",
             body: JSON.stringify({"on":lamp_on})
