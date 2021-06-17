@@ -147,7 +147,7 @@ Pak nu het ZIP bestand uit naar `C:\PHP`.
 Open het bestand [C:\Apache\conf\httpd.conf](c:\Apache\conf\httpd.conf) en voeg hetvolgende onderaan het bestand toe:
 
 ```conf
-LoadModule php7_module "C:/PHP/php7apache2_4.dll"
+LoadModule php_module "C:/PHP/php8apache2_4.dll"  #correct this to your version of php
 AddHandler application/x-httpd-php .php
 PHPIniDir "C:/PHP"
 ```
@@ -164,15 +164,18 @@ Maak een kopie van het bestand `C:\PHP\php.ini-development` en noem het `C:\PHP\
 Open het bestand in jou favoriete editor en voeg onderaan het volgende toe:
 
 ```ìni
-zend_extension=[naam van de xdebug extensie file]
 [XDebug]
-xdebug.remote_enable = 1
-xdebug.remote_autostart = 1
+zend_extension=[naam van de xdebug extensie file]
+xdebug.mode = debug
+xdebug.start_with_request = yes
+xdebug.discover_client_host = 1
 ```
 
 Ga nu op zoek naar `;extension=curl` en verwijder de `;` zodat de cURL module actief wordt.
 
 Ga op zoek naar `;extension=mysqli` en verwijder de `;` zodat de mysqli module actief wordt.
+
+Ga op zoek naar `;extension=openssl` en verwijder de `;` zodat de openssl module actief wordt.
 
 Start of herstart de Apache service in Windows zodat de nieuwe instellingen van kracht worden.
 

@@ -411,7 +411,7 @@ Logische beslissingen in PHP werken op identiek dezelfde wijze als in c#. De opb
 
 ### Herhalingen
 
-We onderscheiden drie verschillende lussen of herhalingen in PHP.
+De reeds gekende herhalingen komen ook in PHP terug.
 
 ```php
 <?php
@@ -421,6 +421,14 @@ We onderscheiden drie verschillende lussen of herhalingen in PHP.
         echo $i . ", ";
         $i++;
     }
+
+    // Do while lus
+    $i = 1;
+    do{
+        $i++;
+        echo "The number is " . $i . "<br>";
+    }
+    while($i <= 3);
 
     // For lus
     for ($i = 0; $i <= 10; $i++) {
@@ -630,6 +638,13 @@ Tot slot vervangen we de binnenste geneste for-lus door een functie:
 </html>
 ```
 
+::: tip Taak 7 - Sensordata in een tabel
+
+![download](./images/assignment.png)
+
+* [opdrachtfiche](assignment7.html)
+:::
+
 ## Een WEB-API raadplegen vanuit PHP
 
 Het verschil met wat we in javascript hebben gedaan is hier dat de client geen verbinding meer hoeft te maken met een andere server. Het is de server die dit nu zal doen en het resultaat gewoon naar de client browser sturen.
@@ -682,7 +697,7 @@ echo "<div>a is {$data->args->a}<div>";
 echo "<div>b is {$data->args->b}<div>";
 ```
 
-### openweathermap API met PHP
+### Deze techniek even toepassen op een WEB-API die we reeds kennen
 
 We gebruiken terug cURL om via openweathermap het weer op te vragen:
 
@@ -698,15 +713,69 @@ We gebruiken terug cURL om via openweathermap het weer op te vragen:
     echo "<img id=\"icoon\" src=\"http://openweathermap.org/img/wn/{$data->weather[0]->icon}@2x.png\"></img>";
 ?>
 ```
+## Zelf een WEB-API schrijven in PHP
 
-Probeer nu zelf even een forcast uit:
+Als we een WEB-API gebruiken sturen we een HTTP GET request naar een url en krijgen een JSON response terug.
 
-PHP:
-* opvragen weather forcast via https://api.openweathermap.org/data/2.5/forecast
-* de elementen in de array "list" in een tabel tonen.
+### Opvangen van een HTTP GET request
 
-Javascript:
-* een linechart maken van de temperaturen via Google chart.
+Maak hiervoor een file `testapi.php` aan. Dat zal tevens onze url zijn.
+
+Laat ons een WEB-API maken waar we 2 cijfers aan kunnen geven en die als response alle gehele getallen tussen die cijfers geeft.
+
+Onze HTTP GET Request zou er dus als volgt kunnen uitzien: `testapi.php?start=1&eind=10`.
+
+Om die twee getallen uit de GET request te halen gaan we als volgt te werk:
+
+```php
+<?php
+    // GET input ontvangen
+    $start = (int)$_GET["start"];
+    $eind = (int)$_GET["eind"];
+    var_dump($start,$eind);
+?>
+```
+We gebruiken `(int)` om zeker te zijn dat we integers definiëren i.p.v. strings.
+
+### De array van cijfers maken 
+
+We werken het gemakkelijkst met een array in PHP, je kan deze ook eenvoudig omvormen naar JSON.
+
+```php
+<?php
+    // Array opbouwen
+    $output = array();
+    $index = 0;
+    for ($i = $start; $i <= $eind; $i++) {
+        $key = "getal_".$index;
+        $output[$key]=$i;
+        $index++;
+    }
+    var_dump($output);
+?>
+```
+
+### Een JSON response versturen
+
+Tot slot zetten we de header voor ons antwoord juist en geven we een response via `echo`.
+M.b.v. `json_encode` kunnen we eenvoudig de array omvormen tot een JSON object.
+
+```php
+<?php
+    // Response aanmaken
+    // header instellen
+    header('Content-Type: application/json');
+    // response
+    echo json_encode($output);
+?>
+```
+
+::: tip Taak 8 - Weersvoorspelling
+
+![download](./images/assignment.png)
+
+* [opdrachtfiche](assignment8.html)
+:::
 
 ## PHP en Forms
 
@@ -760,7 +829,7 @@ We maken een bestand `form.php` met volgende inhoud:
                     </select>
                 </li>
                 <li>
-                    <label for="number2">Number 1:</label>
+                    <label for="number2">Number 2:</label>
                     <input type="number" id="number2" name="number2">
                 </li>
             </ul>
@@ -775,7 +844,7 @@ Onze form ziet er als volgt uit:
 
 ![afbeelding](./images/afbeelding5.png)
 
-De form stuurt hetvolgende naar de server:
+Als je in Chrome de ontwikkelomgeving opent [F12] en naar het tabblad `netwerk` gaat kan je volgen welke informatie wordt verstuurd:
 
 ![afbeelding](./images/afbeelding6.png)
 
@@ -888,6 +957,14 @@ Dit ziet er dan als volgt uit:
     </body>
 </html>
 ```
+
+::: tip Taak 9 - Registratie- en loginform
+
+![download](./images/assignment.png)
+
+* [opdrachtfiche](assignment9.html)
+:::
+
 ## PHP en mySQL
 
 ### Zelfstudie
@@ -931,7 +1008,7 @@ INSERT INTO subjects(menu_name, position, visible) VALUES ('Contact', 4 , 1);
 /* Read */
 SELECT * FROM subjects WHERE id=2;
 /* Update */
-UPDATE subjects SET postion='3', visible='0' WHERE id=2;
+UPDATE subjects SET position='3', visible='0' WHERE id=2;
 /* Delete */
 DELETE FROM subjects WHERE id=4 LIMIT 1;
 ```
@@ -1121,6 +1198,179 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 ```
 
 Zo, nu hebben we een PHP pagina waarmee we records kunnen toevoegen en wissen in onze tabel.
+
+## PHP en mail
+
+Om een mail te versturen gebruiken we [PHPMailer](https://github.com/PHPMailer/PHPMailer).
+We gebruiken de minimum installatie. Hiervoor maken we een folder `PHPMailer\PHPMailer` aan en kopieren de map `src` hierin.
+
+Zoals je ook in de documentatie van PHPMailer kan lezen moeten we in ons PHP bestand de PHPMailer importeren:
+
+```php
+<?php
+    // import PHPMailer classes
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require './PHPMailer/PHPMailer/src/Exception.php';
+    require './PHPMailer/PHPMailer/src/PHPMailer.php';
+    require './PHPMailer/PHPMailer/src/SMTP.php';
+?>
+```
+### Een bevestigingsmail versturen
+
+We starten met [een eenvoudige pagina](/files/mailform.zip) met een form waar je een voornaam, naam en email adres kan ingeven.
+
+Bij een geldige submit kunnen we nu in het bestand `mailconfirm.php` een berichtje naar dat email adres sturen.
+
+We starten met het ophalen van de POST data:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form confirmation</title>
+    </head>
+    <body>
+        <?php
+            // Post data ophalen
+            $firstname = $_POST['firstname']; 
+            $name = $_POST['name']; 
+            $email = $_POST['email']; 
+
+            //debug: komt de info binnen ?
+            echo "<p>Firstname = ".$firstname." Name = ".$name." Email = ".$email."</p>" // mag straks terug weg
+
+            // Genereren APIkey
+
+            // Mail versturen
+           
+            // Content op pagina plaatsen
+            
+        ?>
+    </body>
+</html>
+```
+
+Laten we nu via PHPMailer een mail versturen (raadpleeg hiervoor de documentatie over het gebruik van PHPMailer).
+
+We starten met het inporteren van PHPMailer en het definieren van de mailserver info, dit doen we bovenaan ons bestand:
+
+```php
+    // import PHPMailer classes
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require './PHPMailer/PHPMailer/src/Exception.php';
+    require './PHPMailer/PHPMailer/src/PHPMailer.php';
+    require './PHPMailer/PHPMailer/src/SMTP.php';
+
+    // instellen van de mailserver info
+    $mailhost = 'smtp.gmail.com';
+    $mailuser = '<jou gmail adres>';
+    $mailpass = '<jou app wachtwoord>';
+```
+Nu kunnen we de mail beginnen samenstellen:
+
+```php
+    // Genereren APIkey
+    $apikey = "voorlopige test";
+
+    // Mail versturen
+    $mail = new PHPMailer(true);
+
+    $mail->SMTPDebug  = SMTP::DEBUG_OFF;
+    $mail->isSMTP();
+    $mail->Host       = $mailhost;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $mailuser;
+    $mail->Password   = $mailpass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
+           
+    $mail->setFrom($mailuser, 'Vives IoT - Webdevelopment 3 course');
+    $mail->addAddress($email, $firstname." ".$name);
+    $mail->addReplyTo('noreply@vives-iot.be', 'Do not reply to this mail');
+
+    $mail->isHTML(true);
+    $mail->Subject    = 'Welcome to our VIVES IoT page';
+    $mail->AddEmbeddedImage('./images/logo.png','logo_vives');
+    $mail->Body       = 
+    '<html>
+        <style>
+            html{background-color: lightgray;}
+            body{width: 800px;margin: auto;margin-top: 20px;margin-bottom: 20px;background-color: white;padding: 20px;font-family: Calibri;font-size: 18px;}
+            #banner{margin: 0px;border-bottom: 2px solid;border-color:  rgb(0,156,196);}
+            #logo {margin: 5px;width: 94px;height: 108px;float: left;}
+            #maintext h1 {margin: 0px;color: rgb(0,156,196);font-family: aller;font-size: 38px;width: 100%;text-align: center;}
+            #maintext p {margin: 0px;margin-bottom: 50px;color: black;width: 100%;text-align: center;}
+            #info{margin: 10px;margin-bottom: 40px;padding: 10px;border: 1px solid rgba(0, 0, 0, 0.1);background-color: rgb(255, 255, 255);box-shadow: 10px 8px 16px 0px rgba(0,156,196,0.4);}
+        </style>
+            
+        <body>
+            <div id="banner">
+                <img id="logo" src="cid:logo_vives"></a>
+                <div id="maintext">
+                    <h1>VIVES Internet of Things</h1>
+                    <p>Design your future</p>                
+                </div>        
+            </div>
+
+            <p>Hello '.$firstname.',</p>
+            <p>Thank you for registering on the VIVES IoT page!</p>
+            <p>We have registered the following credentials:<p>
+            <ul>
+                <li>Firstname: <b>'.$firstname.'</b></li>
+                <li>Name: <b>'.$name.'</b></li>
+                <li>Email: <b>'.$email.'</b></li>                                    
+            </ul>
+            
+            <div id="info">
+                <p>You can use your personal APIkey for IoT purposes.</p>
+                <ul>
+                    <li>Your <b>APIkey</b> = '.$apikey.'</li>
+                </ul>
+            </div>
+
+            <p>Regards,<p>
+            <p>The VIVES IoT team.</p>                                
+        </body>
+    </html>';    
+    $mail->send();
+```
+Tot slot kunnen we de confirmatie tekst voorzien:
+
+```php
+    // Content op pagina plaatsen
+    echo "<div class=\"response\" style=\"background-color:#b3e6b3;color:#267326;border-radius:5px;width:90%;padding:12px 20px;margin:10px\">";
+    echo "<p>".$firstname.", you succesfully registrated.</p>";
+    echo "<p>A confirmationmail has been send to ".$email." with your APIkey</p>";
+    echo "</div>"; 
+```
+
+### Een APIkey genereren
+
+Bij het gebruik van een WEB API zal veelal een APIkey worden aangemaakt. Deze zal jou user en wachtwoord combinatie vervangen om de API te gebruiken.
+
+Een APIkey is een onleesbare stringcombinatie van tekens die als volgt kan gegenereerd worden (dit is slecht 1 van de mogelijkheden om dit te doen).
+
+```php
+    // apikey aanmaken
+    mt_srand((double)microtime()*10000); // optioneel voor php 4.2.0 en hoger.
+    $charid = strtoupper(md5(uniqid(rand(), true)));
+    $hyphen = chr(45);// "-"
+    $apikey = chr(123)// "{"
+        .substr($charid, 0, 8).$hyphen
+        .substr($charid, 8, 4).$hyphen
+        .substr($charid,12, 4).$hyphen
+        .substr($charid,16, 4).$hyphen
+        .substr($charid,20,12)
+        .chr(125);// "}"
+```
 
 ## PHP en cookies & sessions
 
