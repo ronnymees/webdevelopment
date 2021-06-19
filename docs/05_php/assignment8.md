@@ -18,8 +18,24 @@ Javascript:
 
 ## Tips
 
+Jou PHP gedeelte van de webpagina zou er bv. zo kunnen uitzien:
+
+![download](./images/afbeelding12.png)
+
 Het opvragen van de weersvoorspelling kan via https://api.openweathermap.org/data/2.5/forecast.
+
+Om de array in het json object antwoord te doorlopen kan je bv. als volgt te werk gaan:
+
+```php
+// doorlopen van de array list in het object
+foreach ($data['list'] as $key) {
+    // de info van de temperatuur zit dan bv in
+    $temp = $key['main']['temp'];
+}
+```
+
 Gebruik in Javascript een selector om de gegevens uit de tabel te halen.
+Maak gebruik van bv een class om die te kunnen onderscheiden van de rest van de info op de pagina.
 
 ## Evaluatie
 
