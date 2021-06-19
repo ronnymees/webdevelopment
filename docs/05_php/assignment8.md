@@ -18,7 +18,7 @@ Javascript:
 
 ## Tips
 
-Jou PHP gedeelte van de webpagina zou er bv. zo kunnen uitzien:
+Jou webpagina zou er bv. zo kunnen uitzien:
 
 ![download](./images/afbeelding12.png)
 
