@@ -1,60 +1,114 @@
 # Introductie in web development
 
-Laten we eerst even kijken naar de infrastructuur die we gebruiken om de web informatie bij de gebruiker te krijgen.
+## Hoe werkt internet ?
+
+We maken met onze PC een verbinding met het internet via een Internet Service Provider (ISP). Als we in onze browser (bv. Google Chrome) een domein naam intikken om een website te bezoeken dan gebeuren er verschillende zaken:
+* Je browser zal eerst een Domain Name System (DNS) raadplegen die de door jou ingetikte domein naam zal vertalen naar een IP adres.
+* Nu kan je browser de juiste webserver die de website hosts contacteren om de betreffende webpagina op te vragen.
+* Die webserver zal op zijn beurt de files (HTML, CSS en JS) aanleveren om de website op te bouwen.
+* Je browser zal nu de ontvangen files gebruiken om je webpagina te tonen.
+
+![download](./images/afbeelding2.jpg) 
+
+Laten we hier even dieper op inzoemen.
+
+## Wat is 'het internet' eigenlijk ?
+
+We kunnen stellen dat 'het internet' een infrastructuur is die we gebruiken om web informatie van een server tot bij een gebruiker te krijgen.
+
+Die infrastructuur ziet er als volgt uit:
 
 ![download](./images/internet.png)
 
-De infrastructuur gebruikt om informatie over de wereld te verspreiden noemen we internet. Internet is eigenlijk een netwerk van netwerken. Om deze informatiestroom op gang te krijgen zijn enkele protocols van kracht.
+Internet is eigenlijk een netwerk van netwerken. Om deze informatiestroom op gang te krijgen zijn enkele afspraken (protocollen) van kracht.
 
-**IP-protocol**
+## Hoe vind een browser de juiste weg in het internet ?
+
+### Domain Name Server
+
+**D**omain **N**ame **S**ervers zijn zoals het adressboek voor websites. Als je een domain naam in je browser intikt, dan raadpleegt de browser een DNS server om het werkelijke adres (IP-adres) van de server die de website hosts te weten. Nu kan de browser naar dat adres een vraag (HTTP boodschap) sturen.
+ 
+### IP adres
+
+Net zoals je thuisadres is dit een uniek nummer voor elk toestel die op een netwerk gekoppeld is.
+
+#### IPv4
+
+Momenteel wordt er voornamelijk gebruik gemaakt van IPv4. Deze is 32 bits en bestaat uit vier getallen tussen de 0 en 255 gescheiden door een punt. Een voorbeeld van een IPv4 adres is: “192.168.1.1”. Met deze constructie zijn er iets meer dan vier miljard adressen mogelijk.
+
+#### IPv6
+
+Echter door de groei van het aantal apparaten dat verbinding maakt met het internet zijn er te weinig adressen beschikbaar. Om dit probleem op te lossen is IPv6 in het leven geroepen welke veel meer adressen beschikbaar heeft. Ipv6 is 128 bits waardoor er triljoenen adressen beschikbaar zijn per aardbewoner. Een voorbeeld notatie van een IPv6 adres is: “fdb5:3682:01d0:6648:0000:0000:0000:0001” overigens kan dit verkort worden genoteerd tot: “fdb5:3682:01d0:6648::1”. IPv6 wordt gefaseerd ingevoerd en kan naast IPv4 gebruikt worden. Sommige apparaten maken al gebruik van IPv6 maar de meeste maken nog gebruik van IPv4.
+
+## Welke protocollen gebruikt internet ?
+
+### IP-protocol
 
 Het **I**nternet **P**rotocol definieerd de manier waarop informatie is verzonden d.m.v pakketjes langs een willekeurige weg naar de ontvanger. Die informatie kan allerhande data bevatten. Dit protocol gebruikt de 'best-effort' techniek om die data te bezorgen zonder enige vorm van fout- of datastroom controle. 
  
 ![download](./images/afbeelding2.png)
 
-**TCP-protocol**
+### TCP-protocol
 
 Het **T**ransmission **C**ontrol **P**rotocol verzekerd het aanleveren van IP pakketjes zonder verlies van pakketjes en zorgt er ook voor dat deze in de juiste volgorde aangeleverd worden. De tijd nodig om de data te versturen is onderschikt aan de zekerheid dat alle data correct aangeleverd wordt.
  
 ![download](./images/afbeelding3.png)
 
-**HTTP-protocol**
+### HTTP-protocol
 
-**H**yper**T**ext **T**ransfer **P**rotocol is een applicatie protocol dat de taal definieerd om clients en servers te laten communiceren. Het is tevens ook het protocol die gebruikt wordt om webpagina's te versturen en ontvangen.
+**H**yper**T**ext **T**ransfer **P**rotocol is een applicatie protocol dat de taal definieerd om clients en servers te laten communiceren. De browser speelt hier de rol van HTTP-client en de webserver de HTTP-server. De communicatie tussen beiden
+bestaat uit een of meerdere request bericht(en) en (verstuurd door de browser) en met telkens (hopelijk)
+een bijbehorend response bericht van de server.
+
+Elke request die de browser naar de server stuurt bevat een URL waarmee een resource
+geïdentificeerd wordt (bv. een document, een video, een afbeelding, ...) waarin de browser
+geïnteresseerd is. De respons wordt teruggestuurd op basis van het IP‐adres van de client computer.
+
 
 ![download](./images/afbeelding4.png)
 
-**DNS**
+::: tip Oefening
+Duid de verschillende onderdelen van de volgende URL aan.
 
-**D**omain **N**ame **S**ervers zijn zoals het adressboek voor websites. Als je een web adres in je browser intikt, dan zoekt de browser via DNS het werkelijke adres van de site alvorens het te kunnen ontvangen van de website. De browser moet bepalen op welke server die website staat zodat het een HTTP boodschap naar de juiste plaats kan sturen.
- 
-**IP adres**
+https://www.bol.com/nl/p/hoe‐werkt‐dat‐nou/9200000057347012/?country=BE&suggestionType=browse#product_alternatives
+:::
 
-Een IP adres is een set van vier nummers gescheiden door een punt (vb 192.168.1.1). Net zoals je thuisadres is dit een uniek nummer voor elk toestel die op een netwerk gekoppeld is.
+Elke response die de server terugstuurt bevat een status code die aangeeft om wat voor soort response het gaat (alles ok, server overbelast, toegang tot resource verboden, etc).
 
-## Hoe wordt een website aangeleverd aan jou browser ?
+::: tip Oefening
+Zoek onderstaande HTTP status codes op die in een response kunnen voorkomen en schrijf hun betekenis op. Omcirkel deze die je al eens bent tegengekomen bij het surfen. Schrijf ook een gepaste hoofding boven de kolommen.
 
-1. Jou computer stuurt een aanvraag voor een webpagina naar de router. De router verzorgt internet toegang voor jou huis of werkplek.
+|   |   |   |   |
+| - | - | - | - |
+| 200 | 301 | 400 | 500 |
+| 204 | 302 | 401 | 503 |
+|     | 303 | 404 |     |
+:::
 
-2. De router stuurt vervolgens jou aanvraag door naar jou Internet service provider (ISP). 
+## Wat is nu web development ?
 
-3. Jou ISP converteert de tekens van you URL aanvraag naar een IP adres.
+Onder web development verstaan we het aanmaken van files die content zal beschikbaar stellen aan de gebruiker en interactie mogelijk zal maken.
+We onderscheiden hier **Front-end** webdevelopment en **Back-end** webdevelopment.
 
-4. A.d.h.v. het IP adres weet jou ISP nu naar welke server jou aanvraag en jou IP adres moet verstuurd worden. 
+![download](./images/afbeelding6.png) 
 
-5. De website server ontvangt jou aanvraag en stuurt een kopie van de webpagina code naar jou computer zodat jou browser die kan tonen.
+### Front-end web development
 
-6. You browser zal tot slot de code interpreteren en de webpagina tonen op het scherm.
+Front-end of client-side is een term gebruikt om duidelijk te maken dat de verwerking door de browser van de client gebeurt.
 
-![download](./images/afbeelding2.jpg) 
+We onderscheiden hier:
+* Een **HTML** bestand die zorgt voor de structuur van de pagina
+* Een **CSS** bestand die zorgt voor de opmaak van de pagina
+* Een **JS** bestand die zorgt voor dynamische mogelijkheden van de pagina
 
-## Client side of Server Side ?
+### Back-en web development
 
-Een statische webpagina is gebouwd met **HTML** (inhoud) en **CSS** (stijl). Dit is opgebouwd op het WYSIWYG principe. Het is een zeer flexibele manier om webpagina's te bouwen maar je hebt steeds een IT specialist nodig voor wijzigingen.
+Back-end of server-side is een term gebruikt om duidelijk te maken dat de verwerking door de webserver gebeurt.
 
-Een dynamische webpagina heeft extra scripts. Meestal zijn deze webpagina's gebaseerd op een sjabloon. Het aanbrengen van wijzigingen is hier veel eenvoudiger, geen IT specialist nodig.
+We onderscheiden hier:
+* Een **PHP** bestand die zorgt voor het genereren van HTML, CSS en JS bestanden die dan aan de browser kunnen aangeleverd worden.
+* Een **Database** bv MYSQL die er voor zorgt dat data bewaard en geraadpleegd kan worden.
 
-**Javascripts** worden aan de client-side uitgevoerd, terwijl **PHP**, ASP.NET,... scripts aan de server-side uitgevoerd worden.
 
-![download](./images/afbeelding5.jpg) 
+
 

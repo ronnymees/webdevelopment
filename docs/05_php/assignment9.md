@@ -28,6 +28,10 @@ In je php file `register.php` zit een stuk HTML met een form die volgende input 
 
 De submit van deze form verwijst dus naar dezelfde pagina en gebruikt hierbij de HTTP POST request techniek.
 
+Jou registratieform zou er bv zo kunnen uitzien:
+
+![download](./images/afbeelding13.png)
+
 **PHP:**
 
 1. Je valideert alle inputvelden als volgt:
@@ -35,12 +39,13 @@ De submit van deze form verwijst dus naar dezelfde pagina en gebruikt hierbij de
     * Alle velden zijn verplicht
     * Lege of foutieve velden worden in het rood omkaderd.
     * De velden 'telefoonnummer', 'email' en 'wachtwoord' worden via een reguliere expressie gevalideerd.
-    * Fouten bij de velden 'telefoonnummer', 'email' en 'wachtwoord' worden aan de gebruiker gesignaleerd in een extra rood vak dat verschijnt bovenaan alle inputvelden.
+    * Fouten bij de velden 'telefoonnummer', 'email' en 'wachtwoord' worden aan de gebruiker gesignaleerd in een rode tekst net onder de invulvelden en boven de submit knop.
+    * Het wachtwoord is minstens 8 tekens lang en bevat minstens 1 hoofdletter, 1 cijfer en 1 ander teken.
     * Als alles correct is ingevuld verschijnt een "Bedankt voor uw registratie..." boodschap op de pagina.
 
 2. Een gevalideerde input verwerken:
 
-    * Je stopt alle inputs in een json object.
+    * Je stopt alle inputs in een associative array.
     * Je genereerd een APIkey
     * Je voegt deze user informatie toe aan de database.
     * Er wordt een bevestigingsmail verstuurd met een HTML body die er bv zo zou kunnen uitzien:

@@ -1,28 +1,58 @@
-﻿# Een webpagina bouwen in HTML
+﻿# De structuur van een webpagina
 
 ![download](./images/htmlicon.png)
 
-HTML is de standaard markup language om web pagina's aan te maken. HTML staat voor **H**yper **T**ext **M**arkup **L**anguage. Het beschrijft de structuur van een webpagina a.d.h.v. HTML elementen die de browser vertellen hoe de paginainhoud te tonen. De HTML elementen noemen we ook **tags**.
+De structuur van een webpagina wordt opgemaakt via HTML, dat is de standaard **markup language** om web pagina's aan te maken. HTML staat voor **H**yper **T**ext **M**arkup **L**anguage. Het beschrijft de structuur van een webpagina a.d.h.v. HTML elementen die de browser vertellen hoe de pagina inhoud gestructureerd is. 
 
-Een HTML element start meestal met een **opening tag** en eindigd dan ook met een **closing tag**.
+HTML elementen, ook **tags** genoemd, zijn als een soort containers. Ze vertellen iets over de informatie binnenin hun **opening tag** en **closing tag**.
+
+![download](./images/afbeelding2.png)
+
+Laten we nog even zo'n tag nader bekijken:
 
 ```html
-For example
-<h1>This is a header element</h1>
+<a href="https://www.vives.be">Visit VIVES</a>
 ```
-## Wat heb je nodig om HTML code te schrijven en het resultaat te bekijken?
+* `<a>` is hierbij de **opening tag**
+* `href` is hierbij een **attribute name**
+* `"https://www.vives.be"` is hierbij een **attribute value**
+* `</a>` is hierbij de **closing tag**
+
+## Wat heb je nodig?
 
 Omdat HTML eigenlijk gewoon tekst is, kan je jou favoriete tekstverwerker zoals Notepad, Notepad++, Visual Studio Code, Brackets, ... hiervoor gebruiken. Sommige van die editors bieden ook een 'live preview' wat zeer handig is terwijl je jou pagina ontwerpt.
 
 Tijdens deze cursus zullen we gebruik maken van **Visual Studio Code**. Mocht je dit nog niet geïnstalleerd hebben, neem dan eens een kijkje bij software installatie.
 
-## De basis van een HTML document
+
+## Hoe zit de basis structuur van een HTML document in elkaar ?
+
+Als je een nieuw HTML document start dan ziet de basisstructuur er als volgt uit:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
+```
+
+Laten we dit even nader bekijken.
 
 Alle HTML documenten moeten starten met een document type declaration `<!DOCTYPE html>`.
 
 Het HTML document zelf start met `<html lang="...">` en eindigt met `</html>`. Hierbij is `lang="..."` belangrijk voor tekst voorleessoftware, het kan anders nogal vreemd klinken :-).
 
-Het HTML element `<head>` is een container voor de metadata van het document. Metadata wordt niet getoond op de pagina. Het `<meta>` element wordt gebruikt metadata zoals de pagina beschrijving, zoektermen, auteur, ... te specificeren.
+Het HTML element `<head>` is een container waar informatie over de pagina in terecht komt. Metadata wordt niet getoond op de pagina. Het `<meta>` element wordt gebruikt om metadata zoals de pagina beschrijving, zoektermen, auteur, ... te specificeren.
+
+Bijvoorbeeld:
 
 ```html
 <meta charset="UTF-8">
@@ -41,43 +71,33 @@ Het HTML element `<head>` is een container voor de metadata van het document. Me
 
 Het zichtbare deel van het HTML document kan je terugvinden tussen `<body>` en `</body>`.
 
-::: warning Noot
-Je gebruikt best insprongen bij het schrijven van HTML code. Het bevorderd de leesbaarheid van je HTML tekst.
-Je kan dit automatisch doen via het rechtermuis menu in Visual Studio Code, je kiest dan voor format document.
-:::
+::: tip Zorg voor een leesbaar HTML document
+
+**1. Maak gebruik van insprongen**
+
+Je kan insprongen automatisch toevoegen in Visual Studio Code door voor `format document` te kiezen in het rechtermuis menu.
+Het bevorderd de leesbaarheid van je HTML document.
+
+**2. Plaats commentaar bij je code**
+
+Het toevoegen van commentaar aan je HTML document kan zorgen voor meer duiding bij een bepaald stukje code waardoor de lezer sneller begrijpt wat er gebeurt.
 
 ```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My First HTML</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1>My First Heading</h1>
-        <p>My first paragraph.</p>
-    </body>
-</html>
-```
-
-### Commentaar
-
-Het gebruik van commentaar in een HTML pagina wordt als een 'good practice' beschouwd. 
-
-```html
-Example
 <!-- This is a comment line -->
 
 <!-- And this is
 a comment
 block -->
 ```
+:::
 
-## HTML elementen
+## Welke elementen hebben we nu allemaal ter beschikking om onze pagina structuur te geven ?
 
-### Hoofding
+### Tekst
 
-Een hoofding kan je aangeven met de `<h1>` tot `<h6>` tags. Waarbij de `<h1>` de meest belangrijkste hoofdsing is en de `<h6>` de minst belangrijke.
+#### Hoofding
+
+Een hoofding kan je aangeven met de `<h1>` tot `<h6>` tags. Waarbij de `<h1>` de meest belangrijkste hoofding is en de `<h6>` de minst belangrijke.
 
 ```html
 <h1>Heading 1</h1>
@@ -93,7 +113,7 @@ Een hoofding kan je aangeven met de `<h1>` tot `<h6>` tags. Waarbij de `<h1>` de
 Hoofdingen worden door zoekmachines gebruik om de structuur van je webpagina te bepalen. Je gebruikt ze dan ook uitsluitend daarvoor en niet om bepaalde tekst groter of vetjes te krijgen.
 :::
 
-### Paragraaf
+#### Paragraaf
 
 Een paragraf kan je herkennen aan het `<p>` element. 
 
@@ -108,7 +128,7 @@ In jou html code kan je extra spaties of lijnen toevoegen, maar de browser zal d
 Als je een nieuwe lijn wil in een paragraaf kan je hiervoor `<br>` gebruiken.
 :::
 
-### Formatering
+#### Formatering
 
 Alle tekst in een html document kan geformatteerd worden door volgende elementen:
 
@@ -123,7 +143,7 @@ Alle tekst in een html document kan geformatteerd worden door volgende elementen
 * `<sub>` - subscript
 * `<sup>` - superscript
 
-### Speciale characters
+#### Speciale characters
 
 Enkele veel gebruikte characters:
 
@@ -134,7 +154,8 @@ Enkele veel gebruikte characters:
 ::: warning Noot
 Gebruik geen `-` in html tekst maar eerder `&ndash`, `&mdash` of `&minus` afhankelijk van de context.
 :::
-### Citaten
+
+#### Citaten
 
 Als je iets wil citeren uit een boek, magazine of website dan kan je gebruik maken van `<q>` voor een kort citaat of `<blockquote>` voor een deel van een citaat.
 
@@ -149,64 +170,83 @@ WWF works in 100 countries and is supported by
 close to 5 million globally.
 </blockquote>
 ```
-### Media
 
-#### Afbeeldingen
+### Lijsten
 
-Afbeeldingen kunnen het ontwerp van je pagina enorm versterken en terzelfdertijd de inhoud verduidelijken.
+#### Niet geordende lijst
 
-Afbeeldingen worden aangegeven met het `<img>` element en gebruikt de volgende syntax `<img src="url">`.
-
-Ja kan een absolute URL gebruiken voor een afbeelding die niet afkomstig is van jou eigen site.
-```html
-<img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Small house">
-```
-
-Of een relatieve URL voor afbeeldingen die wel afkomstig zijn uit je eigen site.
+Een niet geordende lijst start met het `<ul>` element, elk element van de lijst start met het `<li>` element. Deze lijst elementen worden gemarkeerd met een bolletje.
 
 ```html
-<img src="pic_trulli.jpg" alt="Small house">
-<img src="/images/pic_trulli.jpg" alt="Small house">
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
 ```
 
-#### Audio & video
+#### Geordende lijst
 
-Je kan audio als volgt toevoegen aan je webpagina:
+Een geordende lijst start met het `<ol>` element en kent het attribuut `type` om het type van lijst markering te bepalen.
+
+|Type | Beschrijving  |
+|---- | ------------ |
+|type="1" | De lijst zal genummerd worden met nummers |
+|type="A" | De lijst zal genummerd worden met hoofdletters |
+|type="a" | De lijst zal genummerd worden met kleine letters |
+|type="I" | De lijst zal genummerd worden met Romeinse cijfers in hoofdletters |
+|type="i" | De lijst zal genummerd worden met Romeinse cijfers in kleine letters |
 
 ```html
-<audio src="media/intro.mp3" controls>
-  Your browser does not support the audio tag
-</audio>
+<ol type="1">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
 ```
+#### Beschrijvende lijst
 
-Je kan video als vogt toevoegen aan je webpagina:
+Een beschrijvende lijst is een lijst van termen met elk een beschrijving van de term. Het `<dl>` element definieert dergelijke lijst waarbij het `<dt>` element voor de term staat en het `<dd>` voor de beschrijving.
 
 ```html
-<video src="media/intro.mp4" controls poster="img/intro.jpg">
-  Your browser dows not support the video tag
-</video>
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
 ```
 
-#### embedded media
+### Hyperlinken
 
-Je kan media zoals bv youtube, google maps, google trents, ... toevoegen aan je webpagina met `iframe`, ga hiervoor naar de bron en kopieer de embed code.
-
-### Links
+#### Link naar een andere pagina, website of bestand
 
 Links kan je op bijna elke webpagina terugvinden, ze stellen de gebruiker in staat om hun weg door de site te vinden. Een HTML link is een hyperlink waarmee je naar een ander document kunt springen. Als de cursor boven zo'n link komt veranderd deze in een handje.
 
-Hyperlinks worden in HTML aangeduid met het `<a>` element en volgt volgende syntax `<a href="url">link text</a>`.
+Hyperlinks worden in HTML aangeduid met het `<a>` element en volgt volgende syntax `<a href="url">link text</a>`. Waarbij URL staat voor **U**niform **R**esource **L**ocator beter gekend als web adres.
 
-::: warning Noot
-URL staat voor **U**niform **R**esource **L**ocator beter gekend als web adres.
-:::
-
-Ook hier kan je terug gebruik maken van absolute of relative links.
+Ja kan een absolute URL gebruiken voor een bestand die niet afkomstig is van jou eigen site.
 
 ```html
 <a href="http://www.vives.be">University College VIVES</a>
+```
+Of een relatieve URL voor een bestand die wel afkomstig is van je eigen site.
+
+```html
 <a href="contact.html">Contact Form</a>
 ```
+Bij het gebruik van een relatieve URL moet je de folderstructuur van je site kennen.
+
+![download](./images/afbeelding3.png)
+
+|Relatieve URL | Voorbeeld  |
+|- | - |
+| Zelfde folder | `<a href="reviews.html">Reviews</a>` |
+| Child folder | `<a href="music/listings.html">Listings</a>` |
+| Grandchild folder | `<a href="movies/dvd/reviews.html">Reviews</a>` |
+| Parent folder | `<a href="../index.html">Home</a>` |
+| Grandparent folder | `<a href="../../index.html">Home</a>` |
+
 Je kan een `target` referentie specificeren zodat de browser weet waar de pagina moet geopend worden. Een `target` referentie kan volgende waarde hebben:
 
 * `_blank` - wordt geopend in een nieuw tabblad
@@ -224,6 +264,81 @@ Je kan eveneens een hyperlink toevoegen aan een afbeelding:
     <img src="logo.png" alt="VIVES">    
 </a>
 ```
+#### Link naar een andere plaats op dezelfde pagina
+
+Hiertoe moet je de plaats waarnaar je wil linken eerst voorzien van een `id`, dit is een unieke identificatie.
+Daarna kan je in je URL verwijzen naar dat ID.
+
+```html
+<h1 id="top">Hoofding van de pagina</h1>
+<a href="#sectie1">Sectie 1</a><br />
+<a href="#sectie2">Sectie 2</a><br />
+<a href="#sectie3">Sectie 3</a><br /><br />
+<h2 id="sectie1">Sectie 1</h2>
+<p>Een paragraaf met wat tekst</p>
+<h2 id="sectie2">Sectie 2</h2>
+<p>Een paragraaf met wat tekst</p>
+<h2 id="sectie3">Sectie 3</h2>
+<p>Een paragraaf met wat tekst</p>
+<p><a href="#top">Top</a></p>
+```
+#### Link naar een emailadres
+
+Hiervoor plaats je `mailto:` in je URL gevolgd door het email adres.
+
+```html
+<a href="mailto:ronny.mees@vives.be">Email Ronny Mees</a>
+```
+### Media
+
+#### Afbeeldingen
+
+Afbeeldingen kunnen het ontwerp van je pagina enorm versterken en terzelfdertijd de inhoud verduidelijken.
+
+Afbeeldingen worden aangegeven met het `<img>` element en gebruikt de volgende syntax `<img src="url">`.
+
+Ja kan een absolute URL gebruiken voor een afbeelding die niet afkomstig is van jou eigen site.
+```html
+<img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Small house">
+```
+Of een relatieve URL voor afbeeldingen die wel afkomstig zijn uit je eigen site.
+
+```html
+<img src="pic_trulli.jpg" alt="Small house">
+<img src="/images/pic_trulli.jpg" alt="Small house">
+```
+Je kan tevens afmetingen van de afbeelding vastleggen.
+
+```html
+<img src="images/server.jpg" alt="Server" with="256" height="128">
+```
+::: tip Good practice
+1. Het is aangewezen om afbeeldingen steeds op je eigen website te bewaren. Het internet is zo dynamisch dat er geen enkele garantie is dat een link naar een afbeelding straks nog werkt. De afbeelding kan verwijderd worden of verplaatst worden.
+
+2. Je bewaart afbeeldingen best onder een map `root/images` op je site.
+:::
+
+#### Audio & video
+
+Je kan audio als volgt toevoegen aan je webpagina:
+
+```html
+<audio src="media/intro.mp3" controls>
+  Your browser does not support the audio tag
+</audio>
+```
+
+Je kan video als volgt toevoegen aan je webpagina:
+
+```html
+<video src="media/intro.mp4" controls poster="img/intro.jpg">
+  Your browser does not support the video tag
+</video>
+```
+
+#### Embedded media
+
+Je kan media zoals bv youtube, google maps, google trents, ... toevoegen aan je webpagina met `iframe`, ga hiervoor naar de bron en kopieer de embed code.
 
 ### Tabellen
 
@@ -288,51 +403,7 @@ Om een cel meerdere rijen groot te maken gebruiken we het `rowspan` attribuut.
 </table>
 ```
 
-### Lijsten
 
-#### Niet geordende lijst
-
-Een niet geordende lijst start met het `<ul>` element, elk element van de lijst start met het `<li>` element. Deze lijst elementen worden gemarkeerd met een bolletje.
-
-```html
-<ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ul>
-```
-
-#### Geordende lijst
-
-Een geordende lijst start met het `<ol>` element en kent het attribuut `type` om het type van lijst markering te bepalen.
-
-|Type | Beschrijving  |
-|---- | ------------ |
-|type="1" | De lijst zal genummerd worden met nummers |
-|type="A" | De lijst zal genummerd worden met hoofdletters |
-|type="a" | De lijst zal genummerd worden met kleine letters |
-|type="I" | De lijst zal genummerd worden met Romeinse cijfers in hoofdletters |
-|type="i" | De lijst zal genummerd worden met Romeinse cijfers in kleine letters |
-
-```html
-<ol type="1">
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ol>
-```
-#### Beschrijvende lijst
-
-Een beschrijvende lijst is een lijst van termen met elk een beschrijving van de term. Het `<dl>` element definieert dergelijke lijst waarbij het `<dt>` element voor de term staat en het `<dd>` voor de beschrijving.
-
-```html
-<dl>
-  <dt>Coffee</dt>
-  <dd>- black hot drink</dd>
-  <dt>Milk</dt>
-  <dd>- white cold drink</dd>
-</dl>
-```
 
 ### Container
 
@@ -361,7 +432,7 @@ Een `<section>` element kan gebruik worden om een sectie of hoofdstuk van een pa
 
 Het `<hr>` element geeft een opsplitsing in het document weer op een visueel gescheiden mannier.
 
-### HTML Forms
+### Forms
 
 Een `<form>` element definieert een deel in een pagina waar input van de gebruiker wordt verwacht.
 
@@ -441,7 +512,7 @@ Het `<button>` element geeft een klikbare knop weer.
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
 
-::: warning Noot
+::: warning Let op ❗
 Je gebruikt een button enkel in de context van een form. Daarbuiten gebruik je steeds een link.
 ::: 
 
@@ -454,151 +525,26 @@ Je gebruikt een button enkel in de context van een form. Daarbuiten gebruik je s
 * Sluit altijd je tags af, dus `<p> ... </p>` en niet `<p> ...`.
 * Gebruik steeds relatieve url verwijzigen t.o.v. de root van je website.
 
-## Voorbeeld
+## Oefening
 
-::: tip We werken een voorbeeld uit
+::: tip HTML oefening
 
-![download](./images/afbeelding1.png)
+Maak de oefening 'HTML voorbeeld' op het elektronisch leerplatform en laad die op.
 
-Laten we eerst een folder aanmaken voor dit voorbeeld. We openen dan die folder met Visual studio Code en maken daar een nieuw bestand **index.html**.
-
-Om de basisstructuur van een HTML pagina aan te maken in Visual Studio Code hoef je enkel in `html:5` in te tikken.
-
-```html
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-    
-</body>
-</html>
-```
-Laten we de metadata voor deze pagina wat aanvullen
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Een dashboard voor het weerstation">
-    <meta name="keywords" content="dashboard,weer">
-    <meta name="author" content="jou naam">
-    <title>Dashboard</title>
-</head>
-```
-Denk eraan dat het werken met insprongen je html code een stuk leesbaarder maakt. ( In Visual Studio Code kan je via je rechter muismenu een 'Format Document' uitvoeren die dit automatisch voor je doet )
-
-Laten we starten om de body van onze pagina op te bouwen.
-We gebruiken hierbij een container, een header, een paragraaf en een link.
-
-```html
-<body>
-    <!-- container met hoofding -->
-    <div class="banner">
-        <h1>Dashboard weerstation</h1>
-        <p>locatie: <a href="https://www.brugge.be/" target="_blank">Brugge</a></p>        
-    </div>
-```
-Vervolgens voegen we een lijst met meetwaarden toe. 
-We gebruiken hier een ongeordende lijst en een afbeelding die je [Hier](/files/sun.png) kan downloaden.
-Het is 'good practice' om alle afbeeldingen in een folder **images** te plaatsen.
-
-```html
-<!-- container met het weer actueel -->
-    <br>
-    <div class="actueel">
-        <h3>Weer actueel</h3>
-        <img src="/images/sun.png" alt="sunny">
-        <ul>
-            <li>Temperatuur: 26°C</li>
-            <li>Neerslag: 0%</li>
-            <li>Wind: ZW 8 km/u</li>
-            <li>Luchtvochtigheid: 61%</li>            
-            <li>Weercijfer: 8</li>
-        </ul>
-    </div>
-```
-
-Nu voegen we een container met het weerpraatje en een container met de weersvoorspellingen toe.
-We gebruikern hiervoor een tabel. De afbeelding kan je [hier](/files/zonnen.jpg) downloaden.
-
-```html
-<!-- container met weerpraatje -->
-    <div class="praatje">
-        <h3>Weerpraatje</h3>
-        <img src="/images/zonnen.jpg">
-        <p>Een dag zonder wolken met veel zon. De temperatuur stijgt tot 26 °C.</p>
-        <p> Er staat een lichte bries vanuit het noordwesten die voor wat afkoeling zorgt.</p>
-    </div>
-    <!-- container met tabel -->
-    <br>
-    <div class="forcast">
-        <h3>Weersvoorspelling</h3>
-        <table>
-            <tr>
-                <th>Dag</th>
-                <th>Temperatuur</th>
-                <th>Neerslag</th>
-                <th>Wind</th>
-            </tr>
-            <tr>
-                <td>Maandag</td>
-                <td>23 °C</td>
-                <td>1%</td>
-                <td>ZW 11 km/u</td>
-            </tr>
-            <tr>
-                <td>Dinsdag</td>
-                <td>20 °C</td>
-                <td>5%</td>
-                <td>W 13 km/u</td>
-            </tr>
-            <tr>
-                <td>Woensdag</td>
-                <td>18 °C</td>
-                <td>15%</td>
-                <td>W 15 km/u</td>
-            </tr>
-            <tr>
-                <td>Donderdag</td>
-                <td>20 °C</td>
-                <td>5%</td>
-                <td>ZW 10 km/u</td>
-            </tr>
-            <tr>
-                <td>Vrijdag</td>
-                <td>25 °C</td>
-                <td>0%</td>
-                <td>Z 5 km/u</td>
-            </tr>
-        </table>
-    </div>
-```
-
-Tot slot voegen we nog een footer container toe:
-
-```html
-<!-- container met footer-->
-    <div class="footer">
-        <p>laatste update 10:15</p>
-    </div>
-```
 :::
 
-## Herhaling via zelfstudie
+## Take-home opdracht
 
-Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande videotutorial even bekijken:
+::: tip Herhaling HTML
+
+Om de nieuwe leerstof nog beter te begrijpen volg je onderstaande videotutorial:
 
 * [HTML Essential Traininng](https://www.linkedin.com/learning/html-essential-training-4) op LinkedIn Learning
 
+Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op het elektronisch leerplatform.
 
-::: tip Taak 1 - Het bouwen van een HTML pagina
+![download](./images/afbeelding4.png)
 
-![download](./images/assignment.png)
-
-* [Opdrachtfiche](assignment1.html)
 :::
 
 ## Cheatsheet

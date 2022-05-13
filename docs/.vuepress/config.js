@@ -2,13 +2,13 @@ module.exports = {
   title: 'Webdevelopment',
   description: 'Cursus Webdevelopment graduaat Internet of Things ( VIVES )',
   themeConfig: {
-    logo: '/files/afbeelding1.png',
+    logo: '/files/afbeelding2.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Company', link: 'https://www.vives.be' },      
       { text: 'Contact', link: 'mailto:ronny.mees@vives.be' },
     ],
-    sidebarDepth: 1,
+    sidebarDepth: 2,
     repo: 'https://github.com/ronnymees/webdevelopment',
     docsDir: 'docs',
     docsBranch: 'master',
