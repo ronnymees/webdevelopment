@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ronnymees/webdevelopment#readme",
   "devDependencies": {
     "vuepress": "^1.2.0",
-    "vuepress-plugin-zooming": "^1.1.7"
+    "vuepress-plugin-zooming": "^1.1.8"
   },
   "dependencies": {
     "@dovyp/vuepress-plugin-clipboard-copy": "^1.0.0-alpha.7"
