@@ -18,14 +18,16 @@ Laten we nog even zo'n tag nader bekijken:
 * `"https://www.vives.be"` is hierbij een **attribute value**
 * `</a>` is hierbij de **closing tag**
 
-## Wat heb je nodig?
+## Ontwikkeltools
 
 Omdat HTML eigenlijk gewoon tekst is, kan je jou favoriete tekstverwerker zoals Notepad, Notepad++, Visual Studio Code, Brackets, ... hiervoor gebruiken. Sommige van die editors bieden ook een 'live preview' wat zeer handig is terwijl je jou pagina ontwerpt.
 
 Tijdens deze cursus zullen we gebruik maken van **Visual Studio Code**. Mocht je dit nog niet geïnstalleerd hebben, neem dan eens een kijkje bij software installatie.
 
 
-## Hoe zit de basis structuur van een HTML document in elkaar ?
+## De basisstructuur
+
+Hoe ziet de basisstructuur van een webpagina er nu eigenlijk uit?
 
 Als je een nieuw HTML document start dan ziet de basisstructuur er als volgt uit:
 
@@ -91,7 +93,9 @@ block -->
 ```
 :::
 
-## Welke elementen hebben we nu allemaal ter beschikking om onze pagina structuur te geven ?
+## HTML elementen
+
+Welke elementen hebben we nu allemaal ter beschikking om onze pagina structuur te geven ?
 
 ### Tekst
 
@@ -529,7 +533,7 @@ Je gebruikt een button enkel in de context van een form. Daarbuiten gebruik je s
 
 ::: tip HTML oefening
 
-Maak de oefening 'HTML voorbeeld' op het elektronisch leerplatform en laad die op.
+Maak de oefening op het elektronisch leerplatform en laad die op.
 
 :::
 

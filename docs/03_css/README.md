@@ -1,4 +1,4 @@
-# Een webpagina stylen in CSS
+# De opmaak van een webpagina
 
 ![download](./images/cssicon.png) 
 
@@ -6,7 +6,9 @@
 
 CSS is ontworpen om het scheiden van presentatie en inhoud van een webpagina mogelijk te maken. Hierdoor is het geheel beter toegankelijk, flexibeler en heeft een een betere controle op de presentatie karakteristieken. Meerdere webpagina's kunnen ook dezelfde opmaak delen door gebruik te maken van eenzelfde .css bestand.
 
-## Verschillende methoden om stijl aan jou html pagina te koppelen
+Om beter te begrijpen hoe CSS werkt denk je best rond elk HTML element een kader. Was CSS eigenlijk doet is de opmaak van zo'n kader vastleggen.
+
+## Methoden
 
 ### Inline
 
@@ -47,7 +49,7 @@ Dit .css bestand moet dan uiteraard gekoppeld worden aan de HTML pagina.
 ```
 
 ::: warning 'Good-practice'
-Het werken met een external CSS file geniet de voorkeur.
+Het werken met een external CSS file geniet de voorkeur, we zullen voor deze cursus dan ook enkel deze methode toepassen.
 :::
 
 ::: tip Tip
@@ -460,6 +462,37 @@ ul {
   width: calc(100% - 6px);
 }
 ```
+
+## Oefening
+
+::: tip CSS oefening
+
+Maak de oefening op het elektronisch leerplatform en laad die op.
+
+:::
+
+## Take-home opdracht
+
+::: tip Herhaling CSS
+
+Om de nieuwe leerstof nog beter te begrijpen volg je onderstaande videotutorial:
+
+* [CSS Essential Traininng](https://www.linkedin.com/learning/css-essential-training-3) op LinkedIn Learning
+
+Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op het elektronisch leerplatform.
+
+:::
+
+
+
+
+
+
+
+
+
+
+
 
 ## Responsief webdesign
 
