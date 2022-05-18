@@ -806,51 +806,148 @@ Na het volgen van deze online cursus vul je het vragenformulier in op Toledo.
 
 :::
 
+## Gebruik maken van Bootstrap
 
+Bootstrap CSS is het toonaangevende CSS framework voor het ontwikkelen van responsive en mobile-first websites. Deze gratis en open-source toolkit wordt geleverd met een responsive grid systeem, globale CSS instellingen, uitgebreide vooraf gebouwde componenten waaronder knoppen, navigatiebalken en formulieren, en optionele JavaScript plugins om het ontwikkelproces te versnellen.
 
+### Downloaden van Bootstrap
 
+Hiervoor ga je naar [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/download/) en download je de Compiled versie van Bootstrap. Het Zip-bestand pak je uit in de root van je website en je hermoemt de folder gewoon 'Bootstrap'.
 
+### Laden van Bootstrap
 
+Om Bootstrap te laden ga je op gelijkaardige manier te werk als je eigen CSS bestand.
 
+```html
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+```
 
+Als je ook het Javascript gedeelte van Bootstrap wil gebruiken voeg je volgende toe in de footer van je html.
 
+```html
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+```
 
+### Een greep uit de vele Bootstrap componenten 
 
+![download](./images/afbeelding11.png)
+![download](./images/afbeelding12.png)
+![download](./images/afbeelding13.png)
 
+### Gebruik maken van Bootstrap CSS opmaak
 
+Het gebruik van een van deze Bootstrap componenten is heel eenvoudig. Het is gewoon een kwestie van verwijzen naar de juiste Bootstrap CSS klasse in de HTML markup. Bijvoorbeeld, hier is hoe we Bootstrap's primair gekleurde knop gebruiken op een webpagina...
 
+```html
+ <button type="button" class="btn btn-primary">Primary</button>
+```
+Waarom heeft de button 2 classes  `.btn` en `.btn-primary` ?
 
+Bootstrap's componenten zijn gebouwd met een basis-modifier klasse aanpak. Dit betekent dat het grootste deel van de styling is ondergebracht in een basisklasse (bijv. .btn), terwijl stijlvariaties zijn beperkt tot modifier-klassen (bijv. .btn-primary).
 
+Het principe van Bootstrap is dus vrij eenvoudig, het is alleen in het begin wat uitzoeken welke klasse je precies nodig hebt.
 
+## Gebruik maken van FontAwesome
 
+Het gebruik van pictogrammen in webdesign is een beproefde methode om een website te moderniseren en de gebruikersstroom te sturen. Het toevoegen van pictogrammen aan de inhoud van uw site helpt een gebruiker de informatie die u probeert over te brengen beter te verwerken en biedt een visueel focuspunt dat een gebruiker naar een specifieke sectie leidt.
 
+Grafische pictogrammen kunnen op tal van manieren worden gebruikt om uw webdesignproject meer pit te geven. U kunt ze gebruiken als visuele begeleiding van tekstgebieden of als op zichzelf staande links in situaties waar de ruimte beperkt is en tekstblokken niet haalbaar zijn binnen het ontwerp. Het is deze veelzijdigheid van iconen die ze zo nuttig en wijdverspreid maakt.
 
+Gelukkig is het niet nodig om uw eigen pictogrammenset te maken. Font Awesome biedt een veelzijdig kader dat bijna elke icoonafbeelding bevat die u zich kunt voorstellen, samen met de benodigde schaalbaarheid en aanpassingsmogelijkheden. Font Awesome zal u vrijwel zeker tijd en geld besparen bij uw toepassing van specifieke pictogrammen.
 
+### Laden van FontAswesome
 
+Om FontAwesome te laden ga je terug op dezelfde manier tewerk.
 
+```html
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css"/>
+```
 
+### Een icoon toevoegen
 
+Laten we als voorbeeld eens het RSS icon toevoegen.
 
+```html
+<i class="fa fa-rss"></i>
+```
 
+Als je nu de grootte van het icoon wil aanpassen voeg je dit gewoon toe.
 
+```html
+<i class="fa fa-rss fa-3x"></i>
+```
 
+Het is nu dus kwestie van het gewenste icoon op te zoeken op [FontAwesome](https://fontawesome.com/icons) en de daarbij horende class toe te passen.
 
-## Het gebruik van online stylesheets
+## Oefening
 
-Naast het werken met je eigen stijl kan je ook gebruik maken van online stijlen. 
+::: tip Bootstrap en FontAwesome oefening
 
-Bekijk zelf even de mogelijkheden van:
+Maak de oefening op het elektronisch leerplatform en laad die op.
+
+:::
+
+## Take-home opdracht
+
+::: tip Herhaling Bootstrap & FontAwesome
+
+Om de nieuwe leerstof nog beter te begrijpen volg je onderstaande videotutorial:
 
 * [Bootstrap](https://www.linkedin.com/learning/bootstrap-4-essential-training)
 
 * [Font Awesome](https://www.youtube.com/watch?v=rXiO4bm2Zpc)
 
-::: tip Taak 3 - Een eenvoudige webpagina met online stijl
+Na het volgen van deze online cursus vul je het vragenformulier in op Toledo.
 
-![download](./images/assignment.png)
-
-* [Opdrachtfiche](assignment3.html)
 :::
+
+## Publiceren van je website
+
+Je hebt uren gespendeert om je website te bouwen en nu moet die publiek geplaatst worden.
+Je hebt hiertoe eerst en vooral een Web Host nodig.
+
+### Een geschikte Web Host zoeken
+
+#### Gedeelde Web Hosts
+
+Je eerste optie is het gebruik van een van de populaire hosting platforms zoals Combell, One, Neostrada en Argeweb. De eigenlijke server waar jouw website is opgeslagen is eigendom van de hosting service en is gedeeld met andere websites.
+
+Gedeelde hosting is een betaalbare optie, maar het heeft ook nadelen zoals langzame pagina laadtijden of downtime. Sommige platforms beperken ook RAM en CPU gebruik, wat kan leiden tot prestatieproblemen voor je website.
+
+#### Managed Web Hosts
+
+Managed hosting, in het kort, betekent dat het hostingbedrijf zoals Nucleus of Hostnet de setup, administratie en het onderhoud van de servers afhandelt.
+
+Managed hosting kost iets meer dan shared hosting, maar de investering betaalt zich altijd terug in termen van betere prestaties, beveiliging, ondersteuning en een verbeterde workload.
+
+#### DIY Host
+
+Een andere optie is om zelf de volledige verantwoordelijkheid voor het configureren, updaten, en onderhouden van jouw website servers op te nemen.
+
+Het klinkt misschien als een goede deal, omdat je niet hoeft te betalen een managed hosting provider. Maar het is veel werk en vereist een grote mate van technische expertise.
+
+Als je niet beschikt over de middelen om regelmatige back-ups, security scans, en ander onderhoud te beheren, DIY hosting is niet voor jou.
+
+### Uploaden bestanden en testen
+
+Nu je een Web Host hebt kan je jou bestanden en folderstructuur uploaden.
+
+Voor je de website effectief publiceert is het verstandig om in een kleine groep of in preview mode de website grondig te testen.
+
+### Publiceren
+
+Het moment van de waarheid, je kan eindelijk de website delen met de wereld.
+Je kan nu je domain naam kopen, de webhost configureren en vervolgens publiceren.
+
+Iedereen kan nu je website raadplegen maar daarom is hij nog niet direct vindbaar.
+Het is nu kwestie van je website te registreren bij zoekmachines.
+
+Om je website bij Google in te dienen, gebruik je [Google Search Console](https://search.google.com/search-console/welcome?utm_source=about-page), en verifieer je de eigendom van de website.
+
+1. Ga naar Google Search Console en log in met je google account (als je nog niet bent ingelogd via Google Chrome).
+2. Voeg nu je domainnaam toe
+3. Om te bewijzen dat je eigenaar bent van dit domain gebruik je gewoon het DNS TXT record.
 
 ## Cheatsheet
 
