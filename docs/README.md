@@ -24,6 +24,8 @@ Dit werk is tot stand gekomen uit de kennis van de schrijver, collega's hogescho
 * Ferguson, R. (2019). Beginning JavaScript: The Ultimate Guide to Modern JavaScript Development.
 * Mozilla developer pagina
 * De github cursus van docent Rogier Van der Linde aan de hogeschool Odisee.
+* Blog van Matteo Duò op Kinsta i.v.m. responsive webdesign.
+* Blog van Michael J. Fordham op editorx i.v.m. cross-browser webdesign
 
 ## Rechten
 
