@@ -1,4 +1,4 @@
-# Het gebruik van javascript in web development
+# Interactief maken van een webpagina
 
 ![download](./images/javascripticon.png) 
 
@@ -8,7 +8,9 @@ De standaard voor JavaScript is ECMAScript. Met de ingang van 2012, ondersteunen
 
 Verwar JavaScript niet met de Java programmertaal. Beiden "Java" and "JavaScript" zijn handelsmerken of geregistreerde handelsmerken van Oracle in de VS en andere landen. Daarentegen hebben de twee programmeertalen hele verschillende syntaxis, semantiek en toepassingen.
 
-Javascript zorgt ervoor dat je een webpagina **dynamisch** kan maken. Elke actie die moet gebeuren verloopt via een **script** en wordt door de browser, dus aan de **client-side**, verwerkt.
+Met Javascript kunnen webpagina's interactiever worden gemaakt door toegang te krijgen tot de inhoud en de opmaak van een webpagina en deze te wijzigen terwijl de pagina in de browser wordt bekeken. M.a.w. Javascript zorgt ervoor dat je een webpagina **dynamisch** kan maken zodat deze reageert op wat de gebruiker doet. Elke actie die moet gebeuren verloopt via een **script** en wordt door de browser, dus aan de **client-side**, verwerkt.
+
+::: tip Ondersteunend leermateriaal
 
 We raden jullie volgend ondersteunend leermateriaal aan:
 
@@ -17,6 +19,8 @@ We raden jullie volgend ondersteunend leermateriaal aan:
 * [Mozilla developer pagina](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 * [LinkedIn Learning](https://www.academicsoftware.eu/) via Academic Software (kies voor Web Platform)
+
+:::
 
 ## We bestuderen enkele voorbeelden
 
@@ -188,6 +192,8 @@ Of je kan terug met een aparte file werken, wat de voorkeur geniet.
 ```
 
 ::: tip Tip
+Maak een folder 'scripts' aan waarin je de Javascript bestanden plaatst.
+
 Voeg je script steeds **onderaan je body** toe, zo krijgt de gebruiker je webpagina reeds te zien terwijl het script nog aan het laden is bij een trage internetverbinding.
 
 Als je in javascript andere javascripts gebruikt moet je die voor jou script link plaatsen in de body.
@@ -476,13 +482,6 @@ Om in javascript elementen van een html pagina op te vragen bestaan er enkele mo
   * voor en na een operator (`==`, `<`, `&&`, `+`, ...)
 * Vermijd het gebruik van `var` om een variabele te definiëren
 
-### Herhaling via zelfstudie
-
-Volg onderstaande videotutorials van LinkedIn Learning op je eigen tempo tegen de volgende les:
-
-* [Learning the javascript Language](https://www.linkedin.com/learning/learning-the-javascript-language-2) (Hoofdstuk 7 is optioneel)
-* [Using input validation](https://www.linkedin.com/learning/validating-and-processing-forms-with-javascript-and-php) (Hoofdstuk 1 t.e.m. 3)
-
 ## JavaScript Object Notation (JSON)
 
 ![download](./images/jsonicon.png) 
@@ -523,9 +522,29 @@ console.log(JSON.stringify({ x: 5, y: 6 }));
 // expected output: "{"x":5,"y":6}"
 ```
 
-## Nog even verder oefenen
+## Oefening
 
-We oefenen javascript verder in a.d.h.v. twee oefeningen.
+::: tip Basis Javascript oefening
+
+Maak de oefening op het elektronisch leerplatform en laad die op.
+
+:::
+
+## Take-home opdracht
+
+::: tip Herhaling Javascript
+
+Om de nieuwe leerstof nog beter te begrijpen volg je onderstaande videotutorial:
+
+* [Learning the javascript Language](https://www.linkedin.com/learning/learning-the-javascript-language-2)
+
+Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op het elektronisch leerplatform.
+
+:::
+
+## We experimenteren nog even verder met Javascript
+
+Laten we al doende leren a.d.h.v. twee oefeningen.
 
 ### Een rekenmachine via javascript
 
@@ -822,6 +841,24 @@ function processForm() {
 };
 ```
 
+## Oefening
+
+::: tip Javascript oefening
+
+Maak de oefening op het elektronisch leerplatform en laad die op.
+
+:::
+
+## Take-home opdracht
+
+::: tip Voorbereiding Form validation via Javascript
+
+Om de leerstof van de volgende les nog beter te begrijpen volg je onderstaande videotutorial:
+
+* [Using input validation](https://www.linkedin.com/learning/validating-and-processing-forms-with-javascript-and-php) (Hoofdstuk 1 t.e.m. 3)
+
+:::
+
 ## Form validatie via javascript
 
 Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadplegen:
@@ -1009,14 +1046,6 @@ Voor de header is het **application/json** dat moet doorgegeven worden. (deze in
 
 Test uit door te surfen naar [http://localhost:1880/formdata.json](http://localhost:1880/formdata.json)
 
-
-::: tip Taak 4 - Formvalidation 
-
-![download](./images/assignment.png)
-
-* [opdrachtfiche](assignment4.html)
-:::
-
 ## AJAX met tabellen en grafieken
 
 ### Asynchronous Javascript And XML (AJAX)
@@ -1101,13 +1130,14 @@ De functie zal bij elke Await de code verlaten en later op dat punt dan verder d
 
 **Let op**: Deze techniek werkt niet bij oude browsers!
 
-#### Herhaling via zelfstudie
+::: tip Herhaling
 
 Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even bekijken:
 
 * Hoofdstuk 1 en 3 van het handboek [ebook](https://limo.libis.be/primo-explore/fulldisplay?docid=TN_springer_s978-1-4842-4395-4_313453&context=PC&vid=VIVES_KATHO&search_scope=ALL_CONTENT&tab=all_content_tab&lang=nl_BE:)
 
 * Hoofdstuk 7 van [deze](https://www.linkedin.com/learning/learning-the-javascript-language-2) LinkedIn Learning videotutorial.
+:::
 
 ### JSON-data in een tabel weergeven via AJAX
 
@@ -1417,13 +1447,6 @@ var myLineChart = new Chart(ctx, {
 
 Je kan meer info terugvinden op [chartjs.org](https://www.chartjs.org/docs/latest/getting-started/).
 
-::: tip Taak 5 - JSON data visualiseren in een tabel en grafiek
-
-![download](./images/assignment.png)
-
-* [opdrachtfiche](assignment5.html)
-:::
-
 ## Web API
 
 Een Application Programming Interface is een software service dat een set aan functies online beschikbaar stelt voor anderen.
@@ -1659,12 +1682,16 @@ Je kan het icoon dus als volgt ophalen:
 document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+json.weather[0].icon+"@2x.png";
 ```
 
-::: tip Taak 6 - Weersvoorspelling
 
-![download](./images/assignment.png)
 
-* [opdrachtfiche](assignment6.html)
-:::
+
+
+
+
+
+
+
+
 
 ## Cheatsheet
 
