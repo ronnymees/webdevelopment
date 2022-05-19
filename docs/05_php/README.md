@@ -552,12 +552,14 @@ Om dit op te lossen moeten we 1 regeltje toevoegen:
 De techniek hierboven met het gebruik van `global` zal zelden gebruikt worden, maar het verduidelijkt wel het onderscheid tussen een globaal en lokaal gedefinieerde variabele.
 :::
 
-### Herhaling via zelfstudie
+::: tip Herhaling
 
-Je kan de leerstof herhalen via:
+Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even bekijken:
 
 * [LinkedIn Learning - PHP Essential Training](https://www.linkedin.com/learning/php-essential-training-2)
 * [TutorialRepublic - PHP Tutorial](https://www.tutorialrepublic.com/php-tutorial/)
+
+:::
 
 ## PHP verkennen via een voorbeeld
 
@@ -637,13 +639,6 @@ Tot slot vervangen we de binnenste geneste for-lus door een functie:
     </body>
 </html>
 ```
-
-::: tip Taak 7 - Sensordata in een tabel
-
-![download](./images/assignment.png)
-
-* [opdrachtfiche](assignment7.html)
-:::
 
 ## Een WEB-API raadplegen vanuit PHP
 
@@ -769,19 +764,17 @@ M.b.v. `json_encode` kunnen we eenvoudig de array omvormen tot een JSON object.
     echo json_encode($output);
 ?>
 ```
+## Take-home opdracht
 
-::: tip Taak 8 - Weersvoorspelling
+::: tip Voorbereiding Form validation via PHP
 
-![download](./images/assignment.png)
+Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofdstukken 1 t.e.m. 4 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
 
-* [opdrachtfiche](assignment8.html)
 :::
 
 ## PHP en Forms
 
-### Zelfstudie
-
-Bekijk alvast hoofdstukken 1 t.e.m. 4 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
+### HTTP Request
 
 **HTTP GET** : Er gebeuren geen wijzigingen op de server.
 
@@ -957,19 +950,16 @@ Dit ziet er dan als volgt uit:
     </body>
 </html>
 ```
+## Take-home opdracht
 
-::: tip Taak 9 - Registratie- en loginform
+::: tip Voorbereiding PHP en MySql
 
-![download](./images/assignment.png)
+Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofdstukken 5 t.e.m. 9 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
 
-* [opdrachtfiche](assignment9.html)
 :::
 
+
 ## PHP en mySQL
-
-### Zelfstudie
-
-Bekijk hoofdstukken 5 t.e.m. 9 van de videotutorial [PHP with mySQL essential training 1 the basics](https://www.linkedin.com/learning/php-with-mysql-essential-training-1-the-basics) op LinkedIn Learing
 
 ### Een oefendatabase aanmaken
 
@@ -1372,11 +1362,11 @@ Een APIkey is een onleesbare stringcombinatie van tekens die als volgt kan gegen
         .chr(125);// "}"
 ```
 
-## PHP en cookies & sessions
+## Take-home opdracht
 
-### Zelfstudie
+::: tip Voorbereiding PHP en cookies & sessions
 
-Bekijk hoofdstuk 4 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms/work-with-cookies) op LinkedIn Learing.
+Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofdstuk 4 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms/work-with-cookies-14247738) op LinkedIn Learing.
 
 Andere relevantie informatiebronnen zijn:
 
@@ -1384,6 +1374,10 @@ Andere relevantie informatiebronnen zijn:
 * [TutorialRepublic - PHP sessions](https://www.tutorialrepublic.com/php-tutorial/php-sessions.php)
 * [Guru99 - cookies and sessions](https://www.guru99.com/cookies-and-sessions.html)
 * Hoofdstuk 5 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms/user-authentication-overview) op LinkedIn Learing.
+
+:::
+
+## PHP en cookies & sessions
 
 ### Cookie
 
