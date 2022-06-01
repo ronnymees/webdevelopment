@@ -1,14 +1,14 @@
 {
   "name": "webdevelopment",
   "version": "0.0.0",
-  "description": "Cursus Webdevelopment",
+  "description": "Cursus Webdevelopment Internet of Things",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs"
   },
   "repository": {
     "type": "git",
