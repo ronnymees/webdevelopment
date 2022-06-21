@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Webdevelopment - graduaat Internet of Things',
-  description: 'Cursus Webdevelopment graduaat Internet of Things ( VIVES )',
+  description: 'Cursus Webdevelopment graduaat Internet of Things',
   themeConfig: {
     logo: '/files/afbeelding2.png',
     nav: [
