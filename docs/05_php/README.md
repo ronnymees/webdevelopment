@@ -1,16 +1,88 @@
-# Het gebruik van PHP in web development
+# Back-end webdevelopment met PHP
+
+Bij Back-End wordt door de client een request gestuurd naar de webserver die op zijn beurt de nodige HTML, CSS en JS bestanden zal aanmaken en als antwoord terugsturen.
+
+![image](./images/afbeelding1.png)
+
+## Installatie software
+
+Om de PHP taal lokaal te kunnen hosten hebben we Apache en PHP nodig en om data te gebruiken ook MySQL.
+Om dit operating systeem onafhankelijk te maken is er gekozen om te werken met het installatiepakket XAMPP.
+
+Ga naar [de website van XAMPP](https://www.apachefriends.org/download.html) en download de hoogste PHP versie voor jou operating systeem.
+Installeer vervolgens met alle default waarden.
+
+::: warning Installatie path
+Zorg er voor dat je installatie path `c:\xampp` is.
+:::
+
+Configuratie's kan je doen via het XAMPP controle panel.
+
+Wat als poort 80 reeds bezet is? Je kan jou Apache server ook via een andere poort laten werken.
+Ga via het XAMPP control panel naar de `httpd.conf` file en maak onderstaande aanpassingen:
+
+```conf
+Servername localhost:80 // wijzig de 80 naar bv 8000
+...
+listen 80 // wijzig ook hier de 80 naar dezeflde poort als je hierboven hebt gekozen
+```
+Om te controleren dat je Apache server en PHP goed werken kan je het volgende testbestand `phpinfo.php` aanmaken in de folder `C:\xampp\htdocs`:
+
+```php
+<?php
+    phpinfo();
+?>
+```
+Tik vervolgens in je browser `localhost[:jouw poort]/phpinfo.php`(het : met jouw poort is enkel nodig als je niet met poort 80 werkt).
+Als alles goed is krijg je nu een overzicht van PHP. 
+
+<!-- TODO: uittesten en debugging extensie toevoegen -->
+
+Om een mail te kunnen versturen vanuit onze localhost moeten we enkele instellingen juist zetten.
+
+1. Een google account voorbereiden
+
+* Je maakt hiervoor best een nieuw GMail-account aan die voor ontwikkelingsdoeleinden kan gebruiken.
+* Log via een incognitovenster in op het nieuwe GMail-account.
+* Kies in je accountbeheer voor dubbele authenticatie (Zorg er voor dat je jouw gsm bij de hand hebt).
+* Kies voor App-wachtwoorden, als app kies je email en als apparaat windows computer.
+* Klik vervolgens op genereren en kopieer de toegangscode zodat je die straks kan gebruiken.
+
+2. Open het bestand `php.ini` via het XAMPP control panel en pas volgende regels aan:
+
+```ini
+[mail function] 
+SMTP=smtp.gmail.com
+smtp_port=587
+sendmail_from = YourGmailId@gmail.com
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+```
+
+3. Ga naar de folder `C:\xampp\sendmail`, open er het bestand `sendmail.ini` en pas volgende regels aan (gewoon de ~ verwijderen):
+
+```ini
+[sendmail]
+smtp_server=smtp.gmail.com
+smtp_port=587
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=YourGmailId@gmail.com
+auth_password=Your-Gmail-app-pasword
+force_sender=YourGmailId@gmail.com
+```
+::: warning Restart Apache server
+Je zal de apache server moeten herstarten, je kan dit via XAMPP control panel doen.
+:::
+
+## Week 1 - Introductie in PHP
 
 ![download](./images/phpicon.png) 
 
-## Introductie in PHP
-
 PHP is een **Server-side** scripttaal gebruikt om een webpagina dynamisch te maken. Voor de gebruiker is de PHP scripttaal onzichtbaar, enkel het resultaat er van.
 
-Hieronder zie je een overzicht hoe het proces van gebruiker naar server en terug kan verlopen via PHP.
-
-![download](./images/afbeelding1.png)
-
 Voor we van start gaan, nog even meegeven dat je ook veel informatie op de [php.net](https://www.php.net/manual/en/) website kan terugvinden.
+
+[Hier](/files/cheatsheet_php.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
 
 ### Inleiding
 
@@ -561,7 +633,7 @@ Om de nieuwe leerstof nog beter te begrijpen kan je onderstaande bronnen even be
 
 :::
 
-## PHP verkennen via een voorbeeld
+### PHP verkennen via een voorbeeld
 
 We maken een pagina die de maaltafels zal tonen. De inhoud van die pagina zal op de server gegenereerd worden via PHP.
 
@@ -640,7 +712,16 @@ Tot slot vervangen we de binnenste geneste for-lus door een functie:
 </html>
 ```
 
-## Een WEB-API raadplegen vanuit PHP
+### Klasopdracht
+
+::: tip Back-end IoT applicatie
+
+Kick-off klassikale opdracht
+
+:::
+
+
+## Week 2 - Een WEB-API raadplegen vanuit PHP
 
 Het verschil met wat we in javascript hebben gedaan is hier dat de client geen verbinding meer hoeft te maken met een andere server. Het is de server die dit nu zal doen en het resultaat gewoon naar de client browser sturen.
 

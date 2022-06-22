@@ -8,17 +8,27 @@ module.exports = {
       { text: 'Company', link: 'https://www.vives.be' },      
       { text: 'Contact', link: 'mailto:ronny.mees@vives.be' },
     ],
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     repo: 'https://github.com/ronnymees/webdevelopment',
     docsDir: 'docs',
     docsBranch: 'master',
     sidebar: [
-		      '/00_software_installatie/',
+      { 
+        title: 'Front-end webdevelopment',
+        children: [
+          '/00_software_installatie/',
           '/01_introduction/',
           '/02_html/',
           '/03_css/',
           '/04_javascript/',
-          '/05_php/',          
+        ]
+      },
+      {
+        title: 'Back-end webdevelopment',
+        children: [
+           '/05_php/', 
+        ]
+      }           
     ]    
   },
   markdown: {

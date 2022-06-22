@@ -1,4 +1,4 @@
-# Installatie van software gebruikt in deze cursus
+# Installatie van software gebruikt in deze cursus (moet nadien weg)
 
 Voor het vak webdevelopment heb je eveneens behoefte aan ontwikkelingssoftware.
 

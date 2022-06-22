@@ -7,12 +7,11 @@ Tijdens deze cursus wordt jullie de basisvaardigheden van webdevelopment aangele
 
 ## Inhoud
 
-0. Installatie van software gebruikt in deze cursus
 1. Introductie in web development
-2. Een webpagina bouwen in HTML
-3. Een webpagina stylen in CSS
-4. Het gebruik van javascript in web development
-5. Het gebruik van PHP in web development
+2. De structuur van een webpagina
+3. De opmaak van een webpagina
+4. Interactief maken van een webpagina
+5. Back-end webdevelopment
 
 ## Bronnen
 

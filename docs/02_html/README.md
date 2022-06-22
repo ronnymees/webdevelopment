@@ -2,6 +2,8 @@
 
 ![download](./images/htmlicon.png)
 
+[Hier](/files/cheatsheet_html.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
+
 De structuur van een webpagina wordt opgemaakt via HTML, dat is de standaard **markup language** om web pagina's aan te maken. HTML staat voor **H**yper **T**ext **M**arkup **L**anguage. Het beschrijft de structuur van een webpagina a.d.h.v. HTML elementen die de browser vertellen hoe de pagina inhoud gestructureerd is. 
 
 HTML elementen, ook **tags** genoemd, zijn als een soort containers. Ze vertellen iets over de informatie binnenin hun **opening tag** en **closing tag**.
@@ -22,7 +24,14 @@ Laten we nog even zo'n tag nader bekijken:
 
 Omdat HTML eigenlijk gewoon tekst is, kan je jou favoriete tekstverwerker zoals Notepad, Notepad++, Visual Studio Code, Brackets, ... hiervoor gebruiken. Sommige van die editors bieden ook een 'live preview' wat zeer handig is terwijl je jou pagina ontwerpt.
 
-Tijdens deze cursus zullen we gebruik maken van **Visual Studio Code**. Mocht je dit nog niet geïnstalleerd hebben, neem dan eens een kijkje bij software installatie.
+We maken gebruik van Visual Studio Code om onze projecten in te bouwen.
+Als dit nog niet op jou systeem geïnstalleerd staat, ga dan naar [de website van Visual Studio Code](https://code.visualstudio.com/) en download er de versie voor jou systeem.
+Tijdens de installatie zorg je ervoor dat volgende 2 opties aangevinked staan:
+
+![image](./images/afbeelding0.png)
+
+Na installatie voeg je ook de **live server extensie** toe.
+Bekijk [de gebruikersgids van Visual Studio Code](https://code.visualstudio.com/docs/editor/extension-marketplace) voor meer informatie hoe je dit moet doen.
 
 
 ## De basisstructuur
@@ -550,7 +559,3 @@ Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op h
 ![download](./images/afbeelding4.png)
 
 :::
-
-## Cheatsheet
-
-[Hier](/files/cheatsheet_html.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.

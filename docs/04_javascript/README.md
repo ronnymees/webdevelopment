@@ -2,6 +2,8 @@
 
 ![download](./images/javascripticon.png) 
 
+[Hier](/files/cheatsheet_js.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
+
 **JavaScript** (JS) is een lichtgewicht, geïnterpreteerde programmeertaal met eersteklas functies. Hoewel het beste bekend als de scripttaal voor web pagina's, wordt het ook door vele niet-browser omgevingen gebruikt, zoals node.js. 
 
 De standaard voor JavaScript is ECMAScript. Met de ingang van 2012, ondersteunen alle moderne browsers volledig ECMAScript 5.1. Op 17 juni 2015, publiceerde ECMA International de zesde hoofdversie (major version) van ECMAScript, dit heet officieel ECMAScript 2015, en wordt in het algemeen vaker aangeduid als ECMAScript 2015 of ES2015. Sindsdien worden de ECMAScript standaarden op jaarlijkse basis vrijgegeven.
@@ -22,11 +24,27 @@ We raden jullie volgend ondersteunend leermateriaal aan:
 
 :::
 
+## Problem solving
+
+Als we code schrijven is dat meestal met vallen en opstaan. Fouten maken hoort hier nu eenmaal bij.
+We onderscheiden twee type fouten:
+
+* **Syntax fouten**: Dit zijn fouten waarbij de syntax van Javascript niet correct is. Meestal zijn dit typfouten of stukjes die we vergeten zijn.
+* **Logica fouten**: Hier is de syntax van Javascript correct maar het resultaat is niet wat we verwacht of bedoeld hadden. De fout ligt hierin de logica van ons programma, wat moeilijker te achterhalen valt.
+
+Gelukkig heeft onze browser een ontwikkelomgeving die ons hierbij kan helpen. Voor Google Chrome open je dit via `F12` en in Safari kan je dit openen via het `Develop > Show Web Inspector` menu.
+
+Je kan waarden van variabelen loggen naar de console om zo proberen logica fouten op te sporen.
+
+```js
+console.log('Resultaat : ' + totaal);
+```
+
+Soms is de fout wat complexer en moeten we debuggen.
+Bekijk even de informatie op de [developer pagina van Chrome](https://developer.chrome.com/docs/devtools/javascript/)
+
+
 ## We bestuderen enkele voorbeelden
-
-Als je javascript ontwikkeld is het goed om de ontwikkelomgeving (F12) in Chrome te openen en de console in het oog te houden voor foutmeldingen.
-
-![Afbeelding](./images/afbeelding26.png)
 
 ### Content aanpassen
 
@@ -198,17 +216,6 @@ Voeg je script steeds **onderaan je body** toe, zo krijgt de gebruiker je webpag
 
 Als je in javascript andere javascripts gebruikt moet je die voor jou script link plaatsen in de body.
 :::
-
-### De console als debug tool
-
-Je kan de console van je browser gebruiken als debug tool door er informatie naar te sturen.
-
-```js
-let school = 'Vives';
-console.log('school = ' + school);
-```
-
-Je kan tevens javascript uittesten in de console voor je het gaat toevoegen aan je script.
 
 ### Variabelen
 
@@ -1693,6 +1700,4 @@ document.getElementById('curicon').src="http://openweathermap.org/img/wn/"+json.
 
 
 
-## Cheatsheet
 
-[Hier](/files/cheatsheet_js.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.

@@ -2,6 +2,8 @@
 
 ![download](./images/cssicon.png) 
 
+[Hier](/files/cheatsheet_css.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
+
 **C**ascading **S**tyle **S**heets is een style sheet language die gebruikt wordt om de presentatie van een HTML document te beschrijven.
 
 CSS is ontworpen om het scheiden van presentatie en inhoud van een webpagina mogelijk te maken. Hierdoor is het geheel beter toegankelijk, flexibeler en heeft een een betere controle op de presentatie karakteristieken. Meerdere webpagina's kunnen ook dezelfde opmaak delen door gebruik te maken van eenzelfde .css bestand.
@@ -948,7 +950,3 @@ Om je website bij Google in te dienen, gebruik je [Google Search Console](https:
 1. Ga naar Google Search Console en log in met je google account (als je nog niet bent ingelogd via Google Chrome).
 2. Voeg nu je domainnaam toe
 3. Om te bewijzen dat je eigenaar bent van dit domain gebruik je gewoon het DNS TXT record.
-
-## Cheatsheet
-
-[Hier](/files/cheatsheet_css.pdf) kan je een cheatsheet terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
