@@ -721,7 +721,9 @@ Kick-off klassikale opdracht
 :::
 
 
-## Week 2 - Een WEB-API raadplegen vanuit PHP
+## Week 2 - Gebruik van WEB-API's in PHP
+
+### Een WEB-API raadplegen vanuit PHP
 
 Het verschil met wat we in javascript hebben gedaan is hier dat de client geen verbinding meer hoeft te maken met een andere server. Het is de server die dit nu zal doen en het resultaat gewoon naar de client browser sturen.
 
@@ -729,7 +731,7 @@ We gebruiken hiervoor cURL (client URL library), een techniek die veel gebruikt 
 
 Meer informatie kan je steeds terugvinden op [PHP.net](https://www.php.net/manual/en/book.curl.php) of [PHPPOT.com](https://phppot.com/php/php-curl/).
 
-### De techniek even uitproberen
+#### De techniek even uitproberen
 
 We gebruiken terug httpbin.org om cURL even te testen:
 
@@ -756,11 +758,8 @@ Maak het bestand **curl.php**:
 ?>
 ```
 
-Plaats een breakpoint en browse nu naar het bestand:
-
-![download](./images/afbeelding4.png)
-
-Je stelt vast dat de variabele $content nu een string bevat, je kan die als volgt decoderen naar een JSON formaat:
+Je stelt vast dat de variabele $content nu een string bevat met naast de data ook allerhande header informatie.
+Je kan deze string als volgt decoderen naar een JSON formaat:
 
 ```php
 $data = json_decode($content);
@@ -773,27 +772,47 @@ echo "<div>a is {$data->args->a}<div>";
 echo "<div>b is {$data->args->b}<div>";
 ```
 
-### Deze techniek even toepassen op een WEB-API die we reeds kennen
+#### Deze techniek even toepassen op een WEB-API die we reeds kennen
 
 We gebruiken terug cURL om via openweathermap het weer op te vragen:
 
 ```php
 <?php
+    // variabelen
     $stad = "brugge";
     $apiid = "plaats hier je eigen api id voor openweathermap";
-    $url = "https://api.openweathermap.org/data/2.5/weather?q=".$stad."&appid=".$apiid."&units=metric&lang=nl";
-    $content = curlRequest($url);
-    $data = json_decode($content);
-    echo "<div>temperatuur is {$data->main->temp}</div>";
-    echo "<div>de weersomschrijving: \"{$data->weather[0]->description}\"</div>";
-    echo "<img id=\"icoon\" src=\"http://openweathermap.org/img/wn/{$data->weather[0]->icon}@2x.png\"></img>";
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=".$stad."&appid=".$apiid."&units=metric&lang=nl";
+
+    // functie curl
+    function curlRequest($url)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+
+    // Curl request
+    $content = curlRequest($url);
+    $data = json_decode($content);
+
+    // Visualiseren
+    echo "<div>temperatuur is {$data->main->temp}</div>";
+    echo "<div>de weersomschrijving: \"{$data->weather[0]->description}\"</div>";
+    echo "<img id=\"icoon\" src=\"http://openweathermap.org/img/wn/{$data->weather[0]->icon}@2x.png\"></img>";
 ?>
 ```
-## Zelf een WEB-API schrijven in PHP
+### Zelf een WEB-API schrijven in PHP
 
 Als we een WEB-API gebruiken sturen we een HTTP GET request naar een url en krijgen een JSON response terug.
 
-### Opvangen van een HTTP GET request
+#### Opvangen van een HTTP GET request
 
 Maak hiervoor een file `testapi.php` aan. Dat zal tevens onze url zijn.
 
@@ -813,7 +832,7 @@ Om die twee getallen uit de GET request te halen gaan we als volgt te werk:
 ```
 We gebruiken `(int)` om zeker te zijn dat we integers definiëren i.p.v. strings.
 
-### De array van cijfers maken 
+#### De array van cijfers maken 
 
 We werken het gemakkelijkst met een array in PHP, je kan deze ook eenvoudig omvormen naar JSON.
 
@@ -831,7 +850,7 @@ We werken het gemakkelijkst met een array in PHP, je kan deze ook eenvoudig omvo
 ?>
 ```
 
-### Een JSON response versturen
+#### Een JSON response versturen
 
 Tot slot zetten we de header voor ons antwoord juist en geven we een response via `echo`.
 M.b.v. `json_encode` kunnen we eenvoudig de array omvormen tot een JSON object.
@@ -845,7 +864,16 @@ M.b.v. `json_encode` kunnen we eenvoudig de array omvormen tot een JSON object.
     echo json_encode($output);
 ?>
 ```
-## Take-home opdracht
+
+### Klasopdracht
+
+::: tip Back-end IoT applicatie
+
+WEB API in de klassikale opdracht
+
+:::
+
+### Take-home opdracht
 
 ::: tip Voorbereiding Form validation via PHP
 
