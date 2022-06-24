@@ -657,10 +657,6 @@ We maken onder `C:\Apache\htdocs` een folder `Webdevelopment` aan en creëren da
 ```
 We plaatsen de `\n` in de code om dat de door php gegenereerde html code dan mooier/leesbaarder is. Je kan die code zien door de paginabron van je webpagina te bekijken.
 
-Als we in Visual Studio Code `Listen for XDebug` starten, dan kunnen we breakpoints plaatsen waar de pagina zal tegengehouden worden om te debuggen.
-
-![download](./images/afbeelding3.png)
-
 Vervolgens maken we de effectieve maaltafel aan in een tabel:
 
 ```php
@@ -881,7 +877,7 @@ Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofd
 
 :::
 
-## PHP en Forms
+## Week 3 - Gebruik van Forms met PHP
 
 ### HTTP Request
 
@@ -1059,7 +1055,16 @@ Dit ziet er dan als volgt uit:
     </body>
 </html>
 ```
-## Take-home opdracht
+
+### Klasopdracht
+
+::: tip Back-end IoT applicatie
+
+Aanmaken van de info pagina van de klassikale opdracht
+
+:::
+
+### Take-home opdracht
 
 ::: tip Voorbereiding PHP en MySql
 
@@ -1068,7 +1073,7 @@ Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofd
 :::
 
 
-## PHP en mySQL
+## Week 4 - Werken met data in een mySQL database in PHP
 
 ### Een oefendatabase aanmaken
 
