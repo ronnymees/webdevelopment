@@ -1075,17 +1075,17 @@ Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofd
 
 ## Week 4 - Werken met data in een mySQL database in PHP
 
-### Een oefendatabase aanmaken
+### Een oefendatabase aanmaken en CRUD testen
 
 Voor alle database gerelateerde acties verwijs ik naar de cursus Databases.
 
 We starten met de aanmaak van een database en een gebruiker. Je kan dit in jou favarite tool doen zoals **mySQL Workbench** of **phpMyAdmin**.
 
 ```sql
-CREATE DATABASE globe_bank;
-USE globe_bank;
+CREATE DATABASE vives;
+USE vives;
 CREATE USER 'webuser'@'localhost' IDENTIFIED BY "secretpassword";
-GRANT ALL ON globe_bank.* TO 'webuser'@'localhost’;
+GRANT ALL PRIVILEGES ON vives.* TO 'webuser'@'localhost';
 ```
 
 Vervolgens maken we een tabel, ook schema genoemd, aan.
@@ -1303,25 +1303,37 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 Zo, nu hebben we een PHP pagina waarmee we records kunnen toevoegen en wissen in onze tabel.
 
-## PHP en mail
+### Klasopdracht
 
-Om een mail te versturen gebruiken we [PHPMailer](https://github.com/PHPMailer/PHPMailer).
-We gebruiken de minimum installatie. Hiervoor maken we een folder `PHPMailer\PHPMailer` aan en kopieren de map `src` hierin.
+::: tip Back-end IoT applicatie
 
-Zoals je ook in de documentatie van PHPMailer kan lezen moeten we in ons PHP bestand de PHPMailer importeren:
+Verder werken aan de info pagina, WEBApi en het IoT device alsook het aanmaken van de database van de klassikale opdracht
+
+:::
+
+## Week 5 - PHP en mail
+
+We maken gebruik van de intern voorziene mailservice van XXAMP.
+
+De basis van het sturen van een mail ziet er als volgt uit:
 
 ```php
 <?php
-    // import PHPMailer classes
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+    $to_email = "receipient@gmail.com";
+    $subject = "Simple Email Test via PHP";
+    $body = "Hi, This is test email send by PHP Script";
+    $headers = "From: sender email";
 
-    require './PHPMailer/PHPMailer/src/Exception.php';
-    require './PHPMailer/PHPMailer/src/PHPMailer.php';
-    require './PHPMailer/PHPMailer/src/SMTP.php';
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "Email successfully sent to $to_email...";
+    } else {
+        echo "Email sending failed...";
+    }
 ?>
 ```
+
+Test dit uit zodat je zeker bent dat je email configuratie in orde is.
+
 ### Een bevestigingsmail versturen
 
 We starten met [een eenvoudige pagina](/files/mailform.zip) met een form waar je een voornaam, naam en email adres kan ingeven.
@@ -1346,7 +1358,7 @@ We starten met het ophalen van de POST data:
             $email = $_POST['email']; 
 
             //debug: komt de info binnen ?
-            echo "<p>Firstname = ".$firstname." Name = ".$name." Email = ".$email."</p>" // mag straks terug weg
+            echo "<p>Firstname = ".$firstname." Name = ".$name." Email = ".$email."</p>"; // mag straks terug weg
 
             // Genereren APIkey
 
@@ -1359,92 +1371,126 @@ We starten met het ophalen van de POST data:
 </html>
 ```
 
-Laten we nu via PHPMailer een mail versturen (raadpleeg hiervoor de documentatie over het gebruik van PHPMailer).
+We zullen een html mail versturen, hiervoor zullen we een css opmaak gebruiken. Plaats onderstaande styling in een bestand `mailstyle.css` onder de folder `styles`.
 
-We starten met het inporteren van PHPMailer en het definieren van de mailserver info, dit doen we bovenaan ons bestand:
+```css
+html{
+    background-color: lightgray;
+}
 
-```php
-    // import PHPMailer classes
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+body{
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    font-family: Calibri;
+    font-size: 18px;
+}
 
-    require './PHPMailer/PHPMailer/src/Exception.php';
-    require './PHPMailer/PHPMailer/src/PHPMailer.php';
-    require './PHPMailer/PHPMailer/src/SMTP.php';
+#banner{
+    margin: 0px;
+    border-bottom: 2px solid;
+    border-color:  rgb(224,0,32);
+}
 
-    // instellen van de mailserver info
-    $mailhost = 'smtp.gmail.com';
-    $mailuser = '<jou gmail adres>';
-    $mailpass = '<jou app wachtwoord>';
+#logo {
+    margin: 5px;
+    height: 50px;
+    float: left;
+}
+
+.nobullet {
+    list-style-type: none;
+}
+
+#maintext h1 {
+    margin: 0px;
+    color: rgb(224,0,32);
+    font-family: aller;
+    font-size: 38px;
+    width: 100%;
+    text-align: center;
+}
+
+#maintext p {
+    margin: 0px;
+    margin-bottom: 50px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+#info{
+    margin: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 8px 16px 0px rgba(224,0,32,0.4);
+}
 ```
-Nu kunnen we de mail beginnen samenstellen:
+
+We laten de APIkey even voor wat het is en starten nu met de opbouw van de mail om die vervolgens te versturen.
 
 ```php
     // Genereren APIkey
     $apikey = "voorlopige test";
 
-    // Mail versturen
-    $mail = new PHPMailer(true);
+    // subject definieren
+    $subject = "Copy of your contact request";
 
-    $mail->SMTPDebug  = SMTP::DEBUG_OFF;
-    $mail->isSMTP();
-    $mail->Host       = $mailhost;
-    $mail->SMTPAuth   = true;
-    $mail->Username   = $mailuser;
-    $mail->Password   = $mailpass;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
-           
-    $mail->setFrom($mailuser, 'Vives IoT - Webdevelopment 3 course');
-    $mail->addAddress($email, $firstname." ".$name);
-    $mail->addReplyTo('noreply@vives-iot.be', 'Do not reply to this mail');
+    // server bestanden inladen
+    $content = file_get_contents("./styles/mailstyle.css");
+    $img = file_get_contents('./images/logo.png');
+    $imgdata = base64_encode($img);
 
-    $mail->isHTML(true);
-    $mail->Subject    = 'Welcome to our VIVES IoT page';
-    $mail->AddEmbeddedImage('./images/logo.png','logo_vives');
-    $mail->Body       = 
-    '<html>
-        <style>
-            html{background-color: lightgray;}
-            body{width: 800px;margin: auto;margin-top: 20px;margin-bottom: 20px;background-color: white;padding: 20px;font-family: Calibri;font-size: 18px;}
-            #banner{margin: 0px;border-bottom: 2px solid;border-color:  rgb(0,156,196);}
-            #logo {margin: 5px;width: 94px;height: 108px;float: left;}
-            #maintext h1 {margin: 0px;color: rgb(0,156,196);font-family: aller;font-size: 38px;width: 100%;text-align: center;}
-            #maintext p {margin: 0px;margin-bottom: 50px;color: black;width: 100%;text-align: center;}
-            #info{margin: 10px;margin-bottom: 40px;padding: 10px;border: 1px solid rgba(0, 0, 0, 0.1);background-color: rgb(255, 255, 255);box-shadow: 10px 8px 16px 0px rgba(0,156,196,0.4);}
-        </style>
-            
-        <body>
+    // html body definieren                
+    $body = <<<EOF
+            <html>
+            <head>
+            <style>
+            $content
+            </style>
+            </head>
+            <body>
             <div id="banner">
-                <img id="logo" src="cid:logo_vives"></a>
+                <img id="logo" src='data:image/x-icon;base64,$imgdata'>
                 <div id="maintext">
                     <h1>VIVES Internet of Things</h1>
                     <p>Design your future</p>                
                 </div>        
             </div>
-
-            <p>Hello '.$firstname.',</p>
+    
+            <p>Hello $firstname,</p>
             <p>Thank you for registering on the VIVES IoT page!</p>
             <p>We have registered the following credentials:<p>
             <ul>
-                <li>Firstname: <b>'.$firstname.'</b></li>
-                <li>Name: <b>'.$name.'</b></li>
-                <li>Email: <b>'.$email.'</b></li>                                    
+                <li>Firstname: <b>$firstname</b></li>
+                <li>Name: <b>$name</b></li>
+                <li>Email: <b>$email</b></li>                                    
             </ul>
             
             <div id="info">
                 <p>You can use your personal APIkey for IoT purposes.</p>
                 <ul>
-                    <li>Your <b>APIkey</b> = '.$apikey.'</li>
+                    <li>Your <b>APIkey</b> = $apikey</li>
                 </ul>
             </div>
 
             <p>Regards,<p>
             <p>The VIVES IoT team.</p>                                
-        </body>
-    </html>';    
-    $mail->send();
+            </body>
+            </html>
+            EOF;
+
+            // Set content-type header for sending HTML email 
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+
+            // Mail versturen
+            $result=mail($email, $subject, $body, $headers);   
 ```
 Tot slot kunnen we de confirmatie tekst voorzien:
 
@@ -1463,20 +1509,40 @@ Bij het gebruik van een WEB API zal veelal een APIkey worden aangemaakt. Deze za
 Een APIkey is een onleesbare stringcombinatie van tekens die als volgt kan gegenereerd worden (dit is slecht 1 van de mogelijkheden om dit te doen).
 
 ```php
-    // apikey aanmaken
-    mt_srand((double)microtime()*10000); // optioneel voor php 4.2.0 en hoger.
-    $charid = strtoupper(md5(uniqid(rand(), true)));
-    $hyphen = chr(45);// "-"
-    $apikey = chr(123)// "{"
-        .substr($charid, 0, 8).$hyphen
-        .substr($charid, 8, 4).$hyphen
-        .substr($charid,12, 4).$hyphen
-        .substr($charid,16, 4).$hyphen
-        .substr($charid,20,12)
-        .chr(125);// "}"
+    // functie om een APIkey te genereren
+    function getGUID(){
+        if (function_exists('com_create_guid')){
+            return com_create_guid();
+        }else{
+            mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+            $charid = strtoupper(md5(uniqid(rand(), true)));
+            $hyphen = chr(45);// "-"
+            $uuid =
+                substr($charid, 0, 8).$hyphen
+                .substr($charid, 8, 4).$hyphen
+                .substr($charid,12, 4).$hyphen
+                .substr($charid,16, 4).$hyphen
+                .substr($charid,20,12);
+            return $uuid;
+        }
+    }
 ```
 
-## Take-home opdracht
+Je kan nu in de PHP code de APIkey met deze functie genereren:
+```php
+// Genereren APIkey
+    $apikey = getGUID();
+```
+
+### Klasopdracht
+
+::: tip Back-end IoT applicatie
+
+Verder werken aan de info pagina en WEBApi van de klassikale opdracht
+
+:::
+
+### Take-home opdracht
 
 ::: tip Voorbereiding PHP en cookies & sessions
 
@@ -1487,11 +1553,11 @@ Andere relevantie informatiebronnen zijn:
 * [TutorialRepublic - PHP cookies](https://www.tutorialrepublic.com/php-tutorial/php-cookies.php)
 * [TutorialRepublic - PHP sessions](https://www.tutorialrepublic.com/php-tutorial/php-sessions.php)
 * [Guru99 - cookies and sessions](https://www.guru99.com/cookies-and-sessions.html)
-* Hoofdstuk 5 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms/user-authentication-overview) op LinkedIn Learing.
+* Hoofdstuk 4 van de videotutorial [PHP with mySQL essential training 2 build a CMS](https://www.linkedin.com/learning/php-with-mysql-essential-training-2-build-a-cms) op LinkedIn Learing.
 
 :::
 
-## PHP en cookies & sessions
+## Week 6 - PHP en cookies & sessions
 
 ### Cookie
 
@@ -1625,15 +1691,15 @@ Het is onmogelijk om vanuit de hash het paswoord te berekenen. Bij gevolg moet j
 
 ![download](./images/afbeelding9.png)
 
-## Wetgeving
+### Wetgeving
 
 Laten we eerst even [deze video](https://www.youtube.com/watch?v=QWw7Wd2gUJk) bekijken om beter te begrijpen wat het probleem met cookies is.
 
-### GDPR
+#### GDPR
 
 Bedrijven hebben het recht om de persoonsgegevens van gebruikers te verwerken indien ze **toestemming kregen** of ze een **legitiem belang** (bvb om fraude te vermijden) hebben. 
 
-### ePrivacy Regulation
+#### ePrivacy Regulation
 
 Dit is een uitbreiding op de GDPR wetgeving die binnenkort van kracht komt:
 
@@ -1642,7 +1708,7 @@ Dit is een uitbreiding op de GDPR wetgeving die binnenkort van kracht komt:
 * privacy setting van de browsers standaard aan
 * regulatie van de inhoud van de metadata (cookies)
 
-### Klassificatie
+#### Klassificatie
 
 Cookies vallen onder volgende klassificatie:
 
@@ -1663,7 +1729,7 @@ Cookies vallen onder volgende klassificatie:
 * statistics cookies (performance cookies): tellers, hoe de website werd gebruikt, ... Maar anoniem gemaakt, niet meer terug te leiden naar een persoon
 * marketing cookies: volgen je online activiteit en helpen adverteerders doelgerichter te adverteren, meestal third-pary en persistent
 
-### Cookie richtlijnen
+#### Cookie richtlijnen
 
 * gebruikers dienen toestemming te geven vooraleer cookies te gebruiken, uitgezonderd de noodzakelijke cookies(strictly necessary cookies)
 * de gebruiker informeren welke data elke cookie precies volgt, en dit vooraleer toestemming werd verkregen
@@ -1675,3 +1741,10 @@ Een mooi voorbeeld is [Cookiebot](https://www.cookiebot.com/en/cookie-consent).
 
 ![download](./images/afbeelding10.png)
 
+### Klasopdracht
+
+::: tip Back-end IoT applicatie
+
+Verder werken aan de info pagina van de klassikale opdracht
+
+:::
