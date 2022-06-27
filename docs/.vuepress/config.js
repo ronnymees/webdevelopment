@@ -19,18 +19,21 @@ module.exports = {
           '/01_introduction/',
           '/02_html/',
           '/03_css/',          
+          '/04_forall/',          
+          '/05_online/',          
+          '/06_publish/',          
         ]
       },
       { 
         title: 'Front-end webdevelopment',
         children: [
-          '/04_javascript/',
+          '/07_javascript/',
         ]
       },
       {
         title: 'Back-end webdevelopment',
         children: [
-           '/05_php/', 
+           '/08_php/', 
         ]
       }           
     ]    

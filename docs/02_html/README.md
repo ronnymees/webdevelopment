@@ -416,8 +416,6 @@ Om een cel meerdere rijen groot te maken gebruiken we het `rowspan` attribuut.
 </table>
 ```
 
-
-
 ### Container
 
 Het container element kan gebruikt worden om elementen te groeperen in je HTML document.
