@@ -14,12 +14,16 @@ module.exports = {
     docsBranch: 'master',
     sidebar: [
       { 
-        title: 'Front-end webdevelopment',
+        title: 'Webdesign',
         children: [
-          '/00_software_installatie/',
           '/01_introduction/',
           '/02_html/',
-          '/03_css/',
+          '/03_css/',          
+        ]
+      },
+      { 
+        title: 'Front-end webdevelopment',
+        children: [
           '/04_javascript/',
         ]
       },

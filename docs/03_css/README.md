@@ -486,7 +486,7 @@ Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op h
 :::
 
 
-## Responsief webdesign
+## Een webpagina voor iedereen
 
 Responsive design is een methode binnen webdesign die ervoor zorgt dat je webcontent meeverandert met de verschillende afmetingen van schermen van apparaten of vensters op die apparaten.
 

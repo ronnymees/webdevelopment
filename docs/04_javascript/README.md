@@ -1,4 +1,4 @@
-# Interactief maken van een webpagina
+# Front-end webdevelopment met Javascript
 
 ![download](./images/javascripticon.png) 
 

@@ -1,4 +1,4 @@
-﻿# De structuur van een webpagina
+﻿# De structuur van een webpagina met HTML
 
 ![download](./images/htmlicon.png)
 
