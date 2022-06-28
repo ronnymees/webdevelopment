@@ -8,11 +8,11 @@ Maar als je dezelfde content in meerdere kolommen op een smartphone wil tonen, k
 
 Responsive design maakt het mogelijk om verschillende lay-outs van je content en bijbehorend design af te leveren aan verschillende apparaten, afhankelijk van hun schermgrootte.
 
-### De bouwstenen van responsive webdesign
+## De bouwstenen van responsive webdesign
 
 In dit deel zullen we het hebben over de fundering van responsive webdesign en de verschillende bouwstenen die je daarvoor nodig hebt.
 
-#### CSS en HTML
+### CSS en HTML
 
 De basis voor responsive design is de juiste combinatie van HTML en CSS
 
@@ -34,7 +34,7 @@ Of we kunnen ons juist richten op een specifieke class, “full-width-img” doo
 
 Je kan het ontwerp ook op andere aspecten bewerken, naast hoogte, breedte en kleur. Door CSS op deze manier te gebruiken maak je een ontwerp responsive, zodra je het combineert met een techniek die “media query” wordt genoemd.
 
-#### Media query’s
+### Media query’s
 
 Een media query controleert welk apparaat wordt gebruikt en is een belangrijk deel van CSS3. Het is namelijk het onderdeel waarmee je content kan laten weergeven afhankelijk van bepaalde factoren, zoals schermgrootte of resolutie.
 
@@ -53,7 +53,7 @@ Je kan het vergelijken met een “if” clausule die je kan vinden in sommige pr
 
 Is het scherm tenminste 780 pixels breed, dan zullen afbeeldingen met de “full-width-img” class 90% van het scherm gebruiken en automatisch gecentreerd worden in gelijke marges aan beide kanten.
 
-#### Fluid lay-outs
+### Fluid lay-outs
 
 Een fluid lay-out (vloeiende lay-out) is een essentieel onderdeel van modern responsive design. In de goede oude tijd kon je een statische waarde voor elke HTML element instellen, bijvoorbeeld 600 pixels.
 
@@ -63,7 +63,7 @@ Een fluid lay-out is echter afhankelijk van dynamische waardes, zoals een percen
 
 Deze methode past dynamisch de grootte van elementen aan op basis van de grootte van het scherm.
 
-#### Flexbox lay-outs
+### Flexbox lay-outs
 
 Alhoewel een op percentages gebaseerde lay-out wordt gezien als ‘fluid’, vinden veel designers en webdevelopers dit nog niet dynamisch of flexibel genoeg. Flexbox is een CSS module die is ontworpen als efficiëntere manier om diverse elementen in een lay-out te plaatsen, zelfs wanneer de grootte van de inhoud van een container niet bekend is.
 
@@ -73,7 +73,7 @@ Een flexibele container past de items in de container aan naar gelang de beschik
 
 Dit is vrij geavanceerd design. Als je dit in je design wil gaan toepassen, raden we je aan om de [CSS Tricks’ flexbox gids](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) te lezen.
 
-#### Responsive afbeeldingen
+### Responsive afbeeldingen
 
 De meest basale uitvoering van responsive afbeeldingen volgt hetzelfde concept als fluid lay-out, waarbij een dynamische unit wordt gebruikt om de breedte of hoogte in te stellen. Het stukje CSS code dat we eerder al noemde, zorgt hier al voor:
 
