@@ -44,9 +44,11 @@ Soms is de fout wat complexer en moeten we debuggen.
 Bekijk even de informatie op de [developer pagina van Chrome](https://developer.chrome.com/docs/devtools/javascript/)
 
 
-## We bestuderen enkele voorbeelden
+## Week 1 - Introductie in Javascript
 
-### Content aanpassen
+### We bestuderen enkele voorbeelden
+
+#### Content aanpassen
 
 Je kan javascript gebruiken om de inhoud van een element aan te passen.
 
@@ -86,7 +88,7 @@ function goBackTitle() {
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 :::
 
-### Style aanpassen
+#### Style aanpassen
 
 Je kan javascript gebruiken om de opmaak van iets aan te passen.
 
@@ -123,7 +125,7 @@ function changeBackground2() {
 ```
 * met de syntax `.style` kan je de stijl van  een element aanpassen.
 
-### Complete style aanpassen
+#### Complete style aanpassen
 
 Je kan javascript gebruiken om de volledige opmaak van je pagina, zeg maar het thema, te wijzigen.
 
@@ -184,11 +186,11 @@ function changeCSS() {
 }
 ```
 
-## Vertrouwd raken met de syntax
+### Vertrouwd raken met de syntax
 
 Voor eerst moet je begrijpen dat javascript lijn per lijn geïnterpreteerd wordt door de browser. Terwijl je bij c# het programma compileert tot machinetaal instructies en dan zelfstandig kan laten runnen.
 
-### Javascript toevoegen aan je html pagina.
+#### Javascript toevoegen aan je html pagina.
 
 Je kunt ervoor kiezen om een script block toe te voegen aan je html pagina. Indien mogelijk vermijd je deze techniek.
 
@@ -217,7 +219,7 @@ Voeg je script steeds **onderaan je body** toe, zo krijgt de gebruiker je webpag
 Als je in javascript andere javascripts gebruikt moet je die voor jou script link plaatsen in de body.
 :::
 
-### Variabelen
+#### Variabelen
 
 In javascript zijn variabelen 'loosely typed', wat wil zeggen dat het datatype afhankelijk is van wat je in de variabele stopt. Je kan dus perfect het ene moment een integer in een variabele hebben en enkele ogenblikken later een string in diezelfde variabele hebben.
 
@@ -251,7 +253,7 @@ let somevariable;
 ```
 :::
 
-### Datatypes
+#### Datatypes
 
 Binnen javascript worden 7 primitieve datatypes gebruikt:
 * Boolean : true of false
@@ -308,7 +310,7 @@ myArray.push('Test');    // Zal een nieuw item achteraan de array toevoegen.
 myArray.pop();           // Zal het laatste item van de array verwijderen
 ```
 
-### Logische operatoren
+#### Logische operatoren
 
 We kunnen in javascript de gekende logische operatoren gebruiken om condities te  bouwen:
 
@@ -320,7 +322,7 @@ Bijzonder bij de interpretatie van condities is dat javascript de conditie bekij
 ```js
 false && (a=2)  // linker deel is false, dus de conditie is false, a=2 zal niet meer uitgevoerd worden.
 ```
-### Beslissingen
+#### Beslissingen
 
 We kunnen in javascript de gebruikelijke beslissingsstructuren gebruiken:
 
@@ -348,7 +350,7 @@ Daarnaast hebben we ook de ternary operator:
 ```js
 (animal === 'cat') ? console.log("cat") : console.log("no cat");
 ```
-### Herhalingen
+#### Herhalingen
 
 We kunnen in javascipt ook met lussen werken:
 
@@ -378,7 +380,7 @@ do {
   count--;
 } while (count > 0);
 ```
-### Functies
+#### Functies
 
 We kunnen in javascript eveneens met methoden en functies werken:
 ```js
@@ -444,7 +446,7 @@ verdubbel = i => (i*2);
 ```
 Een functie die meegeven wordt als parameter met een andere functie noemen we een **'callback functie'**.
 
-### Error afhandeling
+#### Error afhandeling
 
 Net zoals in C# kan je met `try` en `catch` de error afhandeling voorzien.
 
@@ -456,7 +458,7 @@ try {
 }
 ```
 
-### Commentaar voorzien
+#### Commentaar voorzien
 
 Zoals steeds is het 'good-practice' om je code van commentaar te voorzien.
 
@@ -469,7 +471,7 @@ Zoals steeds is het 'good-practice' om je code van commentaar te voorzien.
 // Commentaar op 1 enkele lijn.
 ```
 
-### HTML elementen vinden
+#### HTML elementen vinden
 
 Om in javascript elementen van een html pagina op te vragen bestaan er enkele mogelijkheden:
 
@@ -479,7 +481,7 @@ Om in javascript elementen van een html pagina op te vragen bestaan er enkele mo
 * querySelectorAll() : lijst van elementen die voldoet aan een CSS selector
 * querySelector() : eerste element die voldoet aan een CSS selector
 
-### Good practices
+#### Good practices
 
 * Als je manuele indentatie voorziet, gebruik dan steeds ofwel spaties ofwel tabs maar combineer ze niet.
 * Voorzie je code van commentaar zodat je code vlotter begrijpbaar is.
@@ -489,7 +491,7 @@ Om in javascript elementen van een html pagina op te vragen bestaan er enkele mo
   * voor en na een operator (`==`, `<`, `&&`, `+`, ...)
 * Vermijd het gebruik van `var` om een variabele te definiëren
 
-## JavaScript Object Notation (JSON)
+### JavaScript Object Notation (JSON)
 
 ![download](./images/jsonicon.png) 
 
@@ -529,7 +531,7 @@ console.log(JSON.stringify({ x: 5, y: 6 }));
 // expected output: "{"x":5,"y":6}"
 ```
 
-## Oefening
+### Oefening
 
 ::: tip Basis Javascript oefening
 
@@ -537,7 +539,7 @@ Maak de oefening op het elektronisch leerplatform en laad die op.
 
 :::
 
-## Take-home opdracht
+### Take-home opdracht
 
 ::: tip Herhaling Javascript
 
@@ -549,7 +551,7 @@ Na het volgen van deze online cursus krijg je een certificaat dat je oplaad op h
 
 :::
 
-## We experimenteren nog even verder met Javascript
+## Week 2 - We experimenteren nog even verder met Javascript
 
 Laten we al doende leren a.d.h.v. twee oefeningen.
 
@@ -848,7 +850,7 @@ function processForm() {
 };
 ```
 
-## Oefening
+### Oefening
 
 ::: tip Javascript oefening
 
@@ -856,7 +858,7 @@ Maak de oefening op het elektronisch leerplatform en laad die op.
 
 :::
 
-## Take-home opdracht
+### Take-home opdracht
 
 ::: tip Voorbereiding Form validation via Javascript
 
@@ -866,7 +868,7 @@ Om de leerstof van de volgende les nog beter te begrijpen volg je onderstaande v
 
 :::
 
-## Form validatie via javascript
+## Week 3 - Form validatie via javascript
 
 Ter ondersteuning van deze leerstof raden we je aan om volgende bronnen te raadplegen:
 
@@ -1053,7 +1055,7 @@ Voor de header is het **application/json** dat moet doorgegeven worden. (deze in
 
 Test uit door te surfen naar [http://localhost:1880/formdata.json](http://localhost:1880/formdata.json)
 
-## AJAX met tabellen en grafieken
+## Week 4 - AJAX met tabellen en grafieken
 
 ### Asynchronous Javascript And XML (AJAX)
 
@@ -1454,7 +1456,7 @@ var myLineChart = new Chart(ctx, {
 
 Je kan meer info terugvinden op [chartjs.org](https://www.chartjs.org/docs/latest/getting-started/).
 
-## Web API
+## Week 5 - Web API
 
 Een Application Programming Interface is een software service dat een set aan functies online beschikbaar stelt voor anderen.
 
@@ -1484,11 +1486,10 @@ We gaan aan de slag met Philps Hue:
 Op de campus Kortrijk is een bridge met 3 lampen verbonden met het VIVES netwerk.
 
 ::: tip 
-Je kan die bereiken via [VPN pulse secure](https://admin.kuleuven.be/icts/services/extranet/ssl-vpn-pulse-client).
-Installeer deze client voor jou laptop en login met je VIVES account om de VPN verbinding te maken.
+Je kan die bereiken via **Dit moet nog aangepast worden conform de installatie in B304**
 
-* IP adress = 10.198.120.60
-* User = QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz
+* IP adress = 192.168.0.128
+* User = AYu2d2WypYXgb83WaEh9NkWldFN8KAJoStCUjP8e
 :::
 
 Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat uitleg over de Web API van Philips Hue nalezen.
@@ -1511,8 +1512,10 @@ Je kan [hier](https://developers.meethue.com/develop/get-started-2/) alvast wat 
 
 Vanuit de console van je browser kan je dit testen met:
 
+**Nog aanpassen conform de installatie in B304**
+
 ```js
-fetch("http://10.198.120.60/api/QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz/lights/1/state",
+fetch("http://192.168.0.128/api/AYu2d2WypYXgb83WaEh9NkWldFN8KAJoStCUjP8e/lights/1/state",
 {
 method: "PUT",
 body: JSON.stringify({"on":true})
@@ -1524,6 +1527,8 @@ body: JSON.stringify({"on":true})
 Je zou volgende resultaat moeten zien:
 
 ![download](./images/afbeelding21.png)
+
+En de lamp gaat aan.
 
 #### Aansturen via een webpagina
 
@@ -1559,7 +1564,7 @@ window.addEventListener(('load'), (event) => {
             lamp_on=true;
         }
 
-        let response = await fetch("http://10.198.120.60/api/QScScRGIUH581BZOxzAoTrW76rN38GfgXd9QIFyz/lights/1/state",
+        let response = await fetch("http://192.168.0.128/api/AYu2d2WypYXgb83WaEh9NkWldFN8KAJoStCUjP8e/lights/1/state",
         {
             method: "PUT",
             body: JSON.stringify({"on":lamp_on})
@@ -1571,6 +1576,19 @@ window.addEventListener(('load'), (event) => {
 });
 ```
 **Merk op**: Via indexOf wordt nagegaan op welke positie "lamp_on.jpg" in de src string voorkomt, dit omdat de string de volledige url bevat, -1 wil zeggen dat deze niet voorkomt
+
+::: tip Tip
+
+Mocht je de kleur van de lamp willen aanpassen kan je volgende strategie toepassen:
+In de body plaats je bv `{"hue", 235*180}`
+
+Volgende 3 parameters hebben invloed op de lamp:
+* hue : is de kleurwaarde * 180
+* sat : is de saturatie (0-254)
+* bri : is de lichtintensiteit (0-254)
+
+Je kan een online tool gebruiken om deze waarden te bepalen bij het kleur dat je wenst.
+:::
 
 ### Rest API
 

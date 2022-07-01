@@ -1136,7 +1136,7 @@ Een typische interactie met een database vanuit PHP ziet er als volgt uit:
     $dbhost = 'localhost';
     $dbuser = 'webuser';
     $dbpass = 'secretpassword';
-    $dbname = 'globe_bank';
+    $dbname = 'vives';
 
     // 1. Verbinden met de database
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -1180,7 +1180,7 @@ We maken een form waarmee we data kunnen toevoegen aan de tabel. Noem dit bestan
     $dbhost = 'localhost';
     $dbuser = 'webuser';
     $dbpass = 'secretpassword';
-    $dbname = 'globe_bank';
+    $dbname = 'vives';
 
     // Verbinden met de database
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
