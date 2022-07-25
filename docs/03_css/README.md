@@ -390,7 +390,7 @@ ul {
 }
 ```
 
-### tables
+### Tables
 
 Je kan de opmaak van je tabel als volgt aanpassen:
 
@@ -408,6 +408,18 @@ th, td {
   padding: 15px;
 }
 ```
+
+### Input
+
+Je kan uiteraard een input veld volledig stijlen, een leuk weetje is dat je die ook kan voorzien van een icoon.
+
+```css
+input#email{
+  background-image: url("images/email.png");
+}
+```
+
+![image](./images/afbeelding3.png)
 
 ### Display
 

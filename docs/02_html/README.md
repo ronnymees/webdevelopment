@@ -515,7 +515,25 @@ Het `<textarea>` element wordt gebruik om een multi-line inputveld weer te geven
 The cat was playing in the garden.
 </textarea>
 ```
-#### Button 
+
+#### Fieldset & legend
+
+Het `<fieldset>` element wordt gebruikt om elementen in een form te grouperen die samen horen.
+Met het `<legend>` element kan je een titel geven aan de groep.
+
+```html
+<fieldset>
+  <legend>Contact details</legend>
+  <label>Email:<br />
+  <input type="text" name="email"/></label><br />
+  <label>Mobile:<br />
+  <input type="text" name="mobile"/></label><br />
+  <label>Telephone:<br />
+  <input type="text" name="telephone"/></label><br />
+</fieldset>
+```
+
+### Button 
 
 Het `<button>` element geeft een klikbare knop weer.
 
@@ -523,9 +541,39 @@ Het `<button>` element geeft een klikbare knop weer.
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
 
-::: warning Let op ❗
-Je gebruikt een button enkel in de context van een form. Daarbuiten gebruik je steeds een link.
-::: 
+## Layout elementen
+
+Binnen in onze `<body>` kunnen we nog layout elementen definieren.
+
+### Header & footer
+
+Een `<header>` element omvat meestal de hoofding van de pagina zoals:
+* Een banner afbeelding
+* De titel
+* Een navigatiebar
+
+Een `<footer>` element bevat meestal de afsluitende informatie van de pagina zoals:
+* copyright regel
+* links naar verschillende informatiepagina's
+* links naar socials
+
+### Navigatie
+
+Een `<nav>` element bevat de navigatiebar van de pagina
+
+### Een article
+
+Een `<article>` element bevat een deel van de pagina die eigenlijk op zich zelf staat.
+
+### Een Aside
+
+Een `<aside>` element kan twee doelen hebben:
+* Als het in een `<article>` staat is het informatie over wat er in het artikel staat maar niet essentieel is.
+* Als het buiten een `<article>` staat is het informatie over de volledige pagina, zo kan het bevoorbeeld links bevatten naar andere secties van de website of recente blogs of een zoekveld, ...
+
+### Een section
+
+Een `<section>` element groepeert informatie die samenhoort en kan verschillende `<article>` elementen bevatten.
 
 ## Good-practices
 
