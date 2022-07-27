@@ -25,6 +25,9 @@ Dit werk is tot stand gekomen uit de kennis van de schrijver, collega's hogescho
 * De github cursus van docent Rogier Van der Linde aan de hogeschool Odisee.
 * Blog van Matteo Duò op Kinsta i.v.m. responsive webdesign.
 * Blog van Michael J. Fordham op editorx i.v.m. cross-browser webdesign
+* Jon Duckett (2011). HTML & CSS: Design and build websites
+* Jon Duckett (2014). Javascript & Jquery: Interactive front-end web development
+* Jon Duckett (2022). PHP & MySQL: Server-side web development
 
 ## Rechten
 

