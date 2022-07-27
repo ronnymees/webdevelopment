@@ -1698,6 +1698,8 @@ Volgende 3 parameters hebben invloed op de lamp:
 * bri : is de lichtintensiteit (0-254)
 
 Je kan een online tool gebruiken om deze waarden te bepalen bij het kleur dat je wenst.
+
+Je kan een uitgewerkt voorbeeld [hier](/files/voorbeeld_philips_hue.rar) terugvinden.
 :::
 
 ### Rest API
