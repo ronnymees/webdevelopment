@@ -107,6 +107,12 @@ Om PHP iets te laten weergeven naar de gebruiker gebruiken we het commando `echo
     echo 2 + 3;
 ?>
 ```
+
+Als je enkel een stukje PHP code wil gebruiken om iets naar het scherm te schrijven kan je ook de verkorte notitie gebruiken.
+
+```php
+<h2>Welcome <?= $name ?></h2>
+```
 Zoals je in de code hierboven reeds kon vaststellen is het bij PHP eveneens mogelijk om commentaar toe te voegen aan je code. Dit is een 'best-practice' techniek die sterk aangeraden wordt. Het kost je wat extra tijd bij het schrijven van je code, maar nadien haal je er veel winst bij als jij of iemand anders je code moet lezen of aanpassen.
 
 ```php
@@ -138,6 +144,17 @@ Het volgende voorbeeld neemt twee string variabelen voegt deze samen in een derd
     echo $zin;
 ?>
 ```
+
+Je kan ook een string toevoegen aan een string variabele.
+
+```php
+<?php
+    $zin = "Beste ";
+    $zin .= "studenten";
+    echo $zin;
+?>
+```
+
 Je kan ook de variabele in je tekst plaatsen, maar dit werkt enkel als je de tekst met `"`definieert.
 
 ```php
@@ -438,6 +455,16 @@ In PHP is er een duidelijk verschil tussen een variabele en een constante. De na
 
 Logische beslissingen in PHP werken op identiek dezelfde wijze als in c#. De opbouw van condities is dan weer identiek aan dat van Javascript.
 
+#### vergelijkingsoperator
+
+* `==` : vergelijkt de waarden zonder rekening te houden met hun datatype.
+* `===` : vergelijkt de waarden en hun datatype.
+* `<>` of `!=` : is niet gelijk aan zonder rekening te houden met hun dataype.
+* `!==` : is niet gelijk aan.
+* `<` en `>` : groter en kleiner dan.
+* `<=` en `>=` : groter of gelijk aan en kleiner of gelijk aan.
+* `<=>` : geeft een 0 als ze gelijk zijn, een 1 als de eerste waarde groter is dan de tweede en een -1 voor het omgekeerde.
+
 #### if, elseif en else
 
 ```php
@@ -451,7 +478,6 @@ Logische beslissingen in PHP werken op identiek dezelfde wijze als in c#. De opb
     } else {
         echo "a en b zijn gelijk";
     }
-
 ?>
 ```
 
@@ -478,6 +504,15 @@ Logische beslissingen in PHP werken op identiek dezelfde wijze als in c#. De opb
             echo "a is niet gelijk aan 0, 1, 2 of 3";
             break;
     }
+?>
+```
+
+#### Ternary operator
+
+```php
+<?php
+    $stock=7;
+    $message = ($stock > 0) ? 'In stock' : 'Sold out';
 ?>
 ```
 
@@ -623,6 +658,62 @@ Om dit op te lossen moeten we 1 regeltje toevoegen:
 ::: warning Noot
 De techniek hierboven met het gebruik van `global` zal zelden gebruikt worden, maar het verduidelijkt wel het onderscheid tussen een globaal en lokaal gedefinieerde variabele.
 :::
+
+### Hergebruiken van code
+
+In een website zijn sommige delen meermaals nodig, denk maar aan de header, navigatiebar, footer, ...
+
+Je kan die in een aparte file voorzien en dan toevoegen aan je pagina.
+
+```php
+<?php include 'includes/header.php'; ?>
+
+// de html en php code van de pagina...
+
+<?php include 'includes/footer.php'; ?>
+```
+
+### Klassen
+
+Ook in PHP kunnen we gebruik maken van klassen.
+
+Je defineert een klasse als volgt:
+
+```php
+<?php
+    class Account
+    {
+        // variabelen
+        public int $number;
+        public string $type;
+        public float $balance;
+        // constructor
+        public function __construct($number, $type, $balance)
+        {
+            $this->number = $number;
+            $this->type = $type;
+            $this->balance = $balance;
+        }
+        // functies
+        public function deposit(float $amount): float
+        {
+            // code
+        }
+        public function withdraw(float $amount): float
+        {
+            // code
+        }   
+    }
+?>
+```
+
+Je maakt als volgt een nieuwe variabele van het type van jou klasse:
+
+```php
+    $account = new Account();
+    // of
+    $account = new Account(20147596, 'Visa', 2500.00);
+```
 
 ::: tip Herhaling
 
@@ -1587,8 +1678,8 @@ We werken een webpagina uit met een taalkeuze:
     // Is er via de form een post 'lang' doorgestuurd?
     if(isset($_POST["lang"]))
     {
-        // Maak de cookie aan met de doorgekregen waarde
-        setcookie('lang',$_POST['lang'],time()+60*5);
+        // Maak de cookie aan met de doorgekregen waarde met een houdbaarheid van 5 uur.
+        setcookie('lang',$_POST['lang'],time()+60*60*5);
         // Zet de taal juist
         $language=$_POST['lang']; 
         // debug de ontvangen taalkeuze
@@ -1657,6 +1748,41 @@ Als we ditmaal de cookies inspecteren in onze browser stellen we vast dat er sle
 ### Login pagina
 
 Om bij te houden als een gebruiker ingelogd is moet je dit steeds doen via een session variabele. Mocht je dit doen via een cookie kan de gebruiker eventueel de cookie manupuleren en zo het doen lijken alsof hij ingelogd is zonder echt ooit een gebruikersnaam en paswoord in te geven.
+
+Een basis loginsysteem ziet er als volgt uit:
+
+```php
+<?php
+    session_start();                                    // Start or renew the session
+    $logged_in = $_SESSION['logged_in'] ?? false;       // Is the user logged in?
+    
+    $email = 'evy.bucket@outlook.com';                  // Email to log in
+    $password = 'password';                             // Password to log in
+
+    function login(){                                   // After succesfull login
+        session_regenerate_id(true);                    // Update session ID
+        $_SESSION['logged_in'] = true;                  // Set logged_in key to true
+    }
+
+    function logout(){                                  // Terminate the session
+        $_SESSION = [];                                 // Clear contents of session array
+        $params = session_get_cookie_params();          // Get the session cookie parameters
+        setcookie('PHPSESSID', '', time() - 3600,       
+                   $params['path'],
+                   $params['domain'],
+                   $params['secure'],
+                   $params['httponly']);                // Delete session cookie
+        session_destroy();                              // Delete session file
+    }
+
+    function require_login($logged_in){                 // Check if users is logged in
+        if($logged_in == false) {                       // If user is nog logged in
+            header('Location: login.php');              // Redirect to login.php
+            exit;                                       // Stop executing rest of this page
+        }
+    }
+?>
+```
 
 Die gebruikersnaam en paswoord worden bij registratie bewaard in een database. Om er voor te zorgen dat een paswoord veilig bewaard is in een database moet deze versleuteld worden. Doe je dit niet dan kan een hacker eenmaal toegang gekregen tot jou database met alle gebruikersnamen en paswoorden aan de slag.
 
