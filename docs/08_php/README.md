@@ -1203,6 +1203,8 @@ Om de leerstof van de volgende les nog beter te begrijpen bekijk je alvast hoofd
 
 ## Week 4 - Werken met data in een mySQL database in PHP
 
+[Hier](/files/cheatsheet_sql.pdf) kan je een cheatsheet voor SQL terugvinden ter ondersteuning van taken, toetsen, projecten en werkplekleren.
+
 ### Een oefendatabase aanmaken en CRUD testen
 
 Voor alle database gerelateerde acties verwijs ik naar de cursus Databases.
