@@ -673,6 +673,43 @@ Je kan die in een aparte file voorzien en dan toevoegen aan je pagina.
 <?php include 'includes/footer.php'; ?>
 ```
 
+### PHP en HTML combineren
+
+Ondanks het feit dat je een `.php` file hebt kan die hoofdzakelijk HTML bevatten met hier en daar wat PHP code tussen.
+
+Je hebt meerdere mogelijkheden om PHP en HTML te combineren.
+
+Je kan bijvoorbeeld het volgende schrijven:
+
+```php
+<?php 
+    echo "<table>\n";
+    for($j=1;$j<=10;$j++)
+    {
+        echo "<tr>";
+        echo "<td>{$j}x{$i}</td>";
+        echo "<td>".($j*$i)."</td>";
+        echo "</tr>\n";
+    }
+    echo "</table>\n";
+?>
+```
+Waarmee je via PHP de HTML code voor een tabel gaat genereren.
+
+Maar je kan hetzelfde ook als volgt schrijven:
+```php
+<table>
+<?php for($i=1;$i<=12;$i++) : ?>
+    <?php  for($j=1;$j<=10;$j++) : ?>
+        <tr>
+            <td><?php echo "{$j}x{$i}" ?></td>
+            <td><?php echo ($j*$i) ?></td>
+        </tr>
+    <?php endfor ?>
+<?php endfor ?>    
+</table>
+```
+
 ### Klassen
 
 Ook in PHP kunnen we gebruik maken van klassen.
