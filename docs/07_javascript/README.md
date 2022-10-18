@@ -12,7 +12,7 @@ Verwar JavaScript niet met de Java programmertaal. Beiden "Java" and "JavaScript
 
 Met Javascript kunnen webpagina's interactiever worden gemaakt door toegang te krijgen tot de inhoud en de opmaak van een webpagina en deze te wijzigen terwijl de pagina in de browser wordt bekeken. M.a.w. Javascript zorgt ervoor dat je een webpagina **dynamisch** kan maken zodat deze reageert op wat de gebruiker doet. Elke actie die moet gebeuren verloopt via een **script** en wordt door de browser, dus aan de **client-side**, verwerkt.
 
-::: tip Ondersteunend leermateriaal
+::: tip 📖 Ondersteunend leermateriaal
 
 We raden jullie volgend ondersteunend leermateriaal aan:
 
@@ -84,7 +84,7 @@ function goBackTitle() {
 * met de syntax `document.getElementById()` gaan we in de HTML pagina op zoek naar het element met de Id = ... 
 * met de syntax `.textContent` gaan we de inhoud van dit element gaan aanpassen.
 
-::: danger Waarschuwing
+::: danger ⛔ Waarschuwing
 Gebruik nooit de syntax `.innerHTML`, het houd enorme **security risico's** in!
 
 Met name **Cross-Site Scripting Attacks** (XSS). Hieronder twee voorbeelden hoe een hacker met eenvoudige code toegang krijgt tot een useraccount:
@@ -227,12 +227,21 @@ Of je kan terug met een aparte file werken, wat de voorkeur geniet.
 
 Als de browser een `<script>` element tegen komt zal het op die plaats pas het script laden en kijken of het iets moet doen.
 
-::: tip Tip
+::: tip 💡 Tip
 Maak een folder 'scripts' aan waarin je de Javascript bestanden plaatst.
 
 Voeg je script steeds **onderaan je body** toe, zo krijgt de gebruiker je webpagina reeds te zien terwijl het script nog aan het laden is bij een trage internetverbinding.
 
 Als je in javascript andere javascripts gebruikt moet je die voor jou script link plaatsen in de body.
+
+✏️ **UPDATE**
+
+Een nieuwere techniek om er voor te zorgen dat de DOM van je HTML laad voor je script is het gebruik maken van het attribuut `defer`. Dit zorgt er voor dat het script laad in de achtergrond maar pas uitgevoerd wordt als de DOM volledig is opgebouwd.
+
+```html
+<script defer src="/scripts/script.js"></script>
+```
+Hierdoor is het minder belangrijk om je scripts onderaan de body te plaatsen, maar mag je die gewoon ook in de head plaatsen.
 :::
 
 #### Variabelen
@@ -257,7 +266,7 @@ const y = 11
 ```
 Const is de definitie van een constante, heeft dezelfde scope als let maar je kan de waarde niet aanpassen.
 
-::: warning Aandacht
+::: warning ❗Aandacht
 Als je een variable definieert zonder let, var of const dan is dit automatisch een globale variabele. Je moet dan ook goed opletten dat je nergens anders een variabele definieert met dezelfde naam.
 
 Om te vermijden dat je die let, var of const per ongeluk zou vergeten kan je bovenaan je script file "use strict"; plaatsen. Je krijgt dan een foutmelding als je het vergeet.
@@ -269,7 +278,7 @@ let somevariable;
 ```
 :::
 
-**Regels omtrent naamgeving van variabelen**
+👉**Regels omtrent naamgeving van variabelen**
 
 1. De naam moet met een letter, een `$` of een `_` starten. Nooit met een cijfer!
 2. De naam kan letters, cijfers, een `$` of een `_` bevatten. Nooit een `-`  of `.`!
