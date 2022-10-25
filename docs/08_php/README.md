@@ -1722,10 +1722,10 @@ We werken een webpagina uit met een taalkeuze:
         // Zet de taal juist
         $language=$_POST['lang']; 
         // debug de ontvangen taalkeuze
-        echo '<div> POST: '.$_POST['lang']??'post variabele not set'.'</div>';
+        echo '<div> POST: '.($_POST['lang']??'post variabele not set').'</div>';
     }
     // debug de cookie waarde
-    echo '<div> COOKIE: '.$_COOKIE['lang']??'cookie not set'.'</div>';
+    echo '<div> COOKIE: '.($_COOKIE['lang']??'cookie not set').'</div>';
     // Afhankelijk van de taalkeuze toon je de header in de juiste taal
     if($language=='English')
     {
@@ -1768,10 +1768,10 @@ Een **session** is een soort cookie met een id. Iedere client krijgt een uniek i
         // Bewaar de 'comment' data in de session
         $_SESSION['comment']=$_POST['comment'];
         // Debug de ontvangen comment    
-        echo '<div> POST: '.$_POST['comment']??'post variabele not set'.'</div>';
+        echo '<div> POST: '.($_POST['comment']??'post variabele not set').'</div>';
     }
     // Debug de session comment waarde
-    echo '<div> SESSION: '.$_SESSION['comment']??'session not set'.'</div>';
+    echo '<div> SESSION: '.($_SESSION['comment']??'session not set').'</div>';
 ?>
 
 // De comment form
