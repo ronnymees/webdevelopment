@@ -66,6 +66,45 @@ html {
 ```
 :::
 
+## Overschrijven & overerven
+
+### Overschrijven
+
+CSS werkt volgens het principe dat de laatste aanpassing is wat effectief zichtbaar zal zijn.
+
+bv. als in een CSS file (dezelfde of een file die er voor is ingeladen) staat:
+
+```css
+div {
+  background-color: green;
+  color: white;
+  margin: 0;
+}
+```
+
+in nadien schrijf je 
+
+```css
+div {
+  color: yellow;
+  padding: 10;
+}
+```
+
+dan zal het resultaat voor een `<DIV>` element zijn
+
+```css
+div {
+  background-color: green;
+  color: yellow;
+  padding: 10;
+  margin: 0;
+}
+```
+### Overerven
+
+CSS werkt volgens het principe van overerving. D.w.z. dat elementen die kinderen zijn van een ander element ook alle opmaak van dat element automatisch overerven.
+
 ## CSS basis
 
 ### Opmaak set
